@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+
+  root 'unify#index'
+
+  get '/:locale' => 'unify#index'
+
+  scope '(:locale)', locale: /en|en-US|es-US/ do
+    resources :account
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
