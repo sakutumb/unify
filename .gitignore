@@ -17,3 +17,5 @@
 
 # Ignore IDE related files
 /.idea
+
+/.idea/*
