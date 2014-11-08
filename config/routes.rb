@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'unify#index'
 
-  get '/:locale' => 'unify#index'
+  get '/:locale/index' => 'unify#index'
 
   scope '(:locale)', locale: /en|en-US|es-US/ do
     resources :account
