@@ -1,0 +1,48 @@
+'use strict';
+
+angular.module('UnifyApp', [
+        //'ngResource',
+        //'ngRoute',
+        'ui.router',
+        'ui.bootstrap'
+    ]).
+    constant('appConstants', {
+        // All app constants goes here
+    }).
+    config(['$stateProvider', '$urlRouterProvider',
+        function ($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('');
+            $stateProvider.state('index', {
+                url: '',
+                views: {
+                    'index': {
+                        controller: 'IndexCtrl',
+                        templateUrl: '<%= asset_path('templates/index.html') %>'
+                    },
+                    'hero@index': {
+                        controller: 'HeroCtrl',
+                        templateUrl: '<%= asset_path('partials/hero.html') %>'
+                    },
+                    'login@index': {
+                        controller: 'LoginCtrl',
+                        templateUrl: '<%= asset_path('partials/login.html') %>'
+                    },
+                    'registration@index': {
+                        controller: 'RegistrationCtrl',
+                        templateUrl: '<%= asset_path('partials/registration.html') %>'
+                    },
+                    'features@index': {
+                        templateUrl: '<%= asset_path('partials/features.html') %>'
+                    },
+                    'faq@index': {
+                        templateUrl: '<%= asset_path('partials/faq.html') %>'
+                    },
+                    'footer@index': {
+                        templateUrl: '<%= asset_path('partials/footer.html') %>'
+                    }
+                }
+            });
+        }]).run(function ($rootScope) {
+            $rootScope.loginFormVisible = false;
+            $rootScope.registrationFormVisible = false;
+    });
