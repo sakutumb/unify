@@ -18,4 +18,6 @@
 # Ignore IDE related files
 /.idea
 
+/.idea/*
+
 .idea/workspace.xml
