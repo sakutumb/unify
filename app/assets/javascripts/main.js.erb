@@ -1,48 +1,80 @@
 'use strict';
 
 angular.module('UnifyApp', [
-        //'ngResource',
-        //'ngRoute',
-        'ui.router',
-        'ui.bootstrap'
-    ]).
-    constant('appConstants', {
-        // All app constants goes here
-    }).
-    config(['$stateProvider', '$urlRouterProvider',
-        function ($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('');
-            $stateProvider.state('index', {
-                url: '',
-                views: {
-                    'index': {
-                        controller: 'IndexCtrl',
-                        templateUrl: '<%= asset_path('templates/index.html') %>'
-                    },
-                    'hero@index': {
-                        controller: 'HeroCtrl',
-                        templateUrl: '<%= asset_path('partials/hero.html') %>'
-                    },
-                    'login@index': {
-                        controller: 'LoginCtrl',
-                        templateUrl: '<%= asset_path('partials/login.html') %>'
-                    },
-                    'registration@index': {
-                        controller: 'RegistrationCtrl',
-                        templateUrl: '<%= asset_path('partials/registration.html') %>'
-                    },
-                    'features@index': {
-                        templateUrl: '<%= asset_path('partials/features.html') %>'
-                    },
-                    'faq@index': {
-                        templateUrl: '<%= asset_path('partials/faq.html') %>'
-                    },
-                    'footer@index': {
-                        templateUrl: '<%= asset_path('partials/footer.html') %>'
+            //'ngResource',
+            //'ngRoute',
+            'ui.router',
+            'ui.bootstrap'
+        ]).
+        constant('appConstants', {
+            // All app constants goes here
+        }).
+        config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+            function ($stateProvider, $urlRouterProvider, $locationProvider) {
+                $locationProvider.html5Mode(true);
+                $urlRouterProvider.otherwise('');
+                $stateProvider.state('index', {
+                    url: '/',
+                    views: {
+                        'index': {
+                            controller: 'IndexCtrl',
+                            templateUrl: '<%= asset_path('templates/index.html') %>'
+                        },
+                        'hero@index': {
+                            controller: 'HeroCtrl',
+                            templateUrl: '<%= asset_path('partials/hero.html') %>'
+                        },
+                        'login@index': {
+                            url: 'login',
+                            controller: 'LoginCtrl',
+                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
+                        },
+                        'registration@index': {
+                            url: 'register',
+                            controller: 'RegistrationCtrl',
+                            templateUrl: '<%= asset_path('partials/common/registration.html') %>'
+                        },
+                        'features@index': {
+                            templateUrl: '<%= asset_path('partials/features.html') %>'
+                        },
+                        'faq@index': {
+                            templateUrl: '<%= asset_path('partials/common/faq.html') %>'
+                        },
+                        'footer@index': {
+                            templateUrl: '<%= asset_path('partials/common/footer.html') %>'
+                        }
                     }
-                }
-            });
-        }]).run(function ($rootScope) {
+                }).state('bureau', {
+                    url: '/:bureau',
+                    views: {
+                        'bureau': {
+                            controller: 'IndexCtrl',
+                            templateUrl: '<%= asset_path('templates/bureau.html') %>'
+                        },
+                        'hero@bureau': {
+                            controller: 'HeroCtrl',
+                            templateUrl: '<%= asset_path('partials/bureau/hero.html') %>'
+                        },
+                        'login@bureau': {
+                            controller: 'LoginCtrl',
+                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
+                        },
+                        'registration@bureau': {
+                            controller: 'RegistrationCtrl',
+                            templateUrl: '<%= asset_path('partials/common/registration.html') %>'
+                        },
+                        'features@bureau': {
+                            templateUrl: '<%= asset_path('partials/bureau/features.html') %>'
+                        },
+                        'faq@bureau': {
+                            templateUrl: '<%= asset_path('partials/common/faq.html') %>'
+                        },
+                        'footer@bureau': {
+                            templateUrl: '<%= asset_path('partials/common/footer.html') %>'
+                        }
+                    }
+                });
+            }]).run(function ($rootScope) {
             $rootScope.loginFormVisible = false;
             $rootScope.registrationFormVisible = false;
-    });
+        });
