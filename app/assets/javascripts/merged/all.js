@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require angular-js/angular
-//= require angular-js/angular-route
-//= require angular-js/angular-ui-router
-//= require angular-js/ui-bootstrap-tpls
+//= require vendor-index
+//= require main
+//= require_tree ../controllers
+

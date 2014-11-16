@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
   root 'unify#index'
 
-  get '/:locale/index' => 'unify#index'
+  get '/(:dynamic_route)(/:dynamic_action)(/:action_param)' => 'unify#index'
 
-  scope '(:locale)', locale: /en|en-US|es-US/ do
-    resources :account
-  end
+  #get '/:locale/index' => 'unify#index'
+
+  #scope '(:locale)', locale: /en|en-US|es-US/ do
+   # resources :account
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
