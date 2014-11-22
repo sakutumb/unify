@@ -12,9 +12,9 @@ angular.module('UnifyApp', [
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 $locationProvider.html5Mode(true);
-                $urlRouterProvider.otherwise('/');
+                $urlRouterProvider.otherwise('/unify_web/');
                 $stateProvider.state('index', {
-                    url: '/unify_web',
+                    url: '/unify_web/',
                     views: {
                         'index': {
                             controller: 'IndexCtrl',
