@@ -1,0 +1,74 @@
+
+/*-- mixins -- */
+
+$font-stack: arial;
+$white-color: #fff;
+
+/*--- h1, h2, h3, --- */
+.container-fluid {
+  padding: 0 !important;
+}
+
+.hero-content h1 { font-size: 1.5em; }
+/*-- hero component -- */
+
+#hero, .hero-action, .features, #login h2  {
+  font-family: arial;
+  text-align: center;
+}
+
+#hero {
+    height: 720px;
+    left: 0;
+    overflow: hidden;
+    top: 0;
+    min-width: 100%;
+    z-index: 0;
+    color: $white-color;
+    font-family: $font-stack;
+    position: relative;
+
+    .hero-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+
+    .hero-content {
+      position: relative;
+      z-index: 9;
+    }
+
+    .login, .register{
+      padding: 8px 26px;
+      width: 140px;
+      background-color: #b5926a;
+      border-radius: 4px;
+      font-size: 1.5em;
+    }
+
+    .login {
+      margin-right: 20px;
+    }
+
+  .login:hover, .register:hover {
+    background-color: #885327;
+    color: #f9efe3;
+  }
+
+}
+
+@media (max-width:450px){
+  #hero {
+    height: 220px;
+
+    .hero-content {
+      top: 50px;
+      font-size: 1.1em;
+    }
+  }
+
+}
