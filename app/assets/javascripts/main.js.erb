@@ -12,9 +12,9 @@ angular.module('UnifyApp', [
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 $locationProvider.html5Mode(true);
-                $urlRouterProvider.otherwise('');
+                $urlRouterProvider.otherwise('/unify_web/');
                 $stateProvider.state('index', {
-                    url: '/',
+                    url: '/unify_web/',
                     views: {
                         'index': {
                             controller: 'IndexCtrl',
@@ -45,7 +45,7 @@ angular.module('UnifyApp', [
                         }
                     }
                 }).state('bureau', {
-                    url: '/:bureau',
+                    url: '/unify_web/:bureau',
                     views: {
                         'bureau': {
                             controller: 'IndexCtrl',
@@ -74,7 +74,8 @@ angular.module('UnifyApp', [
                         }
                     }
                 });
-            }]).run(function ($rootScope) {
-            $rootScope.loginFormVisible = false;
-            $rootScope.registrationFormVisible = false;
-        });
+            }]).run(['$rootScope', '$state', '$stateParams',
+                    function($rootScope, $state, $stateParams) {
+                        $rootScope.loginFormVisible = false;
+                        $rootScope.registrationFormVisible = false;
+                }]);

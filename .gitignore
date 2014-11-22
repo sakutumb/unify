@@ -20,5 +20,4 @@
 
 /.idea/*.*
 
-
-*.iml
+/public/assets
