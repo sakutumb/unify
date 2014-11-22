@@ -6,9 +6,9 @@
 #
 default: &default
   adapter: mysql2
-  database: test
-  username: phani
-  password: s$k$t$mb9
+  database: unify
+  username: unify
+  password: un$fy9
   host: localhost
 
 development:
