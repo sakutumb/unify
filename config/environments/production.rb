@@ -75,4 +75,13 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.assets.precompile += [ Proc.new{ |path| File.dirname(path) =~ /merged/ }]
+  config.assets.precompile += %w( .svg )
+
+  # Expands the lines which load the assets
+  config.assets.debug = false
+
+  # Do not compress assets
+  config.assets.compress = true
 end

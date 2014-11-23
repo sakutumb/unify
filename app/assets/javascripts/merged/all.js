@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require vendor-index
+//= require vendor-all.js
 //= require main
 //= require_tree ../controllers
 

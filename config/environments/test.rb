@@ -36,4 +36,15 @@ Rails.application.configure do
 
   # Raises error for missing translations
   config.action_view.raise_on_missing_translations = true
+
+  config.assets.precompile += [ Proc.new{ |path| File.dirname(path) =~ /merged/ }]
+  config.assets.precompile += %w( .svg )
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
+
+  # Do not compress assets
+  # TODO: Set it to true later
+  config.assets.compress = false
+
 end
