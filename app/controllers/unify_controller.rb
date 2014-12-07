@@ -22,4 +22,41 @@ class UnifyController < ApplicationController
     render :template => '/index', :locals => {ui_view: @ui_view}
   end
 
+  # Entry point method for all data calls from front-end
+  def services
+    Rails.logger.debug 'Inside service'
+    action = params[:do]
+    result_json = {}
+    case action
+      when 'login'    #compare to 1
+        Rails.logger.debug 'Processing login'
+        result_json = login
+      else
+        Rails.logger.warn 'Unsupported service call'
+    end
+    render json: result_json
+  end
+
+  def login
+    Rails.logger.debug 'Inside login service'
+    user_name = params['userName']
+    password = params['password']
+    # Query database
+    user = FactUser.where user_name: user_name, password: password
+    result_json = {
+        :result  => 'failure',
+        :data    => {},
+        :msg     => 'Invalid username or password'
+    }
+    if(user.present?)
+      Rails.logger.debug 'Valid user !'
+      result_json = {
+          :result  => 'success',
+          :data    => user,
+          :msg     => 'Valid User'
+      }
+    end
+    return result_json
+  end
+
 end

@@ -1,11 +1,18 @@
+<!-- login -->
 <section id="login" ng-show="$root.loginFormVisible">
-    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><a href="#hero">×</a></span><span class="sr-only">Close</span></button>
+
+    <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true"><a href="/" ng-click="$root.loginFormVisible = false;">×</a></span>
+        <span class="sr-only">Close</span>
+    </button>
     <h2>Login</h2>
+
     <form class="form-horizontal registerForm">
         <div class="form-group">
             <label class="col-sm-5 control-label">Username</label>
-            <div class="col-xs-12 col-sm-4">
-                <input type="text" class="form-control" name="username" ng-click="$root.loginFormVisible"
+
+            <div class="col-xs-12 col-sm-3">
+                <input type="text" class="form-control" name="username" ng-model="user.userName"
                        data-bv-notempty="true"
                        data-bv-notempty-message="The username is required and cannot be empty"
 
@@ -20,14 +27,15 @@
 
                        data-bv-different="true"
                        data-bv-different-field="password"
-                       data-bv-different-message="The username and password cannot be the same as each other" />
+                       data-bv-different-message="The username and password cannot be the same as each other"/>
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-sm-5 control-label">Password</label>
-            <div class="col-xs-12 col-sm-4">
-                <input type="password" class="form-control" name="password"
+
+            <div class="col-xs-12 col-sm-3	">
+                <input type="password" class="form-control" name="password" ng-model="user.password"
                        data-bv-notempty="true"
                        data-bv-notempty-message="The password is required and cannot be empty"
 
@@ -37,14 +45,15 @@
 
                        data-bv-different="true"
                        data-bv-different-field="username"
-                       data-bv-different-message="The password cannot be the same as username" />
+                       data-bv-different-message="The password cannot be the same as username"/>
             </div>
         </div>
         <div class="form-group">
-            <div class=" col-sm-6 col-xs-12 col-sm-4">
-                <button type="submit" class="btn btn-default">Sign up</button>
+            <div class=" col-sm-6 col-xs-12 col-sm-4 col-md-offset-5">
+                <button type="submit" class="btn btn-default" ng-click="login()">submit</button>
             </div>
         </div>
 
     </form>
 </section>
+<!-- login -->

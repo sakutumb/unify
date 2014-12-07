@@ -1,0 +1,182 @@
+body {
+	background-color:  #e9dccc
+	;
+}
+.nav {
+	background-color: #37322f;
+	color: #fff;
+	height: auto;
+	position: relative;
+}
+
+.ads, .mm-logo, nav {
+	float: left;
+}
+
+.candidates {
+	color: #d76018;		
+	font-weight: bold;
+}
+.hero-success-main {
+	height: auto;
+	margin: 50px 0 50px 0;
+	border: 1px solid #ccc;
+	float: left;
+	background-color: #F9EFE3;
+}
+
+.hero-story h3 {
+	margin-top: 5px;
+}
+
+.contactus-1,
+.contactus-2, 
+.contactus-3, 
+.powered {
+	background-image: url('../images/matchmakerssprite.svg');
+	width: 140px;
+	height: 140px;	
+	display: block;
+}
+
+.contactus-3 {
+	background-position: -325px -10px;
+}
+
+.contactus-2 {
+	background-position: -176px -10px;
+}
+
+.contactus-1 {
+	background-position: -17px -9px;
+}
+
+.contact-us h3, .contact-us address { text-align: center;}
+
+.mm-logo {
+	width: 25%;
+	height: 150px;
+	padding-left: 20px;
+    padding-top: 20px;
+    
+}
+
+.powered {
+	height: 50px;
+	width: 206px;
+	float: right;
+	background-position: -471px -18px;
+}
+
+.ads {
+	height: 90px;
+	width: 970px;
+}
+
+nav {
+	position: absolute;
+	right: 325px;
+	top: 107px;
+}
+
+
+nav a {
+	padding-right: 20px;
+	font-size: 18px;
+	color: #fff;
+}
+
+nav a:hover {
+	color: #d76018;
+}
+
+
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}	
+
+div.img {
+	background-color: #F9EFE3;	
+}
+
+div.img img {
+    display: block;
+    border: 1px solid #ffffff;
+}
+
+div.desc {
+  text-align: center;
+  font-weight: normal;
+  width: 120px;
+  margin: 5px;
+}
+
+.hero-success{
+	float: left;
+	padding: 20px 0 0 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+.faqs {
+	margin-top: 10px;
+
+}
+.faqs p {
+	margin: 0;
+	padding-left: 20px;
+}
+.question{
+	font-weight: bold;
+}
+.content-soc {
+	padding-bottom: 80px;
+}
+.desc address {
+	text-align: left;
+}
+.main-story-img {
+	padding: 0;
+}
+.social {
+	width: 68px;
+	height: 68px;
+	background: #d76018;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	margin-right: 20px;
+}
+.social-googlepl {
+	background-color: #37322f;
+}
+.social-icon {
+	position: relative;
+	top: 20px;
+	left: 10px;
+	color: #ffffff;
+}
+.contact-us a {
+	color: #d76018;
+}
+
+#login {
+	background-color: #37322f;
+	color: #fff;
+	padding: 5em;
+}
+
+.login {
+	margin-right: 20px;
+}
+.close {
+	color: #fff;
+	opacity: 2;
+}

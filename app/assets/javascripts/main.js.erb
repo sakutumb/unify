@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('UnifyApp', [
+var unifyModule = angular.module('UnifyApp', [
             //'ngResource',
             //'ngRoute',
             'ui.router',
@@ -8,10 +8,11 @@ angular.module('UnifyApp', [
         ]).
         constant('appConstants', {
             // All app constants goes here
+            authenticity_token: FORM_AUTHENTICITY_TOKEN // Defined at layout level
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
-                $locationProvider.html5Mode(true);
+                //$locationProvider.html5Mode(true);
                 $urlRouterProvider.otherwise('/');
                 $stateProvider.state('index', {
                     url: '/',
@@ -25,12 +26,10 @@ angular.module('UnifyApp', [
                             templateUrl: '<%= asset_path('partials/hero.html.erb') %>'
                         },
                         'login@index': {
-                            url: 'login',
                             controller: 'LoginCtrl',
                             templateUrl: '<%= asset_path('partials/common/login.html') %>'
                         },
                         'registration@index': {
-                            url: 'register',
                             controller: 'RegistrationCtrl',
                             templateUrl: '<%= asset_path('partials/common/registration.html') %>'
                         },

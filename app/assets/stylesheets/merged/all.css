@@ -11,5 +11,8 @@
  * file per style scope.
  *
  *= require vendor-all.css
+ *= require ../base
+ *= require ../bootstrapValidator
  *= require ../home
+ *= require ../matchmaker
  */
