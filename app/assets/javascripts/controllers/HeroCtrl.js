@@ -2,20 +2,23 @@
 
 angular.module('UnifyApp').
     controller('HeroCtrl', ['$scope', '$rootScope', '$location', '$anchorScroll', '$timeout', function ($scope, $rootScope, $location, $anchorScroll, $timeout) {
-        $scope.showLoginForm = function(){
+
+        $rootScope.hasUserLoggedIn = false;
+
+        $scope.showLoginForm = function () {
             $rootScope.loginFormVisible = true;
             $rootScope.registrationFormVisible = false;
             $timeout(
-                function(){
+                function () {
                     $('html, body').animate({
-                        scrollTop: $("#login").offset().top - 50
+                        scrollTop: $("#login").offset().top - 10
                     }, 1000);
                 }
             )
 
         };
 
-        $scope.showRegistrationForm = function(){
+        $scope.showRegistrationForm = function () {
             $rootScope.registrationFormVisible = true;
             $rootScope.loginFormVisible = false;
             $anchorScroll();

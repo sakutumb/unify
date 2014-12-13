@@ -8,15 +8,15 @@ class UnifyController < ApplicationController
     # /app/xxx - for all other app specific routes
     dynamic_route = params[:dynamic_route]
     @ui_view = 'index'
-    if(dynamic_route.present? && dynamic_route == 'app')
+    if (dynamic_route.present? && dynamic_route == 'app')
       dynamic_action = params[:dynamic_action]
-      if(dynamic_action.present? && dynamic_action == 'set_locale')
+      if (dynamic_action.present? && dynamic_action == 'set_locale')
         action_param = params[:action_param]
-        if(action_param.present?)
+        if (action_param.present?)
           set_locale(action_param)
         end
       end
-    elsif(dynamic_route.present? && dynamic_route.length > 0)
+    elsif (dynamic_route.present? && dynamic_route.length > 0)
       @ui_view = 'bureau'
     end
     render :template => '/index', :locals => {ui_view: @ui_view}
@@ -28,7 +28,7 @@ class UnifyController < ApplicationController
     action = params[:do]
     result_json = {}
     case action
-      when 'login'    #compare to 1
+      when 'login' #compare to 1
         Rails.logger.debug 'Processing login'
         result_json = login
       else
@@ -37,25 +37,27 @@ class UnifyController < ApplicationController
     render json: result_json
   end
 
+
   def login
     Rails.logger.debug 'Inside login service'
-    user_name = params['userName']
-    password = params['password']
-    # Query database
-    user = FactUser.where user_name: user_name, password: password
     result_json = {
-        :result  => 'failure',
-        :data    => {},
-        :msg     => 'Invalid username or password'
+        :result => 'failure',
+        :data => {},
+        :msg => 'Invalid username or password'
     }
-    if(user.present?)
+    user = UnifyUser.find_by_user_id(params[:user_name])
+    if user && user.authenticate(params[:password])
+      Rails.logger.debug 'Valid Credentials !'
+      session[:user_name] = user.user_name
       Rails.logger.debug 'Valid user !'
+      user.password_digest = nil
       result_json = {
-          :result  => 'success',
-          :data    => user,
-          :msg     => 'Valid User'
+          :result => 'success',
+          :data => user,
+          :msg => 'Valid User'
       }
     end
+    Rails.logger.debug 'Invalid Credentials!'
     return result_json
   end
 

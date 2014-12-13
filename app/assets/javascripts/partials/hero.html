@@ -1,6 +1,6 @@
 <section id="hero">
   <div class="hero-img">
-    <img class="img-responsive" src="<%= image_url('hero.jpg') %>" width="100%" height="auto"/>
+    <img class="img-responsive" src="/assets/hero.jpg" width="100%" height="auto"/>
     <div class="logo"></div>
     <nav>
       <a href="#features">Features</a>
@@ -12,7 +12,8 @@
 
     <div class="hero-action col-md-3 col-md-offset-4">
       <div class="row">
-        <a class="login" href="#" ng-click="showLoginForm()">Login</a>
+        <a class="login" href="#" ng-click="showLoginForm()" ng-hide="$root.hasUserLoggedIn">Login</a>
+        <h4 >Hello {{$root.user.first_name}}</h4>
         <!--<a class="register" href="#" ng-click="showRegistrationForm()">Register</a> -->
       </div>
     </div>
