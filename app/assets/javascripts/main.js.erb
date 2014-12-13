@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('UnifyApp', [
+var unifyModule = angular.module('UnifyApp', [
             //'ngResource',
             //'ngRoute',
             'ui.router',
@@ -8,6 +8,7 @@ angular.module('UnifyApp', [
         ]).
         constant('appConstants', {
             // All app constants goes here
+            authenticity_token  : FORM_AUTHENTICITY_TOKEN // Defined at layout level
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -22,15 +23,13 @@ angular.module('UnifyApp', [
                         },
                         'hero@index': {
                             controller: 'HeroCtrl',
-                            templateUrl: '<%= asset_path('partials/hero.html.erb') %>'
+                            templateUrl: '<%= asset_path('partials/hero.html') %>'
                         },
                         'login@index': {
-                            url: 'login',
                             controller: 'LoginCtrl',
                             templateUrl: '<%= asset_path('partials/common/login.html') %>'
                         },
                         'registration@index': {
-                            url: 'register',
                             controller: 'RegistrationCtrl',
                             templateUrl: '<%= asset_path('partials/common/registration.html') %>'
                         },
@@ -51,20 +50,21 @@ angular.module('UnifyApp', [
                             controller: 'IndexCtrl',
                             templateUrl: '<%= asset_path('templates/bureau.html') %>'
                         },
-                        'hero@bureau': {
-                            controller: 'HeroCtrl',
-                            templateUrl: '<%= asset_path('partials/bureau/hero.html.erb') %>'
+                        'header@bureau': {
+                            templateUrl: '<%= asset_path('partials/bureau/header.html') %>'
                         },
                         'login@bureau': {
                             controller: 'LoginCtrl',
                             templateUrl: '<%= asset_path('partials/common/login.html') %>'
                         },
-                        'registration@bureau': {
-                            controller: 'RegistrationCtrl',
-                            templateUrl: '<%= asset_path('partials/common/registration.html') %>'
+                        'hero@bureau': {
+                            templateUrl: '<%= asset_path('partials/bureau/hero.html') %>'
                         },
-                        'features@bureau': {
-                            templateUrl: '<%= asset_path('partials/bureau/features.html') %>'
+                        'success@bureau': {
+                            templateUrl: '<%= asset_path('partials/bureau/success.html') %>'
+                        },
+                        'candidates@bureau': {
+                            templateUrl: '<%= asset_path('partials/bureau/candidates.html') %>'
                         },
                         'faq@bureau': {
                             templateUrl: '<%= asset_path('partials/common/faq.html') %>'

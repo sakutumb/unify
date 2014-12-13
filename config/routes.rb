@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'unify#index'
 
+  match '/app/services/:do' => 'unify#services', via: [:get, :post]
+
   get '/(:dynamic_route)(/:dynamic_action)(/:action_param)' => 'unify#index'
 
   #get '/:locale/index' => 'unify#index'

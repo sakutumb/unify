@@ -1,9 +1,7 @@
 <section id="hero">
   <div class="hero-img">
-    <img class="img-responsive" src="<%= image_url('hero.jpg') %>" width="100%" height="auto"/>
-        <span class="icon">
-            <img class="img-responsive" src="<%= image_url('logo.jpg') %>" width="250px" height="auto"/>
-        </span>
+    <img class="img-responsive" src="/assets/hero.jpg" width="100%" height="auto"/>
+    <div class="logo"></div>
     <nav>
       <a href="#features">Features</a>
       <a href="#faq">FAQ</a>
@@ -13,8 +11,11 @@
     <h1 class="hero col-md-6 col-md-offset-3">Home - Your matchmaking business, simplified.</h1>
 
     <div class="hero-action col-md-3 col-md-offset-4">
-      <a class="login" href="#" ng-click="showLoginForm()">Login</a>
-      <a class="register" href="#" ng-click="showRegistrationForm()">Register</a>
+      <div class="row">
+        <a class="login" href="#" ng-click="showLoginForm()" ng-hide="$root.hasUserLoggedIn">Login</a>
+        <h4 >Hello {{$root.user.first_name}}</h4>
+        <!--<a class="register" href="#" ng-click="showRegistrationForm()">Register</a> -->
+      </div>
     </div>
   </div>
 </section>
