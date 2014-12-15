@@ -45,10 +45,10 @@ class UnifyController < ApplicationController
         :data => {},
         :msg => 'Invalid username or password'
     }
-    user = UnifyUser.find_by_user_id(params[:user_name])
+    user = UnifyUser.find_by_user_id(params[:user_id])
     if user && user.authenticate(params[:password])
       Rails.logger.debug 'Valid Credentials !'
-      session[:user_name] = user.user_name
+      session[:user_name] = user.first_name
       Rails.logger.debug 'Valid user !'
       user.password_digest = nil
       result_json = {

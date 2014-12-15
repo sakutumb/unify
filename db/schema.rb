@@ -218,13 +218,15 @@ ActiveRecord::Schema.define(version: 20141213060354) do
   add_index "unify_prospects", ["match_maker_id"], name: "FK_unify_user_unify_bureau", using: :btree
   add_index "unify_prospects", ["zodiac_id"], name: "FK_unify_user_dim_zodiac_sign", using: :btree
 
-  create_table "unify_users", primary_key: "email", force: true do |t|
-    t.string   "user_name",          limit: 45
-    t.string   "password",           limit: 45
-    t.string   "encrypted_password", limit: 300,  null: false
-    t.string   "salt",               limit: 1000, null: false
-    t.string   "locale",             limit: 10,   null: false
-    t.string   "user_type",          limit: 2,    null: false
+  create_table "unify_users", primary_key: "user_id", force: true do |t|
+    t.string   "email",             limit: 100, null: false
+    t.string   "password",          limit: 45
+    t.string   "password_digest",   limit: 300
+    t.string   "first_name",        limit: 100, null: false
+    t.string   "last_name",         limit: 100
+    t.string   "user_type",         limit: 2,   null: false
+    t.string   "locale",            limit: 10,  null: false
+    t.string   "organization_name", limit: 100
     t.datetime "last_updated"
   end
 
