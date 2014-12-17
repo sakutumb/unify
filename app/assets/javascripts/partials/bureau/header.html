@@ -9,7 +9,8 @@
                 <a href="#success">SUCCESS STORIES</a>
                 <a href="#candidates">CANDIDATES</a>
                 <a href="#faq">FAQs</a>
-                <a class="login" href="#login">LOGIN</a>
+                <a href="#login" ng-hide="$parent.user.hasSignedIn" ng-click="showLoginForm()">LOGIN</a>
+                <a href="#registration" ng-hide="$parent.user.hasSignedIn" ng-click="showRegistrationForm()">REGISTRATION</a>
             </nav>
             <span class="powered">&nbsp;</span>
         </div>

@@ -6,7 +6,9 @@
 <meta name="robots" content="index, follow"/>
 <%= csrf_meta_tags %>
 <script>
-  var FORM_AUTHENTICITY_TOKEN = '<%= form_authenticity_token %>';
+    //Get the APP_CONFIG
+    var APP_CONFIG = eval(<%= raw Unify::APP_CONFIG.to_json %>);
+    var FORM_AUTHENTICITY_TOKEN = '<%= form_authenticity_token %>';
 </script>
 <head>
   <title>Unify</title>

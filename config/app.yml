@@ -1,0 +1,10 @@
+# to access config use IntuitCom::APP_CONFIG['key']
+development: &development
+  locales:
+    en_US: English(US)
+    es_US: Español(US)
+test:
+    <<: *development
+
+production:
+    <<: *development
