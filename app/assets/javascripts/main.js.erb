@@ -44,6 +44,22 @@ var unifyModule = angular.module('UnifyApp', [
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
                         }
                     }
+                }).state('search', {
+                    url: '/search',
+                    views: {
+                        'search': {
+                            templateUrl: '<%= asset_path('templates/search.html') %>'
+                        },
+                        'header@search': {
+                            templateUrl: '<%= asset_path('partials/search/header.html') %>'
+                        },
+                        'results@search': {
+                            templateUrl: '<%= asset_path('partials/search/results.html') %>'
+                        },
+                        'footer@search': {
+                            templateUrl: '<%= asset_path('partials/common/footer.html') %>'
+                        }
+                    }
                 }).state('bureau', {
                     url: '/:bureau',
                     views: {

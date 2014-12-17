@@ -37,6 +37,16 @@ class UnifyController < ApplicationController
     render json: result_json
   end
 
+  # Search method
+  def search
+    Rails.logger.debug 'Inside search'
+    if request.method == 'GET'
+      @ui_view = 'search'
+      render :template => '/index', :locals => {ui_view: @ui_view}
+    elsif request.method == 'POST'
+      # Return search results as json - WIll cater to AJAX calls
+    end
+  end
 
   def login
     Rails.logger.debug 'Inside login service'
