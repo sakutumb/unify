@@ -18,7 +18,7 @@ angular.module('UnifyApp').controller('LoginCtrl', ['$scope', '$rootScope', 'Uni
                         $rootScope.hasUserLoggedIn = true;
                         $rootScope.user = resultObject.data;
                         if($rootScope.user.user_type == 'MM'){
-                            var urlPath =  $rootScope.user.user_name.replace(/[^a-zA-Z0-9]/g, '-');
+                            var urlPath =  $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
                             urlPath = urlPath.replace(/-+$/, '');
                             window.location = '/' + urlPath;
                         }

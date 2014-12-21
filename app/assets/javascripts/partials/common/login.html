@@ -2,7 +2,7 @@
 <div class="row">
     <section id="login" ng-show="$root.loginFormVisible">
 
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" data-dismiss="modal" ng-click="$root.loginFormVisible = false">
             <span aria-hidden="true"><a href="/" ng-click="$root.loginFormVisible = false;">×</a></span>
             <span class="sr-only">Close</span>
         </button>
@@ -10,7 +10,7 @@
 
         <form class="form-horizontal registerForm">
             <div class="form-group">
-                <label class="col-sm-5 control-label">Username</label>
+                <label class="col-sm-5 control-label">User ID</label>
 
                 <div class="col-xs-12 col-sm-3">
                     <input type="text" class="form-control" name="user_id" ng-model="user.user_id"

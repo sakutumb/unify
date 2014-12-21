@@ -8,6 +8,7 @@ var unifyModule = angular.module('UnifyApp', [
         ]).
         constant('appConstants', {
             // All app constants goes here
+            APP_CONFIG          : APP_CONFIG,
             authenticity_token  : FORM_AUTHENTICITY_TOKEN // Defined at layout level
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
@@ -43,6 +44,22 @@ var unifyModule = angular.module('UnifyApp', [
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
                         }
                     }
+                }).state('search', {
+                    url: '/search',
+                    views: {
+                        'search': {
+                            templateUrl: '<%= asset_path('templates/search.html') %>'
+                        },
+                        'header@search': {
+                            templateUrl: '<%= asset_path('partials/search/header.html') %>'
+                        },
+                        'results@search': {
+                            templateUrl: '<%= asset_path('partials/search/results.html') %>'
+                        },
+                        'footer@search': {
+                            templateUrl: '<%= asset_path('partials/common/footer.html') %>'
+                        }
+                    }
                 }).state('bureau', {
                     url: '/:bureau',
                     views: {
@@ -56,6 +73,9 @@ var unifyModule = angular.module('UnifyApp', [
                         'login@bureau': {
                             controller: 'LoginCtrl',
                             templateUrl: '<%= asset_path('partials/common/login.html') %>'
+                        },
+                        'registration@bureau': {
+                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
                         },
                         'hero@bureau': {
                             templateUrl: '<%= asset_path('partials/bureau/hero.html') %>'
