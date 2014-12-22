@@ -18,6 +18,9 @@ nav a:hover {
     color: #d76018;
 }
 
+#hero nav {
+    right: 55px;
+}
 
 .logo {
     position: absolute;
@@ -25,7 +28,7 @@ nav a:hover {
     left:50px;
     width: 100px;
     height: 50px;
-    background: url(assets/matchmakerssprite.svg);
+    background: url(/assets/matchmakerssprite.svg);
     background-position: -549px -29px;
 }
 
@@ -50,6 +53,10 @@ nav a:hover {
     color: #f9efe3;
 }
 
+.login:visited, .register:visited {
+    color: #fff;
+}
+
 .login-form, #registration {
     display: none;
 }
@@ -59,7 +66,7 @@ nav a:hover {
 
 }
 
-.login-form, #registration{
+#login, #registration{
     margin-top: -1px;
 }
 
@@ -91,6 +98,137 @@ nav a:hover {
     background-color: #d76018;
     color: #fff;
 }
+
+#features {
+    padding-top: 1px;
+    padding-bottom: 40px;
+    background-color: #f9efe3;
+    padding-left: 40px;
+    float: left;
+
+}
+.features {
+    font-weight: bold;
+    color: #040404;
+}
+
+.feature-1, .feature-2, .feature-3 {
+    background-image: url("/assets/unify.sprite.home.10.31.14.svg");
+    width: 140px;
+    height: 140px;
+    display: block;
+}
+
+.feature-2 {
+    background-position: -134px 0;
+}
+
+.feature-3 {
+    background-position: 0 -134px;
+}
+
+
+#faq{
+    background-color: #37322f;
+    height: auto;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    float: left;
+}
+
+#faq h2 {
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.faqs {
+    margin-top: 10px;
+
+}
+.faqs p {
+    margin: 0;
+}
+
+.question{
+    color: #fff;
+}
+
+.answer {
+    color: #d76018;
+
+}
+
+#contactus{
+    background-color: #f9efe3;
+    height: auto;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    float: left;
+}
+
+#contactus h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.top {
+    position: relative;
+    right: 20px;
+    top: 10px;
+
+}
+
+.top a {
+    color: #d76018;
+}
+
+.btn-default {
+    color: #f9efe3;
+    background-color: #b5926a;
+    font-size: 21px;
+}
+address {
+    color: #040404;
+}
+
+.close a {
+    color: #fff;
+}
+
+.btn-default:hover {
+    background-color: #d76018;
+    color: #fff;
+}
+
+.social {
+    width: 68px;
+    height: 68px;
+    background: #d76018;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+.social-googlepl {
+    background-color: #37322f;
+}
+.social-icon {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #ffffff;
+}
+
+#social-buttons {
+    background-color: #f9efe3;
+    padding-bottom: 40px;
+}
+
 
 /*--- for screen size: 768px; ---*/
 @media (max-width:768px){
