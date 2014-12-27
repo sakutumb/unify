@@ -1,247 +1,237 @@
-.container-fluid {
-		padding: 0
-}
 
-.hero, .hero-action, .features, #login h2  {
-   font-family: arial;
-   text-align: center;	
-}
-`
-.hero {
-	line-height: 36pt;
-}
-
-#login {
-	background-color: #37322f;
-	color: #fff;
-	padding: 5em;
-}
-
-#hero h1, #login h2 {
-	margin-bottom: 20px;
-}
-#hero {
-	margin: 0 auto;
-	background-color: #ccc;
-	color: #fff;
-	height: auto;
-	width: 100%;
-	
-}
-
-#hero-img image{
-	position: relative;
-}
-
-.hero-img {
-	  position: relative; 
-   width: 100%; 
-
-}
-
-.hero {
-	position: absolute;
-	top:200px;
-}
-
-.login {
-	position: absolute;
-	top:-400px;
+nav a, .hero {
+    color: #fff;
 }
 
 nav {
-	position: absolute;
+    position: absolute;
     right: 50px;
     top: 50px;
 }
 
 nav a {
-	padding-right: 20px;
-	font-size: 18pt;
-	color: #fff;
+    padding-right: 20px;
+    font-size: 18pt;
 }
 
 nav a:hover {
-	color: #d76018;
+    color: #d76018;
+}
+
+#hero nav {
+    right: 55px;
 }
 
 .logo {
-	position: absolute;
-	top: 50px;
-	left:50px;
+    position: absolute;
+    top: 50px;
+    left:50px;
     width: 100px;
     height: 50px;
     background: url(/assets/matchmakerssprite.svg);
     background-position: -549px -29px;
 }
 
-.login, .register{
-	padding: 8px 26px;
-	width: 140px;
-	color: #fff;
-	background-color: #b5926a;
-	border-radius: 4px;
-	font-size: 18pt;
+
+.hero {
+    position: absolute;
+    top:200px;
+}
+
+.login, .register {
+    position: absolute;
+    top:-400px;
+    padding: 8px 26px;
+    color: #fff;
+    background-color: #b5926a;
+    border-radius: 4px;
+    font-size: 18pt;
 }
 
 .login:hover, .register:hover {
-	background-color: #885327;
-	color: #f9efe3;
+    background-color: #885327;
+    color: #f9efe3;
 }
 
-.login {
-	margin-right: 20px;
-}
-.close {
-	color: #fff;
-	opacity: 2;
+.login:visited, .register:visited {
+    color: #fff;
 }
 
-/* --- features -- */
+.login-form, #registration {
+    display: none;
+}
+.login-form, .login-label {
+    background-color: #37322f;
+    color: #fff;
+
+}
+
+#login, #registration{
+    margin-top: -1px;
+}
+
+.top {
+    position: relative;
+    right: 20px;
+    top: 10px;
+
+}
+
+.top a {
+    color: #d76018;
+}
+
+#login .close, #registration .close {
+    padding: 10px 20px 0 0;
+}
+.close a {
+    color: #fff;
+}
+
+.btn-default {
+    color: #f9efe3;
+    background-color: #b5926a;
+    font-size: 21px;
+}
+
+.btn-default:hover {
+    background-color: #d76018;
+    color: #fff;
+}
+
 #features {
-	padding-top: 1px;
-	padding-bottom: 40px;	
-	background-color: #f9efe3;
-	padding-left: 40px;
-	float: left;
+    padding-top: 1px;
+    padding-bottom: 40px;
+    background-color: #f9efe3;
+    padding-left: 40px;
+    float: left;
 
 }
 .features {
-	font-size: 32pt;
-	font-weight: bold;
-	color: #040404;
+    font-weight: bold;
+    color: #040404;
 }
 
 .feature-1, .feature-2, .feature-3 {
-	background-image: url("/assets/unify.sprite.home.10.31.14.svg");
-	width: 140px;
-	height: 140px;	
-	display: block;
+    background-image: url("/assets/unify.sprite.home.10.31.14.svg");
+    width: 140px;
+    height: 140px;
+    display: block;
 }
 
 .feature-2 {
-	background-position: -134px 0;
+    background-position: -134px 0;
 }
 
 .feature-3 {
-	background-position: 0 -134px;
+    background-position: 0 -134px;
 }
 
+
 #faq{
-	background-color: #37322f;
-	height: auto;
-	padding-left: 40px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	width: 100%;
-	float: left;	
+    background-color: #37322f;
+    height: auto;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    float: left;
 }
 
 #faq h2 {
-	color: #fff;
-	text-align: center;
-	padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 .faqs {
-	margin-top: 10px;
+    margin-top: 10px;
 
 }
 .faqs p {
-	margin: 0;
+    margin: 0;
 }
 
 .question{
-	color: #fff;
+    color: #fff;
 }
 
 .answer {
-	color: #d76018;
+    color: #d76018;
 
 }
 
 #contactus{
-	background-color: #f9efe3;
-	height: auto;
-	padding-left: 40px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	width: 100%;
-	float: left;
+    background-color: #f9efe3;
+    height: auto;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    float: left;
 }
 
- #contactus h2 {
- 	text-align: center;
- 	padding-bottom: 20px;
- }
+#contactus h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
 
- .top {
- 	position: relative;
-	right: 20px;
-	top: 10px;
+.top {
+    position: relative;
+    right: 20px;
+    top: 10px;
 
- }
+}
 
- .top a {
- 	color: #d76018;
- }
+.top a {
+    color: #d76018;
+}
 
- .btn-default {
-	color: #f9efe3;
-	background-color: #b5926a;
-	font-size: 21px;
+.btn-default {
+    color: #f9efe3;
+    background-color: #b5926a;
+    font-size: 21px;
 }
 address {
-	color: #040404;
+    color: #040404;
 }
 
 .close a {
-	color: #fff;
+    color: #fff;
 }
 
 .btn-default:hover {
-	background-color: #d76018;
-	color: #fff;
+    background-color: #d76018;
+    color: #fff;
 }
 
 .social {
-	width: 68px;
-	height: 68px;
-	background: #d76018;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-	margin-right: 20px;
+    width: 68px;
+    height: 68px;
+    background: #d76018;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin-right: 20px;
 }
 .social-googlepl {
-	background-color: #37322f;
+    background-color: #37322f;
 }
 .social-icon {
-	position: relative;
-	top: 20px;
-	left: 10px;
-	color: #ffffff;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #ffffff;
 }
 
 #social-buttons {
-	background-color: #f9efe3;
-	padding-bottom: 40px;
+    background-color: #f9efe3;
+    padding-bottom: 40px;
 }
 
-/*--- for screen size: 1024px; ---*/
-@media (max-width:320px){
-	    #hero {
-		padding: 0;
-	}
-	.hero-img {
-		width: 320px;
-	}
-}
 
 /*--- for screen size: 768px; ---*/
 @media (max-width:768px){
-	    #hero {
-		padding: 0;
-		margin: 0 auto;
-	}
+
 }
+
