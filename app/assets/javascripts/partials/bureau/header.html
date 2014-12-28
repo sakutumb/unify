@@ -6,11 +6,11 @@
                 <img class="img-responsive ads" src="/assets/ad.jpg" width="100%" height="400px" />
             </div>
             <nav>
-                <a href="#success">SUCCESS STORIES</a>
-                <a href="#candidates">CANDIDATES</a>
-                <a href="#faq">FAQs</a>
-                <a href="#login" ng-hide="$parent.user.hasSignedIn" ng-click="showLoginForm()">LOGIN</a>
-                <a href="#registration" ng-hide="$parent.user.hasSignedIn" ng-click="showRegistrationForm()">REGISTRATION</a>
+                <a href="#" ng-click="$root.scrollToSection('#success')">SUCCESS STORIES</a>
+                <a href="#" ng-click="$root.scrollToSection('#candidates')">CANDIDATES</a>
+                <a href="#" ng-click="$root.scrollToSection('#faq')">FAQs</a>
+                <a href="#" ng-hide="$root.hasUserLoggedIn" ng-click="$parent.showLoginForm()">LOGIN</a>
+                <a href="#" ng-hide="$root.hasUserLoggedIn" ng-click="$parent.showRegistrationForm()">REGISTRATION</a>
             </nav>
             <span class="powered">&nbsp;</span>
         </div>
