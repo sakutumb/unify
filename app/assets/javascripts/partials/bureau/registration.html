@@ -1,4 +1,9 @@
 <section id="registration" ng-show="$root.registrationFormVisible">
+    <button type="button" class="close" data-dismiss="modal" ng-click="$root.registrationFormVisible = false; $root.scrollToSection('#main-container')">
+        <span aria-hidden="true"><a href="/" >X</a></span>
+        <span class="sr-only">Close</span>
+    </button>
+
     <h2>Registration</h2>
 
     <form class="form-horizontal registerForm">
