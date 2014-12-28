@@ -94,8 +94,20 @@ var unifyModule = angular.module('UnifyApp', [
                         }
                     }
                 });
-            }]).run(['$rootScope', '$state', '$stateParams',
-                    function($rootScope, $state, $stateParams) {
+            }]).run(['$rootScope', '$timeout',
+                    function($rootScope, $timeout) {
                         $rootScope.loginFormVisible = false;
                         $rootScope.registrationFormVisible = false;
+                        //Utility function to animate scroll to a section of a page
+                        $rootScope.scrollToSection = function(sectionId){
+                            if($(sectionId)){
+                                $timeout(
+                                        function () {
+                                            $('html, body').animate({
+                                                scrollTop: $(sectionId).offset().top - 2
+                                            }, 1000);
+                                        }
+                                );
+                            }
+                        }
                 }]);

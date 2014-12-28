@@ -11,28 +11,13 @@ angular.module('UnifyApp').controller('IndexCtrl', ['$scope', '$rootScope', '$ti
     $scope.showLoginForm = function () {
         $rootScope.loginFormVisible = true;
         $rootScope.registrationFormVisible = false;
-        $timeout(
-            function () {
-                $('html, body').animate({
-                    scrollTop: $("#login").offset().top - 2
-                }, 1000);
-            }
-        )
-
+        $rootScope.scrollToSection('#login');
     };
 
     $scope.showRegistrationForm = function () {
         $rootScope.registrationFormVisible = true;
         $rootScope.loginFormVisible = false;
-        //$anchorScroll();
-        $timeout(
-            function () {
-                $('html, body').animate({
-                    scrollTop: $("#registration").offset().top - 2
-                }, 1000);
-            }
-        )
-
+        $rootScope.scrollToSection('#registration');
     };
 
 }]);
