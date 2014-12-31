@@ -9,7 +9,9 @@ var unifyModule = angular.module('UnifyApp', [
         constant('appConstants', {
             // All app constants goes here
             APP_CONFIG          : APP_CONFIG,
-            authenticity_token  : FORM_AUTHENTICITY_TOKEN // Defined at layout level
+            authenticity_token  : FORM_AUTHENTICITY_TOKEN, // Defined at layout level
+            LOGIN_URL           : '/app/services/login',
+            REGISTRATION_URL    : '/app/services/register'
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {

@@ -1,17 +1,18 @@
 <section id="registration" ng-show="$root.registrationFormVisible">
-    <button type="button" class="close" data-dismiss="modal" ng-click="$root.registrationFormVisible = false; $root.scrollToSection('#main-container')">
-        <span aria-hidden="true"><a href="/" >X</a></span>
+    <button type="button" class="close" data-dismiss="modal"
+            ng-click="$root.registrationFormVisible = false; $root.scrollToSection('#main-container')">
+        <span aria-hidden="true"><a href="/">X</a></span>
         <span class="sr-only">Close</span>
     </button>
 
     <h2>Registration</h2>
 
-    <form class="form-horizontal registerForm">
+    <form class="form-horizontal registerForm" method="post" name="registrationForm">
         <div class="form-group">
             <label class="col-sm-5 control-label">EMail </label>
 
             <div class="col-xs-12 col-sm-4">
-                <input type="text" class="form-control" name="username"
+                <input type="text" class="form-control" name="email" ng-model="user.email"
                        data-bv-notempty="true"
                        data-bv-notempty-message="The username is required and cannot be empty"
 
@@ -34,7 +35,7 @@
             <label class="col-sm-5 control-label">Password </label>
 
             <div class="col-xs-12 col-sm-4">
-                <input type="password" class="form-control" name="password"
+                <input type="password" class="form-control" name="password" ng-model="user.password"
                        data-bv-notempty="true"
                        data-bv-notempty-message="The password is required and cannot be empty"
 
@@ -51,7 +52,7 @@
             <label class="col-sm-5 control-label">Re-enter Password </label>
 
             <div class="col-xs-12 col-sm-4">
-                <input type="password" class="form-control" name="rePassword"
+                <input type="password" class="form-control" name="rePassword" ng-model="user.re_password"
                        data-bv-notempty="true"
                        data-bv-notempty-message="The password is required and cannot be empty"
 
@@ -64,5 +65,51 @@
                        data-bv-different-message="The password cannot be the same as username"/>
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-sm-5 control-label">First Name </label>
+
+            <div class="col-xs-12 col-sm-4">
+                <input type="text" class="form-control" name="first_name" ng-model="user.first_name"
+                       data-bv-notempty="true"
+                       data-bv-notempty-message="The first name is required and cannot be empty"
+
+                       data-bv-stringlength="true"
+                       data-bv-stringlength-max="80"
+                        />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-5 control-label">Last Name </label>
+
+            <div class="col-xs-12 col-sm-4">
+                <input type="text" class="form-control" name="last_name" ng-model="user.last_name"
+                       data-bv-notempty="true"
+                       data-bv-notempty-message="The last name is required and cannot be empty"
+
+                       data-bv-stringlength="true"
+                       data-bv-stringlength-max="80"
+                        />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-5 control-label">Organization Name </label>
+
+            <div class="col-xs-12 col-sm-4">
+                <input type="text" class="form-control" name="organization_name" ng-model="user.organization_name"
+                       data-bv-notempty="true"
+                       data-bv-notempty-message="The organization name is required and cannot be empty"
+
+                       data-bv-stringlength="true"
+                       data-bv-stringlength-max="80"
+                        />
+            </div>
+        </div>
+        <input type="hidden" name="user_type" ng-model="user.user_type" value="MM"/>
+        <div class="form-group">
+            <div class=" col-sm-6 col-xs-12 col-sm-4 col-md-offset-5">
+                <button type="submit" class="btn btn-default" ng-click="register(registrationForm)">submit</button>
+            </div>
+        </div>
+
     </form>
 </section>
