@@ -28,9 +28,12 @@ class UnifyController < ApplicationController
     action = params[:do]
     result_json = {}
     case action
-      when 'login' #compare to 1
+      when 'login'
         Rails.logger.debug 'Processing login'
         result_json = login
+      when 'register'
+        Rails.logger.debug 'Processing registration'
+        result_json = register
       else
         Rails.logger.warn 'Unsupported service call'
     end
@@ -71,4 +74,30 @@ class UnifyController < ApplicationController
     return result_json
   end
 
+  def register
+    Rails.logger.debug 'Inside register service'
+    begin
+      user = UnifyUser.create(user_params)
+      user.locale = get_locale
+      user.save!
+      result_json = {
+          :result => 'success',
+          :data => user,
+          :msg => 'Registration Successful'
+      }
+    rescue Exception => ex
+      result_json = {
+          :result => 'failure',
+          :data => {},
+          :msg => ex.message
+      }
+    end
+    return result_json
+  end
+
+  private
+
+  def user_params
+    params.require(:unify_user).permit(:user_id, :email, :password, :first_name, :last_name, :user_type, :organization_name)
+  end
 end

@@ -227,6 +227,7 @@ ActiveRecord::Schema.define(version: 20141213060354) do
     t.string   "user_type",         limit: 2,   null: false
     t.string   "locale",            limit: 10,  null: false
     t.string   "organization_name", limit: 100
+    t.string   "logo_image_name",   limit: 100
     t.datetime "last_updated"
   end
 
