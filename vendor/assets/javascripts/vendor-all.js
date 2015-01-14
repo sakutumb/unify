@@ -14,3 +14,4 @@
 //= require angular-js/angular-route
 //= require angular-js/angular-ui-router
 //= require angular-js/ui-bootstrap-tpls
+//= require show-errors/showErrors
