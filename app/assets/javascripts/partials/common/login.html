@@ -10,11 +10,11 @@
 
         <form class="form-horizontal" name="loginForm">
             <div class="form-group" show-errors="{ showSuccess: true }">
-                <label class="col-sm-5 control-label">User ID</label>
+                <label class="col-sm-5 control-label">User ID/Email</label>
 
                 <div class="col-xs-12 col-sm-3">
-                    <input type="text" class="form-control" name="user_id" ng-model="user.user_id" ng-required="true" />
-                    <p ng-show="loginForm.user_id.$error.required && loginForm.user_id.$dirty" class="help-block">The username is required and cannot be empty.</p>
+                    <input type="text" class="form-control" name="user_id" ng-model="user.user_id" ng-required="true" placeholder="User Id/Email"/>
+                    <p ng-show="loginForm.user_id.$error.required && loginForm.user_id.$dirty" class="help-block">Please enter your user id/email.</p>
                 </div>
             </div>
 
@@ -22,8 +22,8 @@
                 <label class="col-sm-5 control-label">Password</label>
 
                 <div class="col-xs-12 col-sm-3	">
-                    <input type="password" class="form-control" name="password" ng-model="user.password" ng-required="true" />
-                    <p ng-show="loginForm.password.$error.required && loginForm.password.$dirty" class="help-block">The password is required and cannot be empty.</p>
+                    <input type="password" class="form-control" name="password" ng-model="user.password" ng-required="true" placeholder="Password"/>
+                    <p ng-show="loginForm.password.$error.required && loginForm.password.$dirty" class="help-block">Please enter your password.</p>
                 </div>
             </div>
             <div class="form-group">

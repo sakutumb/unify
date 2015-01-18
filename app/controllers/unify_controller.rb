@@ -61,7 +61,7 @@ class UnifyController < ApplicationController
     user = UnifyUser.find_by_user_id(params[:user_id])
     if user && user.authenticate(params[:password])
       Rails.logger.debug 'Valid Credentials !'
-      session[:user_name] = user.first_name
+      session[:user] = user
       Rails.logger.debug 'Valid user !'
       user.password_digest = nil
       result_json = {
@@ -80,6 +80,7 @@ class UnifyController < ApplicationController
       user = UnifyUser.create(user_params)
       user.locale = get_locale
       user.save!
+      session[:user] = user
       result_json = {
           :result => 'success',
           :data => user,

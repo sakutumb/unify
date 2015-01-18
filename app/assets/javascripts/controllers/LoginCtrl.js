@@ -4,11 +4,11 @@ angular.module('UnifyApp').controller('LoginCtrl', ['$scope', '$rootScope', 'Uni
     function ($scope, $rootScope, UnifyService, $state, $timeout, $log) {
 
         //TODO: Remove this after testing
-        $scope.user = {
+        /*$scope.user = {
             user_id : 'sakutumb@mail.com',
             password: 'test1234'
         };
-
+        */
         $scope.login = function () {
             UnifyService.loginService($scope.user.user_id, $scope.user.password).then(
                 function (resultObject) {

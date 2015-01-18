@@ -3,6 +3,7 @@
 angular.module('UnifyApp').controller('RegistrationCtrl', ['$scope', '$rootScope', 'UnifyService', '$state', '$timeout', '$log',
     function ($scope, $rootScope, UnifyService, $state, $timeout, $log) {
         //TODO: Remove this after testing
+        /*
         $scope.user = {
             user_id         : 'sakutumbtest1@mail.com',
             email           : 'sakutumbtest1@mail.com',
@@ -13,6 +14,7 @@ angular.module('UnifyApp').controller('RegistrationCtrl', ['$scope', '$rootScope
             user_type       : 'MM',
             organization_name : 'unify Inc.'
         };
+         */
 
         $scope.register = function (formObj) {
             UnifyService.registerService(formObj).then(
