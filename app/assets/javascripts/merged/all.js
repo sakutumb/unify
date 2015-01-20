@@ -14,4 +14,5 @@
 //= require main
 //= require_tree ../controllers
 //= require_tree ../services
+//= require_tree ../directives
 
