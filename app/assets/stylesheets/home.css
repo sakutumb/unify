@@ -229,6 +229,135 @@ address {
     padding-bottom: 40px;
 }
 
+.quicksearch {
+    background: #ffffff;
+    border: 1px solid gray;
+    padding: 5px 10px 33px 25px;
+    margin: 0 auto;
+}
+
+.btn-search {
+    color: #f9efe3;
+    background-color: #b5926a;
+    font-size: 14px;
+}
+
+.quicksearchclient {
+    border: 1px solid #111;
+    background: transparent;
+    width: 200px;
+    padding: 5px 35px 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.search-results {
+    border: 1px solid #111;
+    background: transparent;
+    width: 464px;
+    padding: 5px 35px 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(http://www.stackoverflow.com/favicon.ico) 96% / 15% no-repeat #eee;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.quicksearch-box {
+    padding-top:25px;
+}
+
+.search-pic-desc{
+    font-weight: normal;
+    margin: 5px 0 5px 0;
+}
+
+.search-img-box {
+    background: #ffffff;
+    border: 1px gray solid;
+}
+
+.search-img {
+    padding: 0;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.preferences-box {
+    background: #ffffff;
+    padding: 5px 6px 5px 15px;
+    border: 1px gray solid;
+}
+
+.search-add {
+    margin: 0px 0 10px;
+}
+
+.prefer {
+   margin: -5px  0 5px 0;
+}
+
+.search-txt {
+    width: 200px;
+    height: 30px;
+    margin-right: 10px;
+    -moz-border-radius:10px; /* Firefox */
+    -webkit-border-radius: 10px; /* Safari, Chrome */
+    -khtml-border-radius: 10px; /* KHTML */
+    border-radius: 10px; /* CSS3 */
+}
+
+.key-search-txt {
+    width: 150px;
+    height: 30px;
+    margin-right: 10px;
+    -moz-border-radius:10px; /* Firefox */
+    -webkit-border-radius: 10px; /* Safari, Chrome */
+    -khtml-border-radius: 10px; /* KHTML */
+    border-radius: 10px; /* CSS3 */
+}
+.results {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#sidebar {
+    overflow: hidden;
+    outline: none;
+    margin-left: 0px;
+    width: 210px;
+    height: 100%;
+    position: relative;
+    background: #37322f;
+    color: #ffffff;
+}
+
+.main-results {
+    margin-bottom: 20px;
+}
+
+li {
+    list-style: none;
+    line-height: 32px;
+    padding: 5px;
+}
+
+
+
+
+
+
 
 /*--- for screen size: 768px; ---*/
 @media (max-width:768px){
