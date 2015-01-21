@@ -51,16 +51,23 @@ var unifyModule = angular.module('UnifyApp', [
                     url: '/search',
                     views: {
                         'search': {
+                            controller: 'SearchCtrl',
                             templateUrl: '<%= asset_path('templates/search.html') %>'
                         },
                         'header@search': {
                             templateUrl: '<%= asset_path('partials/search/header.html') %>'
                         },
-                        'quicksearch@search': {
-                            templateUrl: '<%=asset_path('partials/search/quicksearch.html') %>'
+                        'quick-search@search': {
+                            templateUrl: '<%=asset_path('partials/search/quick-search.html') %>'
+                        },
+                        'sidebar@search': {
+                            templateUrl: '<%=asset_path('partials/search/sidebar.html') %>'
                         },
                         'results@search': {
                             templateUrl: '<%= asset_path('partials/search/results.html') %>'
+                        },
+                        'search-filters@search': {
+                            templateUrl: '<%= asset_path('partials/search/search-filters.html') %>'
                         },
                         'footer@search': {
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
