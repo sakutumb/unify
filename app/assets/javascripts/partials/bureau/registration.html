@@ -1,9 +1,12 @@
 <section id="registration" ng-show="$root.registrationFormVisible">
+    <!--
     <button type="button" class="close" data-dismiss="modal"
             ng-click="$root.registrationFormVisible = false; $root.scrollToSection('#main-container')">
         <span aria-hidden="true"><a href="/">X</a></span>
         <span class="sr-only">Close</span>
     </button>
+    -->
+    <a class="close" ui-sref="^" ng-click="$root.registrationFormVisible = false; $root.scrollToSection('#main-container')">X</a>
 
     <h2>Registration</h2>
 

@@ -5,6 +5,9 @@ development: &development
     es_US: Español(US)
   facebook:
     token: CAACEdEose0cBAGUY2R7AwZBGX70ZC3Pp97z3uXwJFlLpD5d2B1v7OmAYkVEQCMs5B6hSaSB4YQTnO92nAblGjivIO6SQXyOEdR2HHuERkfWZCvKyIyL7tIKZB5FhnYbKvXsjF9lj3dmZCT75uYzFmK6jHeMyhf0ZA7YPN28LjUufaWCYszvTh5L6U2HQcUEwQh9RfQdGZAojwZDZD
+  angular_routes:
+    - login
+    - register
 test:
     <<: *development
 

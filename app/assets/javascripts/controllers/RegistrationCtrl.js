@@ -15,6 +15,15 @@ angular.module('UnifyApp').controller('RegistrationCtrl', ['$scope', '$rootScope
             organization_name : 'unify Inc.'
         };
          */
+        $scope.$on('$viewContentLoaded',
+            function(event){
+                console.log('view loaded !');
+                $rootScope.registrationFormVisible = true;
+                $rootScope.loginFormVisible = false;
+                $timeout(function(){
+                    $rootScope.scrollToSection('#registration');
+                });
+            });
 
         $scope.register = function (formObj) {
             UnifyService.registerService(formObj).then(

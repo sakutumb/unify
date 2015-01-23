@@ -10,6 +10,17 @@ angular.module('UnifyApp').controller('LoginCtrl', ['$scope', '$rootScope', 'Uni
         };
         */
         $scope.failedLogin = false;
+
+        $scope.$on('$viewContentLoaded',
+            function(event){
+                console.log('view loaded !');
+                $rootScope.loginFormVisible = true;
+                $rootScope.registrationFormVisible = false;
+                $timeout(function(){
+                    $rootScope.scrollToSection('#login');
+                });
+            });
+
         $scope.login = function () {
             UnifyService.loginService($scope.user.user_id, $scope.user.password).then(
                 function (resultObject) {
@@ -19,10 +30,8 @@ angular.module('UnifyApp').controller('LoginCtrl', ['$scope', '$rootScope', 'Uni
 
                         $scope.$parent.showStatusMessage('login-status-msg', "Login successful. " + resultObject.msg, 'success');
                         $timeout(function(){
-
                             $rootScope.loginFormVisible = false;
                             $rootScope.hasUserLoggedIn = true;
-
                             if($rootScope.user.user_type == 'MM'){
                                 var urlPath =  $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
                                 urlPath = urlPath.replace(/-+$/, '');

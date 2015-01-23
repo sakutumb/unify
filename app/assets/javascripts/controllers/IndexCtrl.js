@@ -6,20 +6,6 @@ angular.module('UnifyApp').controller('IndexCtrl', ['$scope', '$rootScope', '$ti
     };
     $scope.localeList = appConstants.APP_CONFIG['locales'];
 
-    $rootScope.hasUserLoggedIn = false;
-
-    $scope.showLoginForm = function () {
-        $rootScope.loginFormVisible = true;
-        $rootScope.registrationFormVisible = false;
-        $rootScope.scrollToSection('#login');
-    };
-
-    $scope.showRegistrationForm = function () {
-        $rootScope.registrationFormVisible = true;
-        $rootScope.loginFormVisible = false;
-        $rootScope.scrollToSection('#registration');
-    };
-
     /**
      * Utility method to show success/error/warning messages
      * @param msgContainerId - container element id

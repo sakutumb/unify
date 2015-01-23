@@ -29,14 +29,6 @@ var unifyModule = angular.module('UnifyApp', [
                             controller: 'HeroCtrl',
                             templateUrl: '<%= asset_path('partials/hero.html') %>'
                         },
-                        'login@index': {
-                            controller: 'LoginCtrl',
-                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
-                        },
-                        'registration@index': {
-                            controller: 'RegistrationCtrl',
-                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
-                        },
                         'features@index': {
                             templateUrl: '<%= asset_path('partials/features.html') %>'
                         },
@@ -45,6 +37,22 @@ var unifyModule = angular.module('UnifyApp', [
                         },
                         'footer@index': {
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
+                        }
+                    }
+                }).state('index.login', {
+                    url: 'login',
+                    views: {
+                        'login': {
+                            controller: 'LoginCtrl',
+                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
+                        }
+                    }
+                }).state('index.register', {
+                    url: 'register',
+                    views: {
+                        'register': {
+                            controller: 'RegistrationCtrl',
+                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
                         }
                     }
                 }).state('search', {
@@ -83,13 +91,6 @@ var unifyModule = angular.module('UnifyApp', [
                         'header@bureau': {
                             templateUrl: '<%= asset_path('partials/bureau/header.html') %>'
                         },
-                        'login@bureau': {
-                            controller: 'LoginCtrl',
-                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
-                        },
-                        'registration@bureau': {
-                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
-                        },
                         'hero@bureau': {
                             templateUrl: '<%= asset_path('partials/bureau/hero.html') %>'
                         },
@@ -106,11 +107,26 @@ var unifyModule = angular.module('UnifyApp', [
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
                         }
                     }
+                }).state('bureau.login', {
+                    views: {
+                        'login': {
+                            controller: 'LoginCtrl',
+                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
+                        }
+                    }
+                }).state('bureau.register', {
+                    views: {
+                        'register': {
+                            controller: 'RegistrationCtrl',
+                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
+                        }
+                    }
                 });
             }]).run(['$rootScope', '$timeout',
                     function($rootScope, $timeout) {
                         $rootScope.loginFormVisible = false;
                         $rootScope.registrationFormVisible = false;
+                        $rootScope.hasUserLoggedIn = false;
                         //Utility function to animate scroll to a section of a page
                         $rootScope.scrollToSection = function(sectionId){
                             if($(sectionId)){
@@ -122,5 +138,5 @@ var unifyModule = angular.module('UnifyApp', [
                                         }
                                 );
                             }
-                        }
+                        };
                 }]);

@@ -17,8 +17,14 @@
         <div class="col-sm-offset-3">
             <h1 class="hero col-md-6 ">Your matchmaking business, simplified.</h1>
             <div class="col-xs-offset-2">
-                <div class="col-xs-2"><a class="login"href="#" ng-click="$parent.showLoginForm()" ng-hide="$root.hasUserLoggedIn">Login</a></div>
-                <div class="col-xs-2"><a class="register" href="#" ng-click="$parent.showRegistrationForm()" ng-hide="$root.hasUserLoggedIn">Register</a></div>
+                <div class="col-xs-2">
+                    <!-- <a class="login"href="#" ng-click="$parent.showLoginForm()" ng-hide="$root.hasUserLoggedIn">Login</a> -->
+                    <a class="login" ui-sref="index.login" ng-hide="$root.hasUserLoggedIn">Login</a>
+                </div>
+                <div class="col-xs-2">
+                    <!-- <a class="register" href="#" ng-click="$parent.showRegistrationForm()" ng-hide="$root.hasUserLoggedIn">Register</a> -->
+                    <a class="register" ui-sref="index.register" ng-hide="$root.hasUserLoggedIn">Register</a>
+                </div>
             </div>
         </div>
     </section>

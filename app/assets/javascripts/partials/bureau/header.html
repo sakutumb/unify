@@ -9,8 +9,8 @@
                 <a href="#" ng-click="$root.scrollToSection('#success')">SUCCESS STORIES</a>
                 <a href="#" ng-click="$root.scrollToSection('#candidates')">CANDIDATES</a>
                 <a href="#" ng-click="$root.scrollToSection('#faq')">FAQs</a>
-                <a href="#" ng-hide="$root.hasUserLoggedIn" ng-click="$parent.showLoginForm()">LOGIN</a>
-                <a href="#" ng-hide="$root.hasUserLoggedIn" ng-click="$parent.showRegistrationForm()">REGISTRATION</a>
+                <a ui-sref="bureau.login" ng-hide="$root.hasUserLoggedIn">LOGIN</a>
+                <a ui-sref="bureau.register" ng-hide="$root.hasUserLoggedIn">REGISTRATION</a>
             </nav>
             <span class="powered">&nbsp;</span>
         </div>
