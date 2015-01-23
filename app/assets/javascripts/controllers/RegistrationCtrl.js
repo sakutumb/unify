@@ -21,19 +21,21 @@ angular.module('UnifyApp').controller('RegistrationCtrl', ['$scope', '$rootScope
                 function (resultObject) {
                     if (resultObject.result == 'success') {
                         $log.debug('User registered !');
-                        alert('User Registered Successfully');
-                        $rootScope.registrationFormVisible = false;
-                        $rootScope.hasUserLoggedIn = true;
-                        $rootScope.user = resultObject.data;
-                        if ($rootScope.user.user_type == 'MM') {
-                            var urlPath = $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
-                            urlPath = urlPath.replace(/-+$/, '');
-                            window.location = '/' + urlPath;
-                        }
+                        $scope.showStatusMessage('registration-status-msg', 'Registration successful.' + resultObject.msd, 'success');
+                        $timeout(function(){
+                            $rootScope.registrationFormVisible = false;
+                            $rootScope.hasUserLoggedIn = true;
+                            $rootScope.user = resultObject.data;
+                            if ($rootScope.user.user_type == 'MM') {
+                                var urlPath = $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
+                                urlPath = urlPath.replace(/-+$/, '');
+                                window.location = '/' + urlPath;
+                            }
+                        }, 500);
                     }
                     else {
-                        $scope.LoginMessage = resultObject.msg;
                         $log.debug('Registration Failed');
+                        $scope.showStatusMessage('registration-status-msg', 'Registration Failed.' + resultObject.msg, 'danger');
                     }
                 },
                 function (rejectReason) {

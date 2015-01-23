@@ -7,15 +7,20 @@
 
     <h2>Registration</h2>
 
-    <form class="form-horizontal" method="post" name="registrationForm">
+    <form class="form-horizontal" method="post" name="registrationForm" novalidate>
         <div class="form-group" show-errors="{ showSuccess: true }">
-            <label class="col-sm-5 control-label">EMail </label>
+            <div>
+                <div class="col-sm-5"></div>
+                <div class="col-xs-12 col-sm-3" id="registration-status-msg">
+                </div>
+            </div>
+            <label class="col-sm-5 control-label">Email </label>
 
             <div class="col-xs-12 col-sm-4">
                 <input type="email" class="form-control" name="email" ng-model="user.email" placeholder="Email address"
-                       maxlength="30"
+                       ng-maxlength="30"
                        required />
-                <p ng-show="registrationForm.email.$dirty" class="help-block">Please enter a valid email.</p>
+                <p ng-show="registrationForm.email.$error.required && registrationForm.email.$dirty" class="help-block">Please enter a valid email.</p>
             </div>
         </div>
 
@@ -24,8 +29,8 @@
 
             <div class="col-xs-12 col-sm-4">
                 <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Password"
-                       minlength="6"
-                       maxlength="30"
+                       ng-minlength="6"
+                       ng-maxlength="30"
                        required />
                 <p ng-show="registrationForm.password.$error.required && registrationForm.password.$dirty" class="help-block">Please enter a valid password.</p>
             </div>
@@ -44,7 +49,7 @@
 
             <div class="col-xs-12 col-sm-4">
                 <input type="text" class="form-control" name="first_name" ng-model="user.first_name" placeholder="First name"
-                       maxlength="80"
+                       ng-maxlength="80"
                        required  />
                 <p ng-show="registrationForm.first_name.$error.required && registrationForm.first_name.$dirty" class="help-block">Please enter a valid first name</p>
             </div>
@@ -54,7 +59,7 @@
 
             <div class="col-xs-12 col-sm-4">
                 <input type="text" class="form-control" name="last_name" ng-model="user.last_name" placeholder="Last name"
-                       maxlength="80"
+                       ng-maxlength="80"
                        required  />
                 <p ng-show="registrationForm.last_name.$error.required && registrationForm.last_name.$dirty" class="help-block">Please enter a valid last name</p>
             </div>
@@ -64,12 +69,12 @@
 
             <div class="col-xs-12 col-sm-4">
                 <input type="text" class="form-control" name="organization_name" ng-model="user.organization_name" placeholder="Organization name"
-                       maxlength="80"
+                       ng-maxlength="80"
                        required  />
                 <p ng-show="registrationForm.organization_name.$error.required && registrationForm.organization_name.$dirty" class="help-block">Please enter a valid organization name.</p>
             </div>
         </div>
-        <input type="hidden" name="user_type" ng-model="user.user_type" value="MM"/>
+        <input type="hidden" name="user_type" id="user_type" ng-model="user.user_type" ng-init="user.user_type='MM'"/>
         <div class="form-group">
             <div class=" col-sm-6 col-xs-12 col-sm-4 col-md-offset-5">
                 <button type="submit" class="btn btn-default" ng-disabled="registrationForm.$invalid" ng-click="register(registrationForm)">submit</button>

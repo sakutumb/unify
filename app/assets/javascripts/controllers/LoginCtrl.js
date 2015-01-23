@@ -9,20 +9,27 @@ angular.module('UnifyApp').controller('LoginCtrl', ['$scope', '$rootScope', 'Uni
             password: 'test1234'
         };
         */
+        $scope.failedLogin = false;
         $scope.login = function () {
             UnifyService.loginService($scope.user.user_id, $scope.user.password).then(
                 function (resultObject) {
                     if(resultObject.result == 'success'){
                         $log.debug('User authenticated !');
-                        alert('User Authenticated Successfully');
-                        $rootScope.loginFormVisible = false;
-                        $rootScope.hasUserLoggedIn = true;
                         $rootScope.user = resultObject.data;
-                        if($rootScope.user.user_type == 'MM'){
-                            var urlPath =  $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
-                            urlPath = urlPath.replace(/-+$/, '');
-                            window.location = '/' + urlPath;
-                        }
+
+                        $scope.$parent.showStatusMessage('login-status-msg', "Login successful. " + resultObject.msg, 'success');
+                        $timeout(function(){
+
+                            $rootScope.loginFormVisible = false;
+                            $rootScope.hasUserLoggedIn = true;
+
+                            if($rootScope.user.user_type == 'MM'){
+                                var urlPath =  $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
+                                urlPath = urlPath.replace(/-+$/, '');
+                                window.location = '/' + urlPath;
+                            }
+                        }, 500)
+
                         //$state.go('bureau', {'bureau' : $rootScope.user['user_type']});
                         /*
                         $timeout(
@@ -35,8 +42,9 @@ angular.module('UnifyApp').controller('LoginCtrl', ['$scope', '$rootScope', 'Uni
                         */
                     }
                     else{
-                        $scope.LoginMessage = resultObject.msg;
                         $log.debug('Invalid credentials');
+                        $scope.failedLogin = true;
+                        $scope.$parent.showStatusMessage('login-status-msg', "Login Failed. " + resultObject.msg, 'danger');
                     }
                 },
                 function (rejectReason) {

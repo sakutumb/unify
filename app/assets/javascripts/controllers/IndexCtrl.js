@@ -20,5 +20,15 @@ angular.module('UnifyApp').controller('IndexCtrl', ['$scope', '$rootScope', '$ti
         $rootScope.scrollToSection('#registration');
     };
 
+    /**
+     * Utility method to show success/error/warning messages
+     * @param msgContainerId - container element id
+     * @param msg - message
+     * @param msgType - warning/success/danger
+     */
+    $scope.showStatusMessage = function(msgContainerId, msg, msgType){
+        msgType = msgType || 'warning';
+        $('#' + msgContainerId).html('<div class="alert alert-' + msgType + '" role="alert">' +  msg + '</div>');
+    };
 }]);
 
