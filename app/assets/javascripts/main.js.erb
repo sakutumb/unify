@@ -16,7 +16,10 @@ var unifyModule = angular.module('UnifyApp', [
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
-                $locationProvider.html5Mode(true);
+                $locationProvider.html5Mode({
+                    enabled: true,
+                    requireBase: false
+                });
                 $urlRouterProvider.otherwise('/');
                 $stateProvider.state('index', {
                     url: '/',
@@ -108,6 +111,7 @@ var unifyModule = angular.module('UnifyApp', [
                         }
                     }
                 }).state('bureau.login', {
+                    url: '/login',
                     views: {
                         'login': {
                             controller: 'LoginCtrl',
@@ -115,6 +119,7 @@ var unifyModule = angular.module('UnifyApp', [
                         }
                     }
                 }).state('bureau.register', {
+                    url: '/register',
                     views: {
                         'register': {
                             controller: 'RegistrationCtrl',
