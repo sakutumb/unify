@@ -9,7 +9,7 @@
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
         //LinkedIn code
         api_key: 75db98g083av4p
-        authorize: true
+        //authorize: true
         onLoad: onLinkedInLoad
     </script>
     <script>
@@ -17,23 +17,34 @@
             IN.Event.on(IN, "auth", onLinkedInAuth);
         }
         function onLinkedInAuth() {
-            IN.API.Profile("me").result(displayProfiles);
+            var linkedInFields = ["id", "first-name", "last-name", "headline", "location", "industry", "distance", "positions", "picture-url", "public_profile_url"];
+
+            IN.API.Profile("me")
+                    .fields(linkedInFields)
+                    .result(displayProfiles);
             IN.API.Connections("me")
-                    .fields("id", "firstName", "lastName", "headline", "industry", "location", "pictureUrl")
+                    .fields(linkedInFields)
                     .result(displayConnections);
         }
         function displayProfiles(profiles) {
             member = profiles.values[0];
-            document.getElementById("profiles").innerHTML = JSON.stringify(profiles);
+            document.getElementById("profiles").value = JSON.stringify(profiles, null, "\t");
         }
 
         function displayConnections(connections) {
-            var connectionsDiv = document.getElementById("connections");
+            document.getElementById("connections").value = JSON.stringify(connections, null, "\t") ;
 
+            /*
             var members = connections.values; // The list of members you are connected to
+            var connString = "";
             for (var member in members) {
-                connectionsDiv.innerHTML += JSON.stringify(members[member]);
+                connString += '<hr/>'
+                for (var key in members[member]) {
+                    connString += key + ' : ' + members[member][key] + '<br/>';
+                }
+                connectionsDiv.innerHTML += connString;
             }
+            */
         }
 
     </script>
@@ -42,7 +53,9 @@
 <script type="in/Login">
 Hello, <?js= firstName ?> <?js= lastName ?>.
 </script>
-<div id="profiles"></div>
-<div id="connections"></div>
+<p/>
+<textarea id="profiles" style="width:100%;height:200px"></textarea>
+<p/><p/>
+<textarea id="connections" style="width:100%;height:800px"></textarea>
 </body>
 </html>

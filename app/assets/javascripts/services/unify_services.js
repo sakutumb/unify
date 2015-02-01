@@ -44,6 +44,22 @@ angular.module('UnifyApp')
                         deferred.reject(data);
                     });
                 return deferred.promise;
+            },
+            saveLinkedInProfile: function (profiles) {
+                var deferred = $q.defer();
+                $http.post(appConstants.LINKEDIN_PROFILE_SAVE_URL,
+                    {
+                        profiles: profiles,
+                        authenticity_token: appConstants.authenticity_token
+                    })
+                    .success(function (data, status, headers, config) {
+                        deferred.resolve(data);
+                    })
+                    .error(function (data, status, headers, config) {
+                        deferred.reject(data);
+                    });
+                return deferred.promise;
             }
+
         }
     }]);

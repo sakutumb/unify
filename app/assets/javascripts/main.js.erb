@@ -12,7 +12,9 @@ var unifyModule = angular.module('UnifyApp', [
             APP_CONFIG          : APP_CONFIG,
             authenticity_token  : FORM_AUTHENTICITY_TOKEN, // Defined at layout level
             LOGIN_URL           : '/app/services/login',
-            REGISTRATION_URL    : '/app/services/register'
+            REGISTRATION_URL    : '/app/services/register',
+            LINKEDIN_PROFILE_SAVE_URL   : '/app/services/save_linkedin_profile',
+            FB_PROFILE_SAVE_URL         : '/app/services/save_fb_profile'
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -84,6 +86,27 @@ var unifyModule = angular.module('UnifyApp', [
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
                         }
                     }
+                }).state('prospect', {
+                    url: '/prospect',
+                    views: {
+                        'prospect': {
+                            controller: 'ProspectCtrl',
+                            templateUrl: '<%= asset_path('templates/prospect.html') %>'
+                        },
+                        'header@prospect': {
+                            templateUrl: '<%= asset_path('partials/prospect/header.html') %>'
+                        },
+                        'main@prospect': {
+                            templateUrl: '<%= asset_path('partials/prospect/main.html') %>'
+                        },
+                        'social@prospect': {
+                            controller: 'SocialCtrl',
+                            templateUrl: '<%= asset_path('partials/social/social.html') %>'
+                        },
+                        'footer@prospect': {
+                            templateUrl: '<%= asset_path('partials/common/footer.html') %>'
+                        }
+                    }
                 }).state('bureau', {
                     url: '/:bureau',
                     views: {
@@ -131,7 +154,7 @@ var unifyModule = angular.module('UnifyApp', [
                     function($rootScope, $timeout) {
                         $rootScope.loginFormVisible = false;
                         $rootScope.registrationFormVisible = false;
-                        $rootScope.hasUserLoggedIn = false;
+                        $rootScope.hasUserLoggedIn = IS_VALID_SESSION;
                         //Utility function to animate scroll to a section of a page
                         $rootScope.scrollToSection = function(sectionId){
                             if($(sectionId)){

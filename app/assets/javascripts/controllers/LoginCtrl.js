@@ -30,28 +30,17 @@ angular.module('UnifyApp').controller('LoginCtrl', ['$scope', '$rootScope', 'Uni
                         if(resultObject.result == 'success'){
                             $log.debug('User authenticated !');
                             $rootScope.user = resultObject.data;
-
-                            $scope.$parent.showStatusMessage('login-status-msg', "Login successful. " + resultObject.msg, 'success');
-                            $timeout(function(){
-                                $rootScope.loginFormVisible = false;
-                                $rootScope.hasUserLoggedIn = true;
-                                if($rootScope.user.user_type == 'MM'){
-                                    var urlPath =  $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
-                                    urlPath = urlPath.replace(/-+$/, '');
-                                    window.location = '/' + urlPath;
-                                }
-                            }, 500)
-
-                            //$state.go('bureau', {'bureau' : $rootScope.user['user_type']});
-                            /*
-                            $timeout(
-                                function () {
-                                    $('html, body').animate({
-                                        scrollTop: $("#mainwrap").offset().top - 50
-                                    }, 1000);
-                                }
-                            )
-                            */
+                            //$scope.$parent.showStatusMessage('login-status-msg', "Login successful. " + resultObject.msg, 'success');
+                            $rootScope.loginFormVisible = false;
+                            $rootScope.hasUserLoggedIn = true;
+                            var urlPath = "prospect"
+                            if($rootScope.user.user_type == 'MM'){
+                                urlPath =  $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
+                                urlPath = urlPath.replace(/-+$/, '');
+                                //$state.go('bureau', {bureau: urlPath});
+                            }
+                            //TODO: Replace with @state.go()
+                            window.location.href = urlPath;
                         }
                         else{
                             $log.debug('Invalid credentials');

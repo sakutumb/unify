@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213060354) do
+ActiveRecord::Schema.define(version: 20150201225229) do
 
   create_table "dim_birth_star", force: true do |t|
     t.string  "name",      limit: 256, null: false
@@ -41,12 +41,11 @@ ActiveRecord::Schema.define(version: 20141213060354) do
 
   add_index "dim_community", ["locale_id"], name: "FK_dim_community_dim_locale", using: :btree
 
-  create_table "dim_country", force: true do |t|
-    t.string  "name",      limit: 256, null: false
-    t.integer "locale_id",             null: false
+  create_table "dim_countries", force: true do |t|
+    t.string  "country_code", limit: 3,   null: false
+    t.string  "country_name", limit: 256, null: false
+    t.integer "locale",                   null: false
   end
-
-  add_index "dim_country", ["locale_id"], name: "FK_dim_country_dim_locale", using: :btree
 
   create_table "dim_education_level", id: false, force: true do |t|
     t.integer "id",                    null: false
@@ -92,12 +91,11 @@ ActiveRecord::Schema.define(version: 20141213060354) do
 
   add_index "dim_religion", ["locale_id"], name: "FK_dim_religion_dim_locale", using: :btree
 
-  create_table "dim_state", force: true do |t|
-    t.string  "name",      limit: 128, null: false
-    t.integer "locale_id",             null: false
+  create_table "dim_states", force: true do |t|
+    t.string "name",         limit: 128, null: false
+    t.string "locale",       limit: 5,   null: false
+    t.string "country_code", limit: 45
   end
-
-  add_index "dim_state", ["locale_id"], name: "FK_dim_state_dim_locale", using: :btree
 
   create_table "dim_values", id: false, force: true do |t|
     t.integer "id",                      null: false
@@ -121,6 +119,33 @@ ActiveRecord::Schema.define(version: 20141213060354) do
 
   add_index "dim_zodiac_sign", ["language_id"], name: "FK_dim_zodiac_sign_dim_language", using: :btree
   add_index "dim_zodiac_sign", ["locale_id"], name: "FK_dim_zodiac_sign_dim_locale", using: :btree
+
+  create_table "fact_linkedin_profile_positions", primary_key: "seq_num", force: true do |t|
+    t.string   "linkedin_user_id",     limit: 200, null: false
+    t.integer  "linkedin_position_id"
+    t.string   "title",                limit: 200
+    t.integer  "company_id"
+    t.string   "company_name",         limit: 200
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "is_current",           limit: 10
+    t.datetime "last_updated"
+  end
+
+  create_table "fact_linkedin_profiles", primary_key: "seq_num", force: true do |t|
+    t.string   "unify_user_id",         limit: 200,  null: false
+    t.string   "linkedin_user_id",      limit: 200,  null: false
+    t.string   "first_name",            limit: 100
+    t.string   "last_name",             limit: 100
+    t.string   "headline",              limit: 2000
+    t.string   "location",              limit: 200
+    t.string   "location_country_code", limit: 3
+    t.string   "industry",              limit: 200
+    t.integer  "distance"
+    t.string   "picture_url",           limit: 2000
+    t.string   "public_profile_url",    limit: 2000
+    t.datetime "last_updated"
+  end
 
   create_table "unify_matchmakers", force: true do |t|
     t.string   "user_name",     limit: 128, default: "0", null: false
