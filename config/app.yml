@@ -4,7 +4,7 @@ development: &development
     en_US: English(US)
     es_US: Español(US)
   facebook:
-    appId: 431383370342354
+    app_id: 431383370342354
     app_secret: 9140d56866821fad547ea9d86eeb166d
   linkedin:
     api_key: 75db98g083av4p

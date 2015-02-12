@@ -14,7 +14,8 @@ var unifyModule = angular.module('UnifyApp', [
             LOGIN_URL           : '/app/services/login',
             REGISTRATION_URL    : '/app/services/register',
             LINKEDIN_PROFILE_SAVE_URL   : '/app/services/save_linkedin_profile',
-            FB_PROFILE_SAVE_URL         : '/app/services/save_fb_profile'
+            FB_PROFILE_SAVE_URL         : '/app/services/save_fb_profile',
+            LOCALE              : '<%= I18n.locale %>'
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
