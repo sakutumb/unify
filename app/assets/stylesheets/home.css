@@ -24,22 +24,21 @@ nav a:hover {
 .logo {
     position: absolute;
     top: 50px;
-    left:50px;
+    left: 50px;
     width: 100px;
     height: 50px;
     background: url(/assets/matchmakerssprite.svg);
     background-position: -549px -29px;
 }
 
-
 .hero {
     position: absolute;
-    top:200px;
+    top: 200px;
 }
 
 .login, .register {
     position: absolute;
-    top:-400px;
+    top: -400px;
     padding: 8px 26px;
     color: #fff;
     background-color: #b5926a;
@@ -59,13 +58,14 @@ nav a:hover {
 .login-form, #registration {
     display: none;
 }
+
 .login-form, .login-label {
     background-color: #37322f;
     color: #fff;
 
 }
 
-#login, #registration{
+#login, #registration {
     margin-top: -1px;
 }
 
@@ -83,6 +83,7 @@ nav a:hover {
 #login .close, #registration .close {
     padding: 10px 20px 0 0;
 }
+
 .close a {
     color: #fff;
 }
@@ -106,6 +107,7 @@ nav a:hover {
     float: left;
 
 }
+
 .features {
     font-weight: bold;
     color: #040404;
@@ -126,8 +128,7 @@ nav a:hover {
     background-position: 0 -134px;
 }
 
-
-#faq{
+#faq {
     background-color: #37322f;
     height: auto;
     padding-left: 40px;
@@ -147,11 +148,12 @@ nav a:hover {
     margin-top: 10px;
 
 }
+
 .faqs p {
     margin: 0;
 }
 
-.question{
+.question {
     color: #fff;
 }
 
@@ -160,7 +162,7 @@ nav a:hover {
 
 }
 
-#contactus{
+#contactus {
     background-color: #f9efe3;
     height: auto;
     padding-left: 40px;
@@ -191,6 +193,7 @@ nav a:hover {
     background-color: #b5926a;
     font-size: 21px;
 }
+
 address {
     color: #040404;
 }
@@ -213,9 +216,11 @@ address {
     border-radius: 50px;
     margin-right: 20px;
 }
+
 .social-googlepl {
     background-color: #37322f;
 }
+
 .social-icon {
     position: relative;
     top: 20px;
@@ -272,11 +277,12 @@ address {
     margin-bottom: 10px;
     margin-right: 10px;
 }
+
 .quicksearch-box {
-    padding-top:25px;
+    padding-top: 25px;
 }
 
-.search-pic-desc{
+.search-pic-desc {
     font-weight: normal;
     margin: 5px 0 5px 0;
 }
@@ -303,14 +309,14 @@ address {
 }
 
 .prefer {
-    margin: -5px  0 5px 0;
+    margin: -5px 0 5px 0;
 }
 
 .search-txt {
     width: 200px;
     height: 30px;
     margin-right: 10px;
-    -moz-border-radius:10px; /* Firefox */
+    -moz-border-radius: 10px; /* Firefox */
     -webkit-border-radius: 10px; /* Safari, Chrome */
     -khtml-border-radius: 10px; /* KHTML */
     border-radius: 10px; /* CSS3 */
@@ -320,11 +326,12 @@ address {
     width: 150px;
     height: 30px;
     margin-right: 10px;
-    -moz-border-radius:10px; /* Firefox */
+    -moz-border-radius: 10px; /* Firefox */
     -webkit-border-radius: 10px; /* Safari, Chrome */
     -khtml-border-radius: 10px; /* KHTML */
     border-radius: 10px; /* CSS3 */
 }
+
 .results {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -356,16 +363,26 @@ address {
     line-height: 32px;
 }
 
-.sidebar-menu a{
+.sidebar-menu a {
     color: #ffffff;
 }
+
 .search-txt-side {
     width: 120px;
 }
 
 /*--- filters ---*/
 
-.search-filter-container { padding: 10px; margin-left: 15px; background: #ffffff;}
+.search-filters {
+    margin-right: 26px;
+}
+
+.search-filter-container {
+    padding: 10px;
+    margin-left: 15px;
+    background: #ffffff;
+    min-height: 425px;
+}
 
 .filter {
     border: 3px solid #ccc;
@@ -375,7 +392,7 @@ address {
     border-radius: 8px;
 }
 
-.sidebar-menu a:active{
+.sidebar-menu a:active {
     border-radius: 0;
     margin-left: -20px !important;
     text-align: center;
@@ -383,12 +400,13 @@ address {
     background: #ffffff;
     color: #333333 !important;
 }
+
 button .btn-search-side {
     padding: 5px !important;
 }
 
 /*--- for screen size: 768px; ---*/
-@media (max-width:768px){
+@media (max-width: 768px) {
 
 }
 
