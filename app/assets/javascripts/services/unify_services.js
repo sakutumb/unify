@@ -59,7 +59,37 @@ angular.module('UnifyApp')
                         deferred.reject(data);
                     });
                 return deferred.promise;
+            },
+            getDimData : function(dimType){
+                var deferred = $q.defer();
+                $http.post(appConstants.DIM_DATA_URL,
+                    {
+                        dim_type: dimType,
+                        authenticity_token: appConstants.authenticity_token
+                    })
+                    .success(function (data, status, headers, config) {
+                        deferred.resolve(data);
+                    })
+                    .error(function (data, status, headers, config) {
+                        deferred.reject(data);
+                    });
+                return deferred.promise;
+            },
+            getFilterData : function(filterData, columns){
+                var deferred = $q.defer();
+                $http.post(appConstants.FILTER_DATA_URL,
+                    {
+                        filter_data: filterData,
+                        columns: columns,
+                        authenticity_token: appConstants.authenticity_token
+                    })
+                    .success(function (data, status, headers, config) {
+                        deferred.resolve(data);
+                    })
+                    .error(function (data, status, headers, config) {
+                        deferred.reject(data);
+                    });
+                return deferred.promise;
             }
-
         }
     }]);

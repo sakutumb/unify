@@ -11,94 +11,127 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201225229) do
+ActiveRecord::Schema.define(version: 0) do
 
-  create_table "dim_birth_star", force: true do |t|
+  create_table "_unused_fact_linkedin", primary_key: "seq_num", force: true do |t|
+    t.string "id",                      limit: 200
+    t.string "first_name",              limit: 45
+    t.string "last_name",               limit: 45
+    t.string "maiden_name",             limit: 45
+    t.string "formatted_name",          limit: 45
+    t.string "phonetic_first_name",     limit: 45
+    t.string "phonetic_last_name",      limit: 45
+    t.string "fomatted_phonetic_name",  limit: 45
+    t.string "headline",                limit: 45
+    t.string "location",                limit: 45
+    t.string "location_country_code",   limit: 45
+    t.string "industry",                limit: 45
+    t.string "distance",                limit: 45
+    t.string "relation_to_viewer",      limit: 45
+    t.string "current_share",           limit: 45
+    t.string "num_of_connections",      limit: 45
+    t.string "summary",                 limit: 45
+    t.string "specialities",            limit: 45
+    t.string "picture_url",             limit: 45
+    t.string "public_profile_url",      limit: 45
+    t.string "email_address",           limit: 45
+    t.string "last_modified_timestamo", limit: 45
+    t.string "proposal_comments",       limit: 45
+    t.string "date_of_birth",           limit: 45
+    t.string "associations",            limit: 45
+    t.string "interests",               limit: 45
+    t.string "phone_type",              limit: 45
+    t.string "phone_number",            limit: 45
+    t.string "fact_linkedincol",        limit: 45
+  end
+
+  create_table "_unused_fact_linkedin_education", primary_key: "seq_num", force: true do |t|
+    t.string "id",             limit: 45
+    t.string "school_name",    limit: 45
+    t.string "field_of_study", limit: 45
+    t.string "start_date",     limit: 45
+    t.string "degree",         limit: 45
+    t.string "end_date",       limit: 45
+    t.string "activities",     limit: 45
+    t.string "notes",          limit: 45
+  end
+
+  create_table "dim_birth_stars", force: true do |t|
     t.string  "name",      limit: 256, null: false
     t.integer "locale_id",             null: false
   end
 
-  add_index "dim_birth_star", ["locale_id"], name: "FK_dim_birth_star_dim_locale", using: :btree
+  add_index "dim_birth_stars", ["locale_id"], name: "FK_dim_birth_star_dim_locale", using: :btree
 
-  create_table "dim_caste", force: true do |t|
+  create_table "dim_castes", force: true do |t|
     t.string  "name",      limit: 50, default: "0", null: false
     t.integer "locale_id",                          null: false
   end
 
-  add_index "dim_caste", ["locale_id"], name: "FK_dim_caste_dim_locale", using: :btree
+  add_index "dim_castes", ["locale_id"], name: "FK_dim_caste_dim_locale", using: :btree
 
-  create_table "dim_city", force: true do |t|
+  create_table "dim_cities", force: true do |t|
     t.string  "name",      limit: 128, null: false
     t.integer "locale_id",             null: false
   end
 
-  add_index "dim_city", ["locale_id"], name: "FK_dim_city_dim_locale", using: :btree
+  add_index "dim_cities", ["locale_id"], name: "FK_dim_city_dim_locale", using: :btree
 
-  create_table "dim_community", force: true do |t|
+  create_table "dim_communities", force: true do |t|
     t.string  "name",      limit: 256, null: false
     t.integer "locale_id",             null: false
   end
 
-  add_index "dim_community", ["locale_id"], name: "FK_dim_community_dim_locale", using: :btree
+  add_index "dim_communities", ["locale_id"], name: "FK_dim_community_dim_locale", using: :btree
 
   create_table "dim_countries", force: true do |t|
-    t.string  "country_code", limit: 3,   null: false
-    t.string  "country_name", limit: 256, null: false
-    t.integer "locale",                   null: false
+    t.string  "name",                limit: 256, null: false
+    t.integer "locale_id",                       null: false
+    t.integer "country_new_code"
+    t.integer "country_old_code"
+    t.string  "country_abbrevation", limit: 10
   end
 
-  create_table "dim_education_level", id: false, force: true do |t|
-    t.integer "id",                    null: false
+  add_index "dim_countries", ["locale_id"], name: "FK_dim_country_dim_locale", using: :btree
+
+  create_table "dim_education_level", force: true do |t|
     t.string  "name",      limit: 128, null: false
     t.integer "locale_id",             null: false
   end
 
   add_index "dim_education_level", ["locale_id"], name: "FK_dim_education_level_dim_locale", using: :btree
 
-  create_table "dim_gender", force: true do |t|
+  create_table "dim_genders", force: true do |t|
     t.string  "name",      limit: 28, null: false
     t.integer "locale_id",            null: false
   end
 
-  add_index "dim_gender", ["locale_id"], name: "FK_dim_gender_dim_locale", using: :btree
+  add_index "dim_genders", ["locale_id"], name: "FK_dim_gender_dim_locale", using: :btree
 
-  create_table "dim_language", force: true do |t|
+  create_table "dim_languages", force: true do |t|
     t.string  "name",      limit: 256, null: false
     t.integer "locale_id",             null: false
   end
 
-  add_index "dim_language", ["locale_id"], name: "FK_dim_language_dim_locale", using: :btree
+  add_index "dim_languages", ["locale_id"], name: "FK_dim_language_dim_locale", using: :btree
 
-  create_table "dim_locale", force: true do |t|
-    t.string "description", limit: 50
+  create_table "dim_locales", force: true do |t|
+    t.string "name", limit: 50, null: false
   end
 
-  create_table "dim_region_caste_language", id: false, force: true do |t|
-    t.integer "region_id",   null: false
-    t.integer "caste_id",    null: false
-    t.integer "language_id", null: false
-    t.integer "locale_id",   null: false
-  end
-
-  add_index "dim_region_caste_language", ["caste_id"], name: "FK_dim_region_caste_language_dim_caste", using: :btree
-  add_index "dim_region_caste_language", ["language_id"], name: "FK_dim_region_caste_language_dim_language", using: :btree
-  add_index "dim_region_caste_language", ["locale_id"], name: "FK_dim_region_caste_language_dim_locale", using: :btree
-
-  create_table "dim_religion", force: true do |t|
+  create_table "dim_religions", force: true do |t|
     t.string  "name",      limit: 256, null: false
     t.integer "locale_id",             null: false
   end
 
-  add_index "dim_religion", ["locale_id"], name: "FK_dim_religion_dim_locale", using: :btree
+  add_index "dim_religions", ["locale_id"], name: "FK_dim_religion_dim_locale", using: :btree
 
   create_table "dim_states", force: true do |t|
-    t.string "name",         limit: 128, null: false
-    t.string "locale",       limit: 5,   null: false
-    t.string "country_code", limit: 45
+    t.string "name",   limit: 256, null: false
+    t.string "locale", limit: 256
   end
 
-  create_table "dim_values", id: false, force: true do |t|
-    t.integer "id",                      null: false
+  create_table "dim_values", force: true do |t|
     t.string  "value",       limit: 256, null: false
     t.integer "map_id",                  null: false
     t.string  "map_value",   limit: 256, null: false
@@ -109,7 +142,7 @@ ActiveRecord::Schema.define(version: 20150201225229) do
     t.date    "to_date"
   end
 
-  create_table "dim_zodiac_sign", force: true do |t|
+  create_table "dim_zodiac_signs", force: true do |t|
     t.string  "name",        limit: 256, null: false
     t.date    "from_date",               null: false
     t.date    "to_date",                 null: false
@@ -117,8 +150,61 @@ ActiveRecord::Schema.define(version: 20150201225229) do
     t.integer "locale_id",               null: false
   end
 
-  add_index "dim_zodiac_sign", ["language_id"], name: "FK_dim_zodiac_sign_dim_language", using: :btree
-  add_index "dim_zodiac_sign", ["locale_id"], name: "FK_dim_zodiac_sign_dim_locale", using: :btree
+  add_index "dim_zodiac_signs", ["language_id"], name: "FK_dim_zodiac_sign_dim_language", using: :btree
+  add_index "dim_zodiac_signs", ["locale_id"], name: "FK_dim_zodiac_sign_dim_locale", using: :btree
+
+  create_table "fact_facebook", id: false, force: true do |t|
+    t.string  "id",                      limit: 64
+    t.string  "about",                   limit: 64
+    t.string  "age_range_min",           limit: 4
+    t.string  "age_range_max",           limit: 4
+    t.string  "bio",                     limit: 64
+    t.string  "birthday",                limit: 10
+    t.string  "context_mutual_friends",  limit: 128
+    t.string  "context_mutual_likes",    limit: 128
+    t.string  "user_currency",           limit: 8
+    t.string  "device_hardware",         limit: 50
+    t.string  "device_os",               limit: 50
+    t.string  "education_school",        limit: 50
+    t.string  "education_year",          limit: 50
+    t.string  "education_concentration", limit: 50
+    t.string  "education_type",          limit: 50
+    t.string  "email",                   limit: 50
+    t.string  "favorite_athletes",       limit: 50
+    t.string  "favorite_teams",          limit: 50
+    t.string  "first_name",              limit: 50
+    t.string  "gender",                  limit: 50
+    t.string  "hometown",                limit: 50
+    t.string  "languages",               limit: 50
+    t.string  "last_name",               limit: 50
+    t.string  "locale",                  limit: 50
+    t.string  "location",                limit: 50
+    t.string  "middle_name",             limit: 50
+    t.string  "name",                    limit: 50
+    t.string  "name_format",             limit: 50
+    t.string  "political",               limit: 50
+    t.string  "quotes",                  limit: 50
+    t.string  "relationship_status",     limit: 50
+    t.string  "religion",                limit: 50
+    t.string  "significant_other",       limit: 50
+    t.integer "timezone"
+    t.string  "website",                 limit: 50
+    t.string  "work_employer",           limit: 50
+    t.string  "work_location",           limit: 50
+    t.string  "work_position",           limit: 50
+    t.string  "work_start_date",         limit: 50
+    t.string  "work_end_date",           limit: 50
+    t.string  "project_with",            limit: 50
+    t.string  "project_description",     limit: 50
+    t.string  "project_start_date",      limit: 50
+    t.string  "project_end_date",        limit: 50
+    t.string  "family_relationship",     limit: 50
+    t.string  "friendlists",             limit: 50
+    t.string  "friends",                 limit: 50
+    t.string  "interests",               limit: 50
+    t.string  "likes",                   limit: 50
+    t.string  "Column 50",               limit: 50
+  end
 
   create_table "fact_linkedin_profile_positions", primary_key: "seq_num", force: true do |t|
     t.string   "linkedin_user_id",     limit: 200, null: false
@@ -243,6 +329,12 @@ ActiveRecord::Schema.define(version: 20150201225229) do
   add_index "unify_prospects", ["match_maker_id"], name: "FK_unify_user_unify_bureau", using: :btree
   add_index "unify_prospects", ["zodiac_id"], name: "FK_unify_user_dim_zodiac_sign", using: :btree
 
+  create_table "unify_religion_lang_caste_mappings", id: false, force: true do |t|
+    t.integer "religion_id", null: false
+    t.integer "language_id", null: false
+    t.integer "caste_id",    null: false
+  end
+
   create_table "unify_users", primary_key: "user_id", force: true do |t|
     t.string   "email",             limit: 100, null: false
     t.string   "password",          limit: 45
@@ -250,12 +342,28 @@ ActiveRecord::Schema.define(version: 20150201225229) do
     t.string   "first_name",        limit: 100, null: false
     t.string   "last_name",         limit: 100
     t.string   "user_type",         limit: 2,   null: false
-    t.string   "locale",            limit: 10,  null: false
+    t.integer  "locale_id",                     null: false
     t.string   "organization_name", limit: 100
     t.string   "logo_image_name",   limit: 100
     t.datetime "last_updated"
   end
 
-  add_index "unify_users", ["locale"], name: "FK_unify_login_dim_locale", using: :btree
+  add_index "unify_users", ["locale_id"], name: "FK_unify_login_dim_locale", using: :btree
+
+  create_table "unify_vw_religion_lang_caste_mappings", id: false, force: true do |t|
+    t.integer "religion_id",               default: 0,   null: false
+    t.string  "religion_name", limit: 256,               null: false
+    t.integer "language_id",               default: 0,   null: false
+    t.string  "language_name", limit: 256,               null: false
+    t.integer "caste_id",                  default: 0,   null: false
+    t.string  "caste_name",    limit: 50,  default: "0", null: false
+    t.integer "locale_id",                 default: 0,   null: false
+    t.string  "locale_name",   limit: 50,                null: false
+  end
+
+  create_table "v_test", id: false, force: true do |t|
+    t.string  "user",     limit: 16, default: "", null: false
+    t.integer "my_alias",            default: 0,  null: false
+  end
 
 end

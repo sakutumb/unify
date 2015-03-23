@@ -2,63 +2,36 @@
     <div id="background-container" >
         <div class="row">
             <div class="col-md-6">
-                <h5>Relationship:</h5>
-                <div class="filter">
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
+                <h5>Religion:</h5>
+                <div class="filter" id="religionFilter" ng-click="refreshBgFilters();">
+                    <label ng-repeat="religion in searchFilters.religions" class="control-label width-100">
+                        {{religion.name}} <input type="checkbox" checklist-model="searchFilters.selectedReligions" checklist-value="religion.id" class="pull-right"/>
+                    </label>
                 </div>
             </div>
-
             <div class="col-md-6">
-                <h5>Relationship:</h5>
-                <div class="filter">
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
+                <h5>Language:</h5>
+                <div class="filter" id="languageFilter" ng-click="refreshBgFilters();">
+                    <label ng-repeat="language in searchFilters.languages" class="control-label width-100">
+                        {{language.language_name}} <input type="checkbox" checklist-model="searchFilters.selectedLanguages" checklist-value="language.language_id" class="pull-right"/>
+                    </label>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h5>Relationship:</h5>
-                <div class="filter">
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
+                <h5>Caste:</h5>
+                <div class="filter" id="casteFilter">
+                    <label ng-repeat="caste in searchFilters.castes" class="control-label width-100">
+                        {{caste.caste_name}} <input type="checkbox" checklist-model="searchFilters.selectedCastes" checklist-value="caste.caste_id" class="pull-right"/>
+                    </label>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <h5>Relationship:</h5>
                 <div class="filter">
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
-                    <div><span>This is checkbox</span><span class="pull-right"> <input type="checkbox" /></span></div>
+
                 </div>
             </div>
         </div>

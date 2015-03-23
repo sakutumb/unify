@@ -13,5 +13,6 @@
 //= require angular-js/angular
 //= require angular-js/angular-route
 //= require angular-js/angular-ui-router
+//= require angular-js/checklist-model
 //= require angular-js/ui-bootstrap-tpls
 //= require show-errors/showErrors

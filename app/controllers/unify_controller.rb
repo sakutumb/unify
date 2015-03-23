@@ -32,22 +32,36 @@ class UnifyController < ApplicationController
   # Entry point method for all data calls from front-end
   def services
     Rails.logger.debug 'Inside service'
-    action = params[:do]
-    result_json = {}
-    case action
-      when 'login'
-        Rails.logger.debug 'Processing login'
-        result_json = login
-      when 'register'
-        Rails.logger.debug 'Processing registration'
-        result_json = register
-      when 'save_linkedin_profile'
-        Rails.logger.debug 'Saving Linkedin Profile'
-        result_json = save_linkedin_profile
-      else
-        Rails.logger.warn 'Unsupported service call'
+    @result_json = {}
+    begin
+      action = params[:do]
+      case action
+        when 'login'
+          Rails.logger.debug 'Processing login'
+          @result_json = login
+        when 'register'
+          Rails.logger.debug 'Processing registration'
+          @result_json = register
+        when 'save_linkedin_profile'
+          Rails.logger.debug 'Saving Linkedin Profile'
+          @result_json = save_linkedin_profile
+        when 'get_dim_data'
+          dim_type = params[:dim_type]
+          Rails.logger.debug "Getting dimension data - #{dim_type}"
+          @result_json = get_dim_data (dim_type)
+        when 'get_filter_data'
+          filter_data = params[:filter_data]
+          columns = params[:columns]
+          Rails.logger.debug "Getting Filter data - #{filter_data}"
+          @result_json = get_filter_data(filter_data, columns)
+        else
+          Rails.logger.warn 'Unsupported service call'
+      end
+    rescue
+      Rails.logger.error "Error in service method #{$!}"
+    ensure
+      render json: @result_json.map(&:serializable_hash)
     end
-    render json: result_json
   end
 
   # Search method
@@ -173,6 +187,47 @@ class UnifyController < ApplicationController
     return result_json
   end
 
+
+  def get_dim_data (dim_type)
+    result_set = {}
+    begin
+      if (dim_type == "religions")
+        result_set = DimReligion.where('locale_id = ?', @current_locale).select('id, name')
+      elsif (dim_type == "languages")
+        result_set = DimLanguage.where('locale_id = ?', @current_locale).select('id, name')
+      elsif (dim_type == "castes")
+        result_set = DimCaste.where('locale_id = ?', @current_locale).select('id, name')
+      end
+    rescue
+      Rails.logger.error "Error in getting dim data #{$!}"
+    ensure
+      return result_set
+    end
+  end
+
+  # Expecting filter_data as a json
+  #     {
+  #       religion_ids  : [1],
+  #       language_ids  : [1,2],
+  #       caste_ids     : [2,3]
+  #     }
+  # columns - String - columns to be selected
+  def get_filter_data (filter_data, columns)
+    Rails.logger.debug 'Inside get filter method'
+    result_set = {}
+    begin
+      if (columns.present?)
+        result_set = UnifyVwReligionLangCasteMapping.where(filter_data.to_hash).select(columns).distinct
+      else
+        result_set = UnifyVwReligionLangCasteMapping.where(filter_data.to_hash).distinct
+      end
+    rescue
+      Rails.logger.error "Error in getting filter data #{$!}"
+    ensure
+      return result_set
+    end
+  end
+
   private
 
   def user_params
@@ -180,6 +235,7 @@ class UnifyController < ApplicationController
   end
 
   def check_user_session
-    @is_logged_in_user = session[:user].present? && session[:user]['user_id'].present?
+    @is_logged_in_user = (session[:user].present? && session[:user]['user_id'].present?)
+    @current_locale = (session[:current_locale].present?) ? session[:current_locale] : Unify::APP_CONFIG['default_locale_id']
   end
 end

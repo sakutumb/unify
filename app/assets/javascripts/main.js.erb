@@ -5,7 +5,8 @@ var unifyModule = angular.module('UnifyApp', [
             //'ngRoute',
             'ui.router',
             'ui.bootstrap',
-            'ui.bootstrap.showErrors'
+            'ui.bootstrap.showErrors',
+            'checklist-model'
         ]).
         constant('appConstants', {
             // All app constants goes here
@@ -13,6 +14,8 @@ var unifyModule = angular.module('UnifyApp', [
             authenticity_token  : FORM_AUTHENTICITY_TOKEN, // Defined at layout level
             LOGIN_URL           : '/app/services/login',
             REGISTRATION_URL    : '/app/services/register',
+            DIM_DATA_URL        : '/app/services/get_dim_data',
+            FILTER_DATA_URL        : '/app/services/get_filter_data',
             LINKEDIN_PROFILE_SAVE_URL   : '/app/services/save_linkedin_profile',
             FB_PROFILE_SAVE_URL         : '/app/services/save_fb_profile',
             LOCALE              : '<%= I18n.locale %>'

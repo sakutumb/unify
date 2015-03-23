@@ -1,8 +1,6 @@
 # to access config use IntuitCom::APP_CONFIG['key']
 development: &development
-  locales:
-    en_US: English(US)
-    es_US: Español(US)
+  default_locale_id: 1
   facebook:
     app_id: 431383370342354
     app_secret: 9140d56866821fad547ea9d86eeb166d
