@@ -7,7 +7,7 @@ class UnifyUser < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :user_type, :presence => true
-  validates :locale, :presence => true
+  validates :locale_id, :presence => true
 
   before_save :update_timestamp
   after_save :clear_password

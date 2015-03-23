@@ -4,7 +4,6 @@ class UnifyController < ApplicationController
 
   layout 'index'
 
-
   def index
     # Expected URL formats
     # /bureau_name  -> Route for bureau dashboards
@@ -60,7 +59,7 @@ class UnifyController < ApplicationController
     rescue
       Rails.logger.error "Error in service method #{$!}"
     ensure
-      render json: @result_json.map(&:serializable_hash)
+      render json: @result_json
     end
   end
 
@@ -102,7 +101,7 @@ class UnifyController < ApplicationController
     Rails.logger.debug 'Inside register service'
     begin
       user = UnifyUser.create(user_params)
-      user.locale = get_locale
+      user.locale_id = session[:user_locale_id]
       user.save!
       session[:user] = user.to_json
       result_json = {
@@ -192,11 +191,11 @@ class UnifyController < ApplicationController
     result_set = {}
     begin
       if (dim_type == "religions")
-        result_set = DimReligion.where('locale_id = ?', @current_locale).select('id, name')
+        result_set = DimReligion.where('locale_id = ?', session[:user_locale_id]).select('id, name')
       elsif (dim_type == "languages")
-        result_set = DimLanguage.where('locale_id = ?', @current_locale).select('id, name')
+        result_set = DimLanguage.where('locale_id = ?', session[:user_locale_id]).select('id, name')
       elsif (dim_type == "castes")
-        result_set = DimCaste.where('locale_id = ?', @current_locale).select('id, name')
+        result_set = DimCaste.where('locale_id = ?', session[:user_locale_id]).select('id, name')
       end
     rescue
       Rails.logger.error "Error in getting dim data #{$!}"
@@ -228,7 +227,6 @@ class UnifyController < ApplicationController
     end
   end
 
-  private
 
   def user_params
     params.require(:unify_user).permit(:user_id, :email, :password, :first_name, :last_name, :user_type, :organization_name)
@@ -236,6 +234,7 @@ class UnifyController < ApplicationController
 
   def check_user_session
     @is_logged_in_user = (session[:user].present? && session[:user]['user_id'].present?)
-    @current_locale = (session[:current_locale].present?) ? session[:current_locale] : Unify::APP_CONFIG['default_locale_id']
+    set_locale if(session[:user_locale].blank? || session[:user_locale_id].blank?)
   end
 end
+
