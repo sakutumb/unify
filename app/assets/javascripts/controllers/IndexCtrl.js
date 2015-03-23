@@ -4,7 +4,7 @@ angular.module('UnifyApp').controller('IndexCtrl', ['$scope', '$rootScope', '$ti
     $scope.user = {
         hasSignedIn: false
     };
-    $scope.localeList = appConstants.APP_CONFIG['locales'];
+    $scope.localeList = appConstants.SUPPORTED_LOCALES;
 
     /**
      * Utility method to show success/error/warning messages
