@@ -9,6 +9,7 @@
     //Get the APP_CONFIG
     var APP_CONFIG = eval(<%= raw Unify::APP_CONFIG.to_json %>);
     var FORM_AUTHENTICITY_TOKEN = '<%= form_authenticity_token %>';
+    var IS_VALID_SESSION = <%= @is_logged_in_user %>;
 </script>
 <head>
   <title>Unify</title>

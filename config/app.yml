@@ -1,10 +1,14 @@
 # to access config use IntuitCom::APP_CONFIG['key']
 development: &development
-  locales:
-    en_US: English(US)
-    es_US: Español(US)
+  default_locale_id: 1
   facebook:
-    token: CAACEdEose0cBAGUY2R7AwZBGX70ZC3Pp97z3uXwJFlLpD5d2B1v7OmAYkVEQCMs5B6hSaSB4YQTnO92nAblGjivIO6SQXyOEdR2HHuERkfWZCvKyIyL7tIKZB5FhnYbKvXsjF9lj3dmZCT75uYzFmK6jHeMyhf0ZA7YPN28LjUufaWCYszvTh5L6U2HQcUEwQh9RfQdGZAojwZDZD
+    app_id: 431383370342354
+    app_secret: 9140d56866821fad547ea9d86eeb166d
+  linkedin:
+    api_key: 75db98g083av4p
+  angular_routes:
+    - login
+    - register
 test:
     <<: *development
 

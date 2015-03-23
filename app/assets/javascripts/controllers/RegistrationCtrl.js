@@ -3,6 +3,7 @@
 angular.module('UnifyApp').controller('RegistrationCtrl', ['$scope', '$rootScope', 'UnifyService', '$state', '$timeout', '$log',
     function ($scope, $rootScope, UnifyService, $state, $timeout, $log) {
         //TODO: Remove this after testing
+        /*
         $scope.user = {
             user_id         : 'sakutumbtest1@mail.com',
             email           : 'sakutumbtest1@mail.com',
@@ -13,30 +14,48 @@ angular.module('UnifyApp').controller('RegistrationCtrl', ['$scope', '$rootScope
             user_type       : 'MM',
             organization_name : 'unify Inc.'
         };
+         */
+        $scope.$on('$viewContentLoaded',
+            function(event){
+                console.log('view loaded !');
+                $rootScope.registrationFormVisible = true;
+                $rootScope.loginFormVisible = false;
+                $timeout(function(){
+                    $rootScope.scrollToSection('#registration');
+                });
+            });
 
         $scope.register = function (formObj) {
-            UnifyService.registerService(formObj).then(
-                function (resultObject) {
-                    if (resultObject.result == 'success') {
-                        $log.debug('User registered !');
-                        alert('User Registered Successfully');
-                        $rootScope.registrationFormVisible = false;
-                        $rootScope.hasUserLoggedIn = true;
-                        $rootScope.user = resultObject.data;
-                        if ($rootScope.user.user_type == 'MM') {
-                            var urlPath = $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
-                            urlPath = urlPath.replace(/-+$/, '');
-                            window.location = '/' + urlPath;
+
+            $scope.$broadcast('show-errors-check-validity');
+
+            if ($scope.registrationForm.$valid) {
+
+                UnifyService.registerService(formObj).then(
+                    function (resultObject) {
+                        if (resultObject.result == 'success') {
+                            $log.debug('User registered !');
+                            $scope.showStatusMessage('registration-status-msg', 'Registration successful.' + resultObject.msd, 'success');
+                            $timeout(function(){
+                                $rootScope.registrationFormVisible = false;
+                                $rootScope.hasUserLoggedIn = true;
+                                $rootScope.user = resultObject.data;
+                                if ($rootScope.user.user_type == 'MM') {
+                                    var urlPath = $rootScope.user.organization_name.replace(/[^a-zA-Z0-9]/g, '-');
+                                    urlPath = urlPath.replace(/-+$/, '');
+                                    window.location = '/' + urlPath;
+                                }
+                            }, 500);
                         }
-                    }
-                    else {
-                        $scope.LoginMessage = resultObject.msg;
-                        $log.debug('Registration Failed');
-                    }
-                },
-                function (rejectReason) {
-                    $log.debug('Failed to register user');
-                });
+                        else {
+                            $log.debug('Registration Failed');
+                            $scope.showStatusMessage('registration-status-msg', 'Registration Failed.' + resultObject.msg, 'danger');
+                        }
+                    },
+                    function (rejectReason) {
+                        $log.debug('Failed to register user');
+                    });
+            }
         };
     }]);
 

@@ -1,57 +1,44 @@
 <!-- login -->
 <div class="row">
     <section id="login" ng-show="$root.loginFormVisible">
-
+        <!--
         <button type="button" class="close" data-dismiss="modal" ng-click="$root.loginFormVisible = false; $root.scrollToSection('#main-container')">
             <span aria-hidden="true"><a href="/" >X</a></span>
             <span class="sr-only">Close</span>
         </button>
+        -->
+
+        <a class="close" ui-sref="^" ng-click="$root.loginFormVisible = false; $root.scrollToSection('#main-container')">X</a>
+
         <h2>Login</h2>
 
-        <form class="form-horizontal registerForm">
-            <div class="form-group">
-                <label class="col-sm-5 control-label">User ID</label>
+        <form class="form-horizontal" name="loginForm">
+            <div>
+                <div class="col-sm-5"></div>
+                <div class="col-xs-12 col-sm-3" id="login-status-msg">
+
+                </div>
+            </div>
+            <div class="form-group" show-errors="{ showSuccess: true }">
+                <label class="col-sm-5 control-label">User ID/Email</label>
 
                 <div class="col-xs-12 col-sm-3">
-                    <input type="text" class="form-control" name="user_id" ng-model="user.user_id"
-                           data-bv-notempty="true"
-                           data-bv-notempty-message="The username is required and cannot be empty"
-
-                           data-bv-stringlength="true"
-                           data-bv-stringlength-min="6"
-                           data-bv-stringlength-max="30"
-                           data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
-
-                           data-bv-regexp="true"
-                           data-bv-regexp-regexp="^[a-zA-Z0-9]+$"
-                           data-bv-regexp-message="The username can only consist of alphabetical and number"
-
-                           data-bv-different="true"
-                           data-bv-different-field="password"
-                           data-bv-different-message="The username and password cannot be the same as each other"/>
+                    <input type="text" class="form-control" name="user_id" ng-model="user.user_id" ng-required="true" placeholder="User Id/Email"/>
+                    <p ng-show="loginForm.user_id.$error.required && loginForm.user_id.$dirty" class="help-block">Please enter your user id/email.</p>
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" show-errors="{ showSuccess: true }">
                 <label class="col-sm-5 control-label">Password</label>
 
                 <div class="col-xs-12 col-sm-3	">
-                    <input type="password" class="form-control" name="password" ng-model="user.password"
-                           data-bv-notempty="true"
-                           data-bv-notempty-message="The password is required and cannot be empty"
-
-                           data-bv-stringlength="true"
-                           data-bv-stringlength-min="8"
-                           data-bv-stringlength-message="The password must have at least 8 characters"
-
-                           data-bv-different="true"
-                           data-bv-different-field="username"
-                           data-bv-different-message="The password cannot be the same as username"/>
+                    <input type="password" class="form-control" name="password" ng-model="user.password" ng-required="true" placeholder="Password"/>
+                    <p ng-show="loginForm.password.$error.required && loginForm.password.$dirty" class="help-block">Please enter your password.</p>
                 </div>
             </div>
             <div class="form-group">
                 <div class=" col-sm-6 col-xs-12 col-sm-4 col-md-offset-5">
-                    <button type="submit" class="btn btn-default" ng-click="login()">submit</button>
+                    <button type="submit" class="btn btn-default" ng-click="login()" >submit</button>
                 </div>
             </div>
 

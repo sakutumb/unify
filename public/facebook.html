@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facebook JavaScript SDK</title>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js"></script>
+</head>
+<body>
+<script>
+    var FBProfile = {};
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log(response);
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            getUserDetailsFromFB();
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not our app.
+            console.log('Please log into this app.');
+        } else {
+            // The person is not logged into Facebook
+            console.log('Please log into facebook.');
+        }
+    }
+
+    // This function is called when someone finishes with the Login Button.
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId   : '431383370342354',
+            cookie  : true,  // enable cookies to allow the server to access
+            xfbml   : true,
+            version : 'v2.2'
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    //Get the user's profiel details
+    function getUserDetailsFromFB() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function (response) {
+            console.log('Got profile details !');
+            FBProfile = response;
+            console.log(FBProfile);
+        });
+        console.log('Checking permissions');
+        FB.api(
+                "/me/permissions",
+                function (response) {
+                    if (response && !response.error) {
+                        console.log('Got friends details !');
+                        console.log(response);
+                        FBProfile['permission'] = response;
+                        console.log(FBProfile);
+                    }
+                }
+        );
+
+    }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+  FB.login(function(response) {
+   // handle the response
+ }, {scope: 'email,user_likes'});
+-->
+
+<fb:login-button scope="public_profile,email,user_friends,user_location,user_work_history,user_relationship_details,read_friendlists" onlogin="checkLoginState();"></fb:login-button>
+
+<div id="status"></div>
+
+<div id="profile"></div>
+
+</body>
+</html>

@@ -4,18 +4,28 @@ var unifyModule = angular.module('UnifyApp', [
             //'ngResource',
             //'ngRoute',
             'ui.router',
-            'ui.bootstrap'
+            'ui.bootstrap',
+            'ui.bootstrap.showErrors',
+            'checklist-model'
         ]).
         constant('appConstants', {
             // All app constants goes here
             APP_CONFIG          : APP_CONFIG,
             authenticity_token  : FORM_AUTHENTICITY_TOKEN, // Defined at layout level
             LOGIN_URL           : '/app/services/login',
-            REGISTRATION_URL    : '/app/services/register'
+            REGISTRATION_URL    : '/app/services/register',
+            DIM_DATA_URL        : '/app/services/get_dim_data',
+            FILTER_DATA_URL        : '/app/services/get_filter_data',
+            LINKEDIN_PROFILE_SAVE_URL   : '/app/services/save_linkedin_profile',
+            FB_PROFILE_SAVE_URL         : '/app/services/save_fb_profile',
+            LOCALE              : '<%= I18n.locale %>'
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
-                $locationProvider.html5Mode(true);
+                $locationProvider.html5Mode({
+                    enabled: true,
+                    requireBase: false
+                });
                 $urlRouterProvider.otherwise('/');
                 $stateProvider.state('index', {
                     url: '/',
@@ -28,14 +38,6 @@ var unifyModule = angular.module('UnifyApp', [
                             controller: 'HeroCtrl',
                             templateUrl: '<%= asset_path('partials/hero.html') %>'
                         },
-                        'login@index': {
-                            controller: 'LoginCtrl',
-                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
-                        },
-                        'registration@index': {
-                            controller: 'RegistrationCtrl',
-                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
-                        },
                         'features@index': {
                             templateUrl: '<%= asset_path('partials/features.html') %>'
                         },
@@ -46,19 +48,66 @@ var unifyModule = angular.module('UnifyApp', [
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
                         }
                     }
+                }).state('index.login', {
+                    url: 'login',
+                    views: {
+                        'login': {
+                            controller: 'LoginCtrl',
+                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
+                        }
+                    }
+                }).state('index.register', {
+                    url: 'register',
+                    views: {
+                        'register': {
+                            controller: 'RegistrationCtrl',
+                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
+                        }
+                    }
                 }).state('search', {
                     url: '/search',
                     views: {
                         'search': {
+                            controller: 'SearchCtrl',
                             templateUrl: '<%= asset_path('templates/search.html') %>'
                         },
                         'header@search': {
                             templateUrl: '<%= asset_path('partials/search/header.html') %>'
                         },
+                        'quick-search@search': {
+                            templateUrl: '<%=asset_path('partials/search/quick-search.html') %>'
+                        },
+                        'sidebar@search': {
+                            templateUrl: '<%=asset_path('partials/search/sidebar.html') %>'
+                        },
                         'results@search': {
                             templateUrl: '<%= asset_path('partials/search/results.html') %>'
                         },
+                        'search-filters@search': {
+                            templateUrl: '<%= asset_path('partials/search/search-filters.html') %>'
+                        },
                         'footer@search': {
+                            templateUrl: '<%= asset_path('partials/common/footer.html') %>'
+                        }
+                    }
+                }).state('prospect', {
+                    url: '/prospect',
+                    views: {
+                        'prospect': {
+                            controller: 'ProspectCtrl',
+                            templateUrl: '<%= asset_path('templates/prospect.html') %>'
+                        },
+                        'header@prospect': {
+                            templateUrl: '<%= asset_path('partials/prospect/header.html') %>'
+                        },
+                        'main@prospect': {
+                            templateUrl: '<%= asset_path('partials/prospect/main.html') %>'
+                        },
+                        'social@prospect': {
+                            controller: 'SocialCtrl',
+                            templateUrl: '<%= asset_path('partials/social/social.html') %>'
+                        },
+                        'footer@prospect': {
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
                         }
                     }
@@ -71,13 +120,6 @@ var unifyModule = angular.module('UnifyApp', [
                         },
                         'header@bureau': {
                             templateUrl: '<%= asset_path('partials/bureau/header.html') %>'
-                        },
-                        'login@bureau': {
-                            controller: 'LoginCtrl',
-                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
-                        },
-                        'registration@bureau': {
-                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
                         },
                         'hero@bureau': {
                             templateUrl: '<%= asset_path('partials/bureau/hero.html') %>'
@@ -95,11 +137,28 @@ var unifyModule = angular.module('UnifyApp', [
                             templateUrl: '<%= asset_path('partials/common/footer.html') %>'
                         }
                     }
+                }).state('bureau.login', {
+                    url: '/login',
+                    views: {
+                        'login': {
+                            controller: 'LoginCtrl',
+                            templateUrl: '<%= asset_path('partials/common/login.html') %>'
+                        }
+                    }
+                }).state('bureau.register', {
+                    url: '/register',
+                    views: {
+                        'register': {
+                            controller: 'RegistrationCtrl',
+                            templateUrl: '<%= asset_path('partials/bureau/registration.html') %>'
+                        }
+                    }
                 });
             }]).run(['$rootScope', '$timeout',
                     function($rootScope, $timeout) {
                         $rootScope.loginFormVisible = false;
                         $rootScope.registrationFormVisible = false;
+                        $rootScope.hasUserLoggedIn = IS_VALID_SESSION;
                         //Utility function to animate scroll to a section of a page
                         $rootScope.scrollToSection = function(sectionId){
                             if($(sectionId)){
@@ -111,5 +170,5 @@ var unifyModule = angular.module('UnifyApp', [
                                         }
                                 );
                             }
-                        }
+                        };
                 }]);
