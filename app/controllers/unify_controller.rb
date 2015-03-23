@@ -235,6 +235,7 @@ class UnifyController < ApplicationController
   def check_user_session
     @is_logged_in_user = (session[:user].present? && session[:user]['user_id'].present?)
     set_locale if(session[:user_locale].blank? || session[:user_locale_id].blank?)
+    Rails.logger.debug "Locale: #{session[:user_locale]}, #{session[:user_locale_id]}"
   end
 end
 
