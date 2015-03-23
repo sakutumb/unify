@@ -361,9 +361,4 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "locale_name",   limit: 50,                null: false
   end
 
-  create_table "v_test", id: false, force: true do |t|
-    t.string  "user",     limit: 16, default: "", null: false
-    t.integer "my_alias",            default: 0,  null: false
-  end
-
 end
