@@ -11,4 +11,5 @@
  * file per style scope.
  *
  *= require bootstrap/_bootstrap
+ *= require jquery-slicknav/slicknav
  */

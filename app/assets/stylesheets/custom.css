@@ -1,0 +1,163 @@
+body{
+	overflow-x: hidden;
+}
+#top_menu{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#top_menu li{
+	float: left;
+}
+#top_menu li a{}
+#top_menu li a :hover{}
+.slicknav_menu {
+	display:none;
+}
+.banner_contents{
+	position: absolute;
+	left: 15px;
+	right: 15px;
+	text-align: center;
+	top: 250px;
+}
+.hero{
+	margin-bottom: 20px;
+}
+.banner_actions{
+	display: block;
+}
+.banner_actions a{
+	margin: 0 5px;
+}
+
+.social_share{
+	overflow: hidden;
+	height: auto;
+	text-align: center;
+}
+#social-buttons{
+	position: relative;
+	height: auto;
+	display: block;
+	clear: both;
+}
+.social_share ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.social_share ul li{
+	display: inline-block;
+}
+.social_share ul li a{
+	display: inline-block;
+	width: 68px;
+	height: 68px;
+	line-height: 75px;
+	background: #d76018;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	color: #fff;
+	margin: 0 3px;
+	font-size: 16px;
+	text-align: center;
+	-webkit-transition: all 1100ms ease;
+	-moz-transition: all 1100ms ease;
+	-ms-transition: all 1100ms ease;
+	-o-transition: all 1100ms ease;
+	transition: all 1100ms ease;
+}
+.social_share ul li a .fa{
+	margin-left: 8px;
+}
+.social_share ul li a:hover{
+	background-color: #37322f;
+}
+#contactus h2{
+	font-size: 30px;
+}
+/* Custom responsive stylesheet */
+
+@media only screen and (max-width: 992px){
+	.banner_contents{
+		top: 200px;
+	}
+	#login, #registration{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#login .col-sm-4.col-md-offset-5,
+	#registration .col-sm-4.col-md-offset-5 {
+	  margin-left: 41.66667%;
+	}
+}
+
+@media only screen and (max-width: 767px){
+ 	#top_menu {
+		display:none;
+	}
+	.slicknav_menu {
+	  display: block;
+	  position: relative;
+	  z-index: 222233;
+	}
+	.logo{
+		top: 6px;
+  		left: 7px;
+  		z-index: 3333333;
+	}
+	.banner_contents{
+		top: 170px;
+	}
+	.features-content{
+		margin-bottom: 20px;
+	}
+	.feature-1, .feature-2, .feature-3{
+		margin: 0 auto;
+	}
+	.features-content h3{
+		text-align: center;
+	}
+	.features{
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	#features,
+	#contactus{
+		padding-left: 0;
+	}
+	#faq {
+	  padding-left: 0px;
+	  padding-top: 40px;
+	  padding-bottom: 40px;
+	  padding-left: 15px;
+	  padding-right: 15px;
+	  width: 100%;
+	  float: left;
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.banner_contents{
+		top: 100px;
+	}
+}
+
+@media only screen and (max-width: 479px){
+	.banner_contents{
+		top: 100px;
+	}
+	.hero{
+		font-size: 20px;
+	}
+	.login, .register{
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 360px){
+	.banner_contents{
+		top: 50px;
+	}
+}
