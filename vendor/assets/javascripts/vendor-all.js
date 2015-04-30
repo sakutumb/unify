@@ -16,3 +16,4 @@
 //= require angular-js/checklist-model
 //= require angular-js/ui-bootstrap-tpls
 //= require show-errors/showErrors
+//= require jquery-slicknav/jquery.slicknav.min

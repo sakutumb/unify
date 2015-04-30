@@ -15,4 +15,5 @@
  *= require ../bootstrapValidator
  *= require ../home
  *= require ../matchmaker
+ *= require ../custom
  */
