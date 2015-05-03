@@ -1,0 +1,38 @@
+<div class="row">
+    <section id="hero">
+        <img class="img-responsive" src="/assets/images/hero.jpg" width="100%" height="auto" />
+        <div class="logo col-sm-2">&nbsp;</div>
+        <nav>
+            <ul id="top_menu">
+                <li><a href="#" ng-click="$root.scrollToSection('#features')">Features</a></li>
+                <li><a href="#" ng-click="$root.scrollToSection('#faq')">FAQ</a></li>
+                <li><a href="#" ng-click="$root.scrollToSection('#contactus')">Contact</a></li>
+                <li><a href="#" ng-click="$root.scrollToSection('#try-it')">Try it Free</a></li>
+            </ul>
+            <!--
+            <select class="form-control" ng-model="user.locale" name="locale" id="locale"
+                    ng-options="value for (key , value) in localeList">
+                <option value="">Select</option>
+            </select>
+            -->
+        </nav>
+        <div class="banner_contents">
+            <h1 class="hero">Your matchmaking business, simplified.</h1>
+            <div class="banner_actions">
+                <!-- <a class="login"href="#" ng-click="$parent.showLoginForm()" ng-hide="$root.hasUserLoggedIn">Login</a> -->
+                <a class="login" ui-sref="index.login" ng-hide="$root.hasUserLoggedIn">Login</a>
+                <!-- <a class="register" href="#" ng-click="$parent.showRegistrationForm()" ng-hide="$root.hasUserLoggedIn">Register</a> -->
+                <a class="register" ui-sref="index.register" ng-hide="$root.hasUserLoggedIn">Register</a>
+            </div>
+        </div>
+
+    </section>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#top_menu').slicknav({
+            label: '',
+            duration: 1000
+        });
+    });
+</script>
