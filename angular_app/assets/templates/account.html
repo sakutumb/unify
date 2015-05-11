@@ -3,16 +3,19 @@
 <p class="under-header-text">Please enter your information.<br> All fields are required.</p>
 
 <fieldset>
+
 	<div class="first-row">
 		<label class="powermail_label">Business Name:</label>
-		<span><input id="Business-Name" name="B-Name" type="text"></span>
+		<span><input id="Business-Name" name="B-Name" ng-model="business_name" type="text"></span>
 	</div>
+
 	<div class="first-row">
 		<label class="powermail_label">Business Location:</label>
 		<span>
-			<input id="Business-Location" name="B-Location" type="text">
+			<input id="Business-Location" name="B-Location" ng-model="business_location" type="text">
 		</span>
 	</div>
+
 	<div class="first-row">
 		<label class="powermail_label">Language:</label>
 		<span class='multiple-input'>
@@ -30,6 +33,7 @@
 			<br/>
 		</span>
 	</div>
+
 	<div class="first-row">
 		<label class="powermail_label">Community:</label>
 		<span class='multiple-input'>
@@ -47,26 +51,32 @@
 			<br/>
 		</span>
 	</div>
+
 	<div class="first-row">
 		<label class="powermail_label">Phone Number:</label>
-		<span><input id="phone-number" name="ph-number" type="text"></span>
+		<span><input id="phone-number" name="ph-number" ng-model="phone_number" type="text"></span>
 	</div>
+
 	<div class="second-row address-f">
 		<label class="powermail_label">Address 1:</label>
-		<span><input id="addres-first" name="addres-f" type="text"></span>
+		<span><input id="addres-first" name="addres-f"  ng-model="address_first" type="text"></span>
 	</div>
+
 	<div class="second-row address-s">
 		<label class="powermail_label">Address 2:</label>
-		<span><input id="addres-second" name="addres-s" type="text"></span>
+		<span><input id="addres-second" name="addres-s" ng-model="address_second" type="text"></span>
 	</div>
+
 	<div class="second-row address-city">
 		<label class="powermail_label">City:</label>
-		<span><input id="city" name="cit" type="text"></span>
+		<span><input id="city" name="cit" ng-model="city_name" type="text"></span>
 	</div>
+
 	<div class="second-row address-state">
 		<label class="powermail_label">State/Province:</label>
-		<span><input id="province" name="prov" type="text"></span>
+		<span><input id="province" name="prov" ng-model="state" type="text"></span>
 	</div>
+
 	<div class="second-row address-country"><label class="powermail_label">Country:</label>
 		<span>
 			<select>
@@ -75,6 +85,7 @@
 			</select>
 		</span>
 	</div>
+
 	<!-- <p href="#" class="submit-button st-button"><input type="submit" value="SUBMIT"></p> -->
-	<button type="button" class="btn submit-button st-button">SUBMIT</button>
+	<button type="button" ng-click="submit" class="btn submit-button st-button">SUBMIT</button>
 </fieldset>
