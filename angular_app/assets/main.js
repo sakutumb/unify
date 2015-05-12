@@ -156,9 +156,27 @@ var unifyModule = angular.module('UnifyApp', [
                     'product': {
                         controller: 'ProductCtrl',
                         templateUrl: '/assets/templates/product.html'
+                    },
+                    'menulist@product': {
+                        controller: 'ProductMenuCtrl',
+                        templateUrl: '/assets/partials/product/menulist.html'
                     }
                 }
+            // The product tabs
+            }).state('product.dashboard', {
+                templateUrl: '/assets/partials/product/dashboard.html'
+            }).state('product.clients', {
+                templateUrl: '/assets/partials/product/clients.html'
+            }).state('product.addclients', {
+                templateUrl: '/assets/partials/product/addclients.html'
+            }).state('product.search', {
+                templateUrl: '/assets/partials/product/search.html'
+            }).state('product.inbox', {
+                templateUrl: '/assets/partials/product/inbox.html'
+            }).state('product.account', {
+                templateUrl: '/assets/partials/product/account.html'
             });
+
         }]).run(['$rootScope', '$timeout',
         function($rootScope, $timeout) {
             $rootScope.loginFormVisible = false;

@@ -1,10 +1,5 @@
-<ul class="nav mobile-menu">
-	<li><a href="#">Dashboard</a></li>
-	<li><a href="#">Clients</a></li>
-	<li><a href="#">Add Clients</a></li>
-	<li><a href="#">Search</a></li>
-	<li><a href="#">Inbox</a></li>
-	<li class="active"><a href="#">Account</a></li>
+<ul class="nav mobile-menu" ui-view="menulist">
+	
 </ul>
 
 <div class="wrapper">
@@ -12,22 +7,15 @@
 		<div class="container">
 			<div class="header-wrapper">
 				<a href="#" class="main-logo"><img src="assets/images/logo.png" alt="logo"></a>
-				<ul  class="nav main-menu">
-					<li><a href="#">Dashboard</a></li>
-					<li><a href="#">Clients</a></li>
-					<li><a href="#">Add Clients</a></li>
-					<li><a href="#">Search</a></li>
-					<li><a href="#">Inbox</a></li>
-					<li class="active"><a href="#">Account</a></li>
+				<ul class="nav main-menu" ui-view="menulist">
+
 				</ul>
-				<a href="#" class="menu-button"></a>
-				<a href="#" class="logout-button">LOGOUT</a>
+				<a href="#" ng-click="openMenu()" class="menu-button"></a>
+				<a href="#" ng-click="logout()" class="logout-button">LOGOUT</a>
 			</div>
 		</div>
 	</div>
 	<div class="content">
-		<div class="container">
-			
-		</div>
+		<div class="container" ui-view></div>
 	</div>
 </div>
