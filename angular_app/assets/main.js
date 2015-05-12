@@ -109,7 +109,7 @@ var unifyModule = angular.module('UnifyApp', [
                     }
                 }
             }).state('bureau', {
-                url: '/:bureau.html',
+                url: '/bureau.html',
                 views: {
                     'bureau': {
                         controller: 'IndexCtrl',
@@ -148,6 +148,14 @@ var unifyModule = angular.module('UnifyApp', [
                     'register': {
                         controller: 'RegistrationCtrl',
                         templateUrl: '/assets/partials/bureau/registration.html'
+                    }
+                }
+            }).state('product', {
+                url: '/product.html',
+                views: {
+                    'product': {
+                        controller: 'ProductCtrl',
+                        templateUrl: '/assets/templates/product.html'
                     }
                 }
             });
