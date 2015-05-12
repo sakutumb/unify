@@ -24,10 +24,11 @@ a:focus, a:visited {
 }
 .wrapper {
 	background-color: #e9dbc9;
-	position: relative;
+	position: absolute;
 	min-height: 100%;
 	/*padding-bottom: 195px;*/
 	min-width: 320px;
+	width: 100%;
 	transform: translate(0px, 0px);
 	transition: transform 1s ease 0s;
 	z-index: 15;
