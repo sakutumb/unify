@@ -8,22 +8,22 @@
 
 		<div class="first-row">
 			<label class="powermail_label">Business Name:</label>
-			<div ng-show="form.$submitted || form.business_name.$touched">
-	      <div ng-show="form.business_name.$error.required">Tell us the name of your business.</div>
-	    </div>
 			<span>
 				<input id="Business-Name" name="business_name" ng-model="account.business_name" required type="text">
-			</span>			
+			</span>
+			<p ng-show="(form.$submitted || form.business_name.$touched) && form.business_name.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="first-row">
 			<label class="powermail_label">Business Location:</label>
-			<div ng-show="form.$submitted || form.business_location.$touched">
-	      <div ng-show="form.business_location.$error.required">Tell us the location of your business.</div>
-	    </div>
 			<span>
 				<input id="Business-Location" name="business_location" ng-model="account.business_location" required type="text">
 			</span>
+			<p ng-show="(form.$submitted || form.business_location.$touched) && form.business_location.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="first-row">
@@ -64,18 +64,18 @@
 
 		<div class="first-row">
 			<label class="powermail_label">Phone Number:</label>
-			<div ng-show="form.$submitted || form.phone_number.$touched">
-	      <div ng-show="form.phone_number.$error.required">Tell us the phone number of your business.</div>
-	    </div>
 			<span><input id="phone-number" name="phone_number" ng-model="account.phone_number" required type="text"></span>
+			<p ng-show="(form.$submitted || form.phone_number.$touched) && form.phone_number.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="second-row address-f">
 			<label class="powermail_label">Address 1:</label>
-			<div ng-show="form.$submitted || form.address_first.$touched">
-	      <div ng-show="form.address_first.$error.required">Tell us the address of your business.</div>
-	    </div>
 			<span><input id="addres-first" name="address_first"  ng-model="account.address_first" required type="text"></span>
+			<p ng-show="(form.$submitted || form.address_first.$touched) && form.address_first.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="second-row address-s">
@@ -85,18 +85,18 @@
 
 		<div class="second-row address-city">
 			<label class="powermail_label">City:</label>
-			<div ng-show="form.$submitted || form.city.$touched">
-	      <div ng-show="form.city.$error.required">Tell us the the city of your business.</div>
-	    </div>
 			<span><input id="city" name="city" ng-model="account.city" required type="text"></span>
+			<p ng-show="(form.$submitted || form.city.$touched) && form.city.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="second-row address-state">
 			<label class="powermail_label">State/Province:</label>
-			<div ng-show="form.$submitted || form.state.$touched">
-	      <div ng-show="form.state.$error.required">Tell us the the state/province of your business.</div>
-	    </div>
 			<span><input id="province" name="state" ng-model="account.state" required type="text"></span>
+			<p ng-show="(form.$submitted || form.state.$touched) && form.state.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="second-row address-country"><label class="powermail_label">Country:</label>

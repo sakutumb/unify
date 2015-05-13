@@ -45,3 +45,28 @@ a:focus, a:visited {
 	transform: translate(-250px, 0px);
 }
 
+fieldset > div {
+	position:relative;
+}
+
+.error-validation:before{
+	content:" ";
+	position:absolute;
+	top:-10px;
+	left:55px;
+	background-image: url(../../images/error-arrow.png);
+	background-repeat:no-repeat;
+	background-position:top center;
+	height:11px;
+	width:11px;
+}
+.error-validation{
+	position:absolute;
+	top:110%;
+	left:53%;
+	z-index:9999;
+	background-color: #793919;
+	color:#fff;
+	padding:5px 5px;
+	border-radius:3px;
+}
