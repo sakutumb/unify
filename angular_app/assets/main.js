@@ -174,6 +174,7 @@ var unifyModule = angular.module('UnifyApp', [
             }).state('product.inbox', {
                 templateUrl: '/assets/partials/product/inbox.html'
             }).state('product.account', {
+                controller: 'AccountCtrl',
                 templateUrl: '/assets/partials/product/account.html'
             });
 
