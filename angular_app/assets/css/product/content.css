@@ -1,0 +1,155 @@
+.content h1, .under-header-text {
+	text-align: center;
+	color: #793919;
+}
+.content h1 {
+	font-size: 30px;
+	margin-top: 62px;
+}
+.under-header-text {
+	font-size: 16px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+fieldset {
+	border: none;
+	position: relative;
+}
+
+.first-row {
+	width: 49%;
+}
+.second-row {
+	width: 49%;
+}
+fieldset div span input {
+	width: 90%;
+}
+fieldset div span select {
+	width: 90%;
+}
+.second-row {
+	position: absolute;
+	top: 6px;
+	right: 0;
+}
+.address-f {
+	top: 6px;
+}
+.address-s {
+	top: 79px;
+}
+.address-city {
+	top: 152px;
+}
+.address-state {
+	top: 225px;
+}
+.address-country {
+	top: 298px;
+}
+fieldset div span {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.first-row:first-child {
+	margin-top: 7px;
+}
+fieldset div span input, fieldset div span select {
+	height: 32px;
+	border-radius: 7px;
+	border: 1px solid #9b8a80;
+}
+fieldset div span select {
+	color: #793919;
+	font-size: 16px;
+}
+
+fieldset div label {
+	font-weight: 700;
+	color: #793919;
+	font-size: 16px;
+	margin-bottom: 0;
+}
+.submit-button {
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+	display: inherit;
+}
+.submit-button {
+	padding: 10px 25px;
+	cursor: pointer;
+	font-size: 14px;
+	background-color: rgba(136,82,55,0.6);
+	color: #fff !important;
+	border-radius: 7px;
+	max-width: 105px;
+	outline: none;
+	font-weight: bold;
+}
+.submit-button:hover {
+	background-color: rgba(136,82,55,1);
+}
+.under-header-text br {
+	display: none;
+}
+
+.multiple-input {
+	background-color: #fff;
+	height: 64px;
+	border-radius: 7px;
+	border: 1px solid #9b8a80;
+	overflow-y: scroll;
+	width: 90%;
+	text-align: left;
+}
+.multiple-input label {
+	font-weight: 400;
+}
+
+span.multiple-input label {
+	width: 100%;
+	cursor: pointer;
+}
+
+input[type='checkbox'] {
+	width: auto !important;
+	height: auto !important;
+	float: none !important;
+	/*display: table-cell;*/
+	padding-left: 5px;
+	margin-left: 5px;
+	vertical-align: middle;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+select[name=countries] {
+	height: auto;
+	padding-top: 3px;
+	padding-left: 3px;
+	/*overflow: hidden;*/
+}
+@media (max-width: 768px) {
+	.under-header-text br {
+		display: block;
+	}
+	.first-row:first-child {
+		margin-top: 0px;
+	}
+	fieldset div span {
+		text-align: center;
+	}
+	fieldset div span input, fieldset div span select, .multiple-input {
+		width: 100%;
+	}
+	.first-row {
+		width: auto;
+	}
+	.second-row {
+		width: auto;
+		position: static;
+	}
+}

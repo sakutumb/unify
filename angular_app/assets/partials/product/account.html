@@ -1,0 +1,116 @@
+<h1>Welcome To Account Setup</h1>
+
+<p class="under-header-text">Please enter your information.<br> All fields are required.</p>
+
+<form name="form" novalidate >
+
+	<fieldset>
+
+		<div class="first-row">
+			<label class="powermail_label">Business Name:</label>
+			<div ng-show="form.$submitted || form.business_name.$touched">
+	      <div ng-show="form.business_name.$error.required">Tell us the name of your business.</div>
+	    </div>
+			<span>
+				<input id="Business-Name" name="business_name" ng-model="account.business_name" required type="text">
+			</span>			
+		</div>
+
+		<div class="first-row">
+			<label class="powermail_label">Business Location:</label>
+			<div ng-show="form.$submitted || form.business_location.$touched">
+	      <div ng-show="form.business_location.$error.required">Tell us the location of your business.</div>
+	    </div>
+			<span>
+				<input id="Business-Location" name="business_location" ng-model="account.business_location" required type="text">
+			</span>
+		</div>
+
+		<div class="first-row">
+			<label class="powermail_label">Language:</label>
+			<span class='multiple-input'>
+				<label>
+					<input id="language-us" name="lang-us" type="checkbox" name="option1" value="US" /> US
+				</label> 
+				<br/>
+				<label>
+					<input id="language-canada" name="lang-canada" type="checkbox" name="option1" value="Canada" /> Canada
+				</label>
+				<br/>
+				<label>
+					<input id="language-italy" name="lang-italy" type="checkbox" name="option1" value="Italy" /> Italy
+				</label>
+				<br/>
+			</span>
+		</div>
+
+		<div class="first-row">
+			<label class="powermail_label">Community:</label>
+			<span class='multiple-input'>
+				<label>
+					<input id="community-afrika" name="comm-afrika" type="checkbox" name="option1" value="afrikanas" /> Afrikanas
+				</label>
+				<br/>
+				<label>
+					<input id="community-albania" name="comm-albania" type="checkbox" name="option1" value="albanian" /> Albanian
+				</label>
+				<br/>
+				<label>
+					<input id="community-arabic" name="comm-arabic" type="checkbox" name="option1" value="arabic" /> Arabic
+				</label>
+				<br/>
+			</span>
+		</div>
+
+		<div class="first-row">
+			<label class="powermail_label">Phone Number:</label>
+			<div ng-show="form.$submitted || form.phone_number.$touched">
+	      <div ng-show="form.phone_number.$error.required">Tell us the phone number of your business.</div>
+	    </div>
+			<span><input id="phone-number" name="phone_number" ng-model="account.phone_number" required type="text"></span>
+		</div>
+
+		<div class="second-row address-f">
+			<label class="powermail_label">Address 1:</label>
+			<div ng-show="form.$submitted || form.address_first.$touched">
+	      <div ng-show="form.address_first.$error.required">Tell us the address of your business.</div>
+	    </div>
+			<span><input id="addres-first" name="address_first"  ng-model="account.address_first" required type="text"></span>
+		</div>
+
+		<div class="second-row address-s">
+			<label class="powermail_label">Address 2:</label>
+			<span><input id="addres-second" name="address_second" ng-model="account.address_second" type="text"></span>
+		</div>
+
+		<div class="second-row address-city">
+			<label class="powermail_label">City:</label>
+			<div ng-show="form.$submitted || form.city.$touched">
+	      <div ng-show="form.city.$error.required">Tell us the the city of your business.</div>
+	    </div>
+			<span><input id="city" name="city" ng-model="account.city" required type="text"></span>
+		</div>
+
+		<div class="second-row address-state">
+			<label class="powermail_label">State/Province:</label>
+			<div ng-show="form.$submitted || form.state.$touched">
+	      <div ng-show="form.state.$error.required">Tell us the the state/province of your business.</div>
+	    </div>
+			<span><input id="province" name="state" ng-model="account.state" required type="text"></span>
+		</div>
+
+		<div class="second-row address-country"><label class="powermail_label">Country:</label>
+			<span>
+				<select>
+					<option value="1">United States</option>
+					<option value="2">Ukraine</option>
+				</select>
+			</span>
+		</div>
+
+		<!-- <p href="#" class="submit-button st-button"><input type="submit" value="SUBMIT"></p> -->
+		<input type="submit" ng-click="submit(account)" class="btn submit-button st-button" value="SUBMIT">
+
+	</fieldset>
+
+</form>

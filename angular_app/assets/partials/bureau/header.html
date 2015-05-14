@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="nav">
+            <div class="mm-logo">logo</div>
+            <div class="ads">
+                <img class="img-responsive ads" src="/assets/images/ad.jpg" width="100%" height="400px" />
+            </div>
+            <nav>
+                <a href="#" ng-click="$root.scrollToSection('#success')">SUCCESS STORIES</a>
+                <a href="#" ng-click="$root.scrollToSection('#candidates')">CANDIDATES</a>
+                <a href="#" ng-click="$root.scrollToSection('#faq')">FAQs</a>
+                <a ui-sref="bureau.login" ng-hide="$root.hasUserLoggedIn">LOGIN</a>
+                <a ui-sref="bureau.register" ng-hide="$root.hasUserLoggedIn">REGISTRATION</a>
+            </nav>
+            <span class="powered">&nbsp;</span>
+        </div>
+    </div>
+</div>
