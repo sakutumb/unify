@@ -27,39 +27,19 @@
 		</div>
 
 		<div class="first-row">
-			<label class="powermail_label">Language:</label>
-			<span class='multiple-input'>
-				<label>
-					<input id="language-us" name="lang-us" type="checkbox" name="option1" value="US" /> US
-				</label> 
-				<br/>
-				<label>
-					<input id="language-canada" name="lang-canada" type="checkbox" name="option1" value="Canada" /> Canada
-				</label>
-				<br/>
-				<label>
-					<input id="language-italy" name="lang-italy" type="checkbox" name="option1" value="Italy" /> Italy
-				</label>
-				<br/>
-			</span>
+			<label class="powermail_label">Language:</label>			
+			<span checkbox-list name="languages" required ng-model="account.languages" items="langOptions" value="id" label="name" class="multiple-input"></span>
+			<p ng-show="(form.$submitted || form.languages.$touched) && form.languages.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="first-row">
 			<label class="powermail_label">Community:</label>
-			<span class='multiple-input'>
-				<label>
-					<input id="community-afrika" name="comm-afrika" type="checkbox" name="option1" value="afrikanas" /> Afrikanas
-				</label>
-				<br/>
-				<label>
-					<input id="community-albania" name="comm-albania" type="checkbox" name="option1" value="albanian" /> Albanian
-				</label>
-				<br/>
-				<label>
-					<input id="community-arabic" name="comm-arabic" type="checkbox" name="option1" value="arabic" /> Arabic
-				</label>
-				<br/>
-			</span>
+			<span checkbox-list name="community" required ng-model="account.community" items="communityOptions" value="id" label="name" class="multiple-input"></span>
+			<p ng-show="(form.$submitted || form.community.$touched) && form.community.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="first-row">
@@ -80,7 +60,10 @@
 
 		<div class="second-row address-s">
 			<label class="powermail_label">Address 2:</label>
-			<span><input id="addres-second" name="address_second" ng-model="account.address_second" type="text"></span>
+			<span><input id="addres-second" name="address_second" ng-model="account.address_second" required type="text"></span>
+			<p ng-show="(form.$submitted || form.address_second.$touched) && form.address_second.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<div class="second-row address-city">
