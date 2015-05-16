@@ -1,41 +1,39 @@
 'use strict';
 
 angular.module('UnifyApp').
-  controller('AccountCtrl', ['$scope',
-    function ($scope) {
+  controller('AccountCtrl', ['$scope', 'UnifyService',
+    function ($scope, UnifyService) {
 
-      $scope.account = {}
-      $scope.account.languages = [];
-      $scope.account.community = [];
-
+      $scope.account = UnifyService.getAccountData();
       $scope.langOptions = [];
       $scope.communityOptions = [];
+      $scope.countryOptions = [];
 
       $scope.submit = function (account) {
-        console.log(account);
-        // Code to submit form
+        $scope.$broadcast('show-errors-check-validity');
+
+        if ($scope.form.$valid) {
+          console.log($scope.account);
+          // Code to submit form
+        }
+        
       }
 
       $scope.loadLanguages = function () { // Dummy function to load languages
-        $scope.langOptions = 
-          [
-            {"id": "en", "name": " English"},
-            {"id": "pt", "name": " Portugues"},
-            {"id": "sp", "name": " Spanish"}
-          ];
+        $scope.langOptions = UnifyService.getLanguageOptions();
       }
 
       $scope.loadCommunities = function () { // Dummy function to load communities
-        $scope.communityOptions = 
-          [
-            {"id": "afrikanas", "name": " Afrikanas"},
-            {"id": "albanian", "name": " Albanian"},
-            {"id": "arabic", "name": " Arabic"}
-          ];
+        $scope.communityOptions = UnifyService.getCommunityOptions();
       }
 
-      $scope.loadCommunities();
+      $scope.loadCountries = function () { // Dummy function to load countries
+        $scope.countryOptions = UnifyService.getCountryOptions();
+      }
+
       $scope.loadLanguages();
+      $scope.loadCommunities();
+      $scope.loadCountries();
 
  		}
   ]);

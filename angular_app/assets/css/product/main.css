@@ -17,10 +17,11 @@ a:focus, a:visited {
 	text-decoration: none;
 }
 .container {
-	/*padding: 0 15px;*/
-	max-width: 985px;
-	width: 100% !important;
-	margin: 0 auto;
+	/*padding: 0 15px;
+  max-width: 985px; */
+  max-width: 1170px;
+  width: 100% !important;
+  margin: 0 auto;
 }
 .wrapper {
 	background-color: #e9dbc9;

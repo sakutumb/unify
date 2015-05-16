@@ -6,21 +6,17 @@
 
 	<fieldset>
 
-		<div class="first-row">
+		<div class="first-row form-group" show-errors="{ showSuccess: true }">
 			<label class="powermail_label">Business Name:</label>
-			<span>
-				<input id="Business-Name" name="business_name" ng-model="account.business_name" required type="text">
-			</span>
+			<input id="Business-Name" class="form-control" name="business_name" ng-model="account.business_name" required type="text">
 			<p ng-show="(form.$submitted || form.business_name.$touched) && form.business_name.$error.required" class="error-validation">
 				Please Complete.
 			</p>
 		</div>
 
-		<div class="first-row">
+		<div class="first-row form-group" show-errors="{ showSuccess: true }">
 			<label class="powermail_label">Business Location:</label>
-			<span>
-				<input id="Business-Location" name="business_location" ng-model="account.business_location" required type="text">
-			</span>
+			<input id="Business-Location" class="form-control" name="business_location" ng-model="account.business_location" required type="text">
 			<p ng-show="(form.$submitted || form.business_location.$touched) && form.business_location.$error.required" class="error-validation">
 				Please Complete.
 			</p>
@@ -42,53 +38,54 @@
 			</p>
 		</div>
 
-		<div class="first-row">
+		<div class="first-row form-group" show-errors="{ showSuccess: true }">
 			<label class="powermail_label">Phone Number:</label>
-			<span><input id="phone-number" name="phone_number" ng-model="account.phone_number" required type="text"></span>
+			<input id="phone-number" class="form-control" name="phone_number" ng-model="account.phone_number" required type="text">
 			<p ng-show="(form.$submitted || form.phone_number.$touched) && form.phone_number.$error.required" class="error-validation">
 				Please Complete.
 			</p>
 		</div>
 
-		<div class="second-row address-f">
+		<div class="second-row address-f form-group" show-errors="{ showSuccess: true }">
 			<label class="powermail_label">Address 1:</label>
-			<span><input id="addres-first" name="address_first"  ng-model="account.address_first" required type="text"></span>
+			<input id="addres-first" class="form-control" name="address_first" ng-model="account.address_first" required type="text"/>
 			<p ng-show="(form.$submitted || form.address_first.$touched) && form.address_first.$error.required" class="error-validation">
 				Please Complete.
 			</p>
 		</div>
 
-		<div class="second-row address-s">
+		<div class="second-row address-s form-group" show-errors="{ showSuccess: true }">
 			<label class="powermail_label">Address 2:</label>
-			<span><input id="addres-second" name="address_second" ng-model="account.address_second" required type="text"></span>
+			<input id="addres-second" class="form-control" name="address_second" ng-model="account.address_second" required type="text"/>
 			<p ng-show="(form.$submitted || form.address_second.$touched) && form.address_second.$error.required" class="error-validation">
 				Please Complete.
 			</p>
 		</div>
 
-		<div class="second-row address-city">
+		<div class="second-row address-city form-group" show-errors="{ showSuccess: true }">
 			<label class="powermail_label">City:</label>
-			<span><input id="city" name="city" ng-model="account.city" required type="text"></span>
+			<input id="city" class="form-control" name="city" ng-model="account.city" required type="text">
 			<p ng-show="(form.$submitted || form.city.$touched) && form.city.$error.required" class="error-validation">
 				Please Complete.
 			</p>
 		</div>
 
-		<div class="second-row address-state">
+		<div class="second-row address-state form-group" show-errors="{ showSuccess: true }">
 			<label class="powermail_label">State/Province:</label>
-			<span><input id="province" name="state" ng-model="account.state" required type="text"></span>
+			<input id="province" class="form-control" name="state" ng-model="account.state" required type="text">
 			<p ng-show="(form.$submitted || form.state.$touched) && form.state.$error.required" class="error-validation">
 				Please Complete.
 			</p>
 		</div>
 
-		<div class="second-row address-country"><label class="powermail_label">Country:</label>
-			<span>
-				<select>
-					<option value="1">United States</option>
-					<option value="2">Ukraine</option>
-				</select>
-			</span>
+		<div class="second-row address-country form-group" show-errors="{ showSuccess: true }">
+			<label class="powermail_label">Country:</label>
+			<select name="country" ng-model="account.country" required class="form-control">
+				<option ng-repeat="c in countryOptions" value="{{c.id}}">{{c.name}}</option>
+			</select>
+			<p ng-show="(form.$submitted || form.country.$touched) && form.country.$error.required" class="error-validation">
+				Please Complete.
+			</p>
 		</div>
 
 		<!-- <p href="#" class="submit-button st-button"><input type="submit" value="SUBMIT"></p> -->
