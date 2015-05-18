@@ -1,13 +1,13 @@
 <div class="row ">
 	<div class="user-info-img  pull-left col-xs-12 col-sm-5  col-md-5">
-		<img src="assets/images/image-client.png" alt="user">
+		<img ng-src="{{userinfo.profile_picture || 'assets/images/image-client.png'}}" alt="user">
 	</div>
-	<div class="user-info-descr col-xs-12 col-sm-7   col-md-7">
+	<div class="user-info-descr col-xs-12 col-sm-7 col-md-7">
 		<h3>Welcome!</h3>
-		<p class="user-info-name">Michelle Wong</p>
-		<p class="user-info-description">Table For Two</p>
-		<p class="user-info-place">San Francisco, United States</p>
+		<p class="user-info-name">{{userinfo.name}}</p>
+		<p class="user-info-description">{{userinfo.description}}</p>
+		<p class="user-info-place">{{userinfo.place}}</p>
 		<p class="user-info-visit">Last Visit:</p>
-		<p class="user-info-visit-date">12-16-14 12:34 PM  (Tuesday)</p>
+		<p class="user-info-visit-date">{{userinfo.visit_date | date:'dd-MM-yy hh:mm a (EEEE)'}}</p>
 	</div>
 </div>
