@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('UnifyApp').
-  controller('AccountCtrl', ['$scope', 'UnifyService',
-    function($scope, UnifyService) {
+  controller('AccountCtrl', ['$scope', 'UnifyProductService',
+    function($scope, UnifyProductService) {
 
-      $scope.account = UnifyService.getAccountData();
+      $scope.account = UnifyProductService.getAccountData();
       $scope.langOptions = [];
       $scope.communityOptions = [];
       $scope.countryOptions = [];
@@ -21,15 +21,15 @@ angular.module('UnifyApp').
       }
 
       $scope.loadLanguages = function() { // Dummy function to load languages
-        $scope.langOptions = UnifyService.getLanguageOptions();
+        $scope.langOptions = UnifyProductService.getLanguageOptions();
       }
 
       $scope.loadCommunities = function() { // Dummy function to load communities
-        $scope.communityOptions = UnifyService.getCommunityOptions();
+        $scope.communityOptions = UnifyProductService.getCommunityOptions();
       }
 
       $scope.loadCountries = function() { // Dummy function to load countries
-        $scope.countryOptions = UnifyService.getCountryOptions();
+        $scope.countryOptions = UnifyProductService.getCountryOptions();
       }
 
       $scope.loadLanguages();

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('UnifyApp').
-  controller('DashboardCtrl', ['$scope', 'UnifyService',
-  	function($scope, UnifyService) {
+  controller('DashboardCtrl', ['$scope', 'UnifyProductService',
+  	function($scope, UnifyProductService) {
 
   	}
 
