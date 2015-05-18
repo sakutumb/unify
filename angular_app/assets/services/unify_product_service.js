@@ -4,6 +4,18 @@ angular.module('UnifyApp')
   .factory('UnifyProductService', ['$http', function ($http) {
   	return {
 
+  		/** Dashboard Tab **/
+  		// Dummy funcions for the dashboard tab
+  		getUserInfoData : function(){
+  			return {
+  				profile_picture: null,
+  				name: "Michelle Wong",
+  				description: "Table For Two",
+  				place: "San Francisco, United States",
+  				visit_date: new Date()
+  			}
+  		},
+
   		/** Account Tab **/
   		// Dummy funcions for the account tab
 	 		getAccountData : function(){ 
@@ -48,7 +60,7 @@ angular.module('UnifyApp')
             {"id": "ukraine", "name": " Ukraine"}
           ];
         return array;
-      }
+      }     
   	}
   }
 ]);
