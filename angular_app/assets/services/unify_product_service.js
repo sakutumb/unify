@@ -15,6 +15,13 @@ angular.module('UnifyApp')
   				visit_date: new Date()
   			}
   		},
+  		getUserCountData : function(){
+  			return {
+  				male_clients: 567,
+  				female_clients: 879,
+  				candidates: 30.456
+  			}
+  		},
 
   		/** Account Tab **/
   		// Dummy funcions for the account tab

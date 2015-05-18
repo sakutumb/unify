@@ -6,6 +6,8 @@ angular.module('UnifyApp').
 
   		$scope.userinfo = UnifyProductService.getUserInfoData();
 
+  		$scope.usercount = UnifyProductService.getUserCountData();
+
   	}
 
   ]);
