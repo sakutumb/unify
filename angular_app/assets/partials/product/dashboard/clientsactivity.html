@@ -4,13 +4,13 @@
 <div class="user-search-content">
 	<p>Recently Activity:</p>
 	<div class="user-search-wrapper-descript">
-		<div ng-repeat="activity in clientsactivity" class="row">
+		<div ng-repeat="item in clientsactivity" class="row">
 			<div class="user-search-img  pull-left col-xs-2 col-sm-2">
-				<img ng-src="{{activity.user.profile_picture || loadProfilePlaceholder(activity.user.gender)}}" alt="user">
+				<img ng-src="{{item.user.profile_picture || loadProfilePlaceholder(item.user.gender)}}" alt="user">
 			</div>
 			<div class="user-search-text col-xs-10 col-sm-10 ">
-				<a class="user-search-name">{{activity.user.clientName}}</a>
-				<p class="user-search-descript" compile="activity.descript"></p>
+				<a class="user-search-name">{{item.user.clientName}}</a>
+				<p class="user-search-descript" compile="item.descript"></p>
 			</div>
 		</div>
 </div>

@@ -34,8 +34,8 @@ angular.module('UnifyApp')
   		getClientsActivityList : function(){
   			var array = new Array();
   			// This template come from the server and can be assembled with different phrases
-  			var template = 'Recently viewed <a class="darkerColor" href="#/client/{{activity.citedUser.id}}">' +
-  										 '{{activity.citedUser.clientName}}’s</a> profile.';
+  			var template = 'Recently viewed <a class="darkerColor" href="/#/client/{{item.citedUser.id}}">' +
+  										 '{{item.citedUser.clientName}}’s</a> profile.';
         array = 
           [
             {
@@ -60,6 +60,10 @@ angular.module('UnifyApp')
             }
           ];
         return array;
+  		},
+  		getRecommendationsList : function(){
+  			// Same data as above
+  			return this.getClientsActivityList();
   		},
 
   		/** Account Tab **/
