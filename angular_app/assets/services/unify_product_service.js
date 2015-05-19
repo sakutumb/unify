@@ -62,8 +62,37 @@ angular.module('UnifyApp')
         return array;
   		},
   		getRecommendationsList : function(){
-  			// Same data as above
+  			// Same data as above for while
   			return this.getClientsActivityList();
+  		},
+  		getInboxList : function(){
+  			var array = new Array();
+  			// This template come from the server and can be assembled with different phrases
+  			var template = 'Subject: <a href="/#/message/{{item.citedMessage.id}}">“{{{item.citedMessage.subject}}”</a>';
+        array = 
+          [
+            {
+            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+            	citedMessage: {id: 1, subject: "Ray Johnson"},
+            	descript: template
+            },
+            {
+            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+            	citedMessage: {id: 2, subject: "I Need More Information"},
+            	descript: template
+            },
+            {
+            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+            	citedMessage: {id: 3, subject: "Ray Johnson"},
+            	descript: template
+            },
+            {
+            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+            	citedMessage: {id: 4, subject: "Ray Johnson"},
+            	descript: template
+            }
+          ];
+        return array;
   		},
 
   		/** Account Tab **/
