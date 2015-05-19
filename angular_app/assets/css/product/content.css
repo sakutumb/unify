@@ -307,7 +307,7 @@ select[name=countries] {
 	}
 }
 
-.user-search .user-search-input button{
+.user-search .user-search-input .submit-button{
 	width: 15%;
 	float: right;
 	margin-top: 0;

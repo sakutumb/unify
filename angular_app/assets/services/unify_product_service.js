@@ -22,6 +22,15 @@ angular.module('UnifyApp')
   				candidates: 30.456
   			}
   		},
+  		getClientList : function(){
+  			var array = new Array();
+        array = 
+          [
+            {id: 1, clientName: "Velasquez, Henry"},
+            {id: 2, clientName: "Jenifer, Ralston"}
+          ];
+        return array;
+  		},
 
   		/** Account Tab **/
   		// Dummy funcions for the account tab
