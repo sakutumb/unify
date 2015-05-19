@@ -22,12 +22,42 @@ angular.module('UnifyApp')
   				candidates: 30.456
   			}
   		},
-  		getClientList : function(){
+  		getClientsList : function(){
   			var array = new Array();
         array = 
           [
             {id: 1, clientName: "Velasquez, Henry"},
             {id: 2, clientName: "Jenifer, Ralston"}
+          ];
+        return array;
+  		},
+  		getClientsActivityList : function(){
+  			var array = new Array();
+  			// This template come from the server and can be assembled with different phrases
+  			var template = 'Recently viewed <a class="darkerColor" href="#/client/{{activity.citedUser.id}}">' +
+  										 '{{activity.citedUser.clientName}}’s</a> profile.';
+        array = 
+          [
+            {
+            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+            	citedUser: {id: 3, clientName: "Tom Gomez"},
+            	descript: template
+            },
+            {
+            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+            	citedUser: {id: 3, clientName: "Tom Gomez"},
+            	descript: template
+            },
+            {
+            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+            	citedUser: {id: 3, clientName: "Tom Gomez"},
+            	descript: template
+            },
+            {
+            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+            	citedUser: {id: 3, clientName: "Tom Gomez"},
+            	descript: template
+            }
           ];
         return array;
   		},

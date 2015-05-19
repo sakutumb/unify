@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('UnifyApp').directive("compareTo", function() {
+angular.module('UnifyApp')
+
+.directive("compareTo", function() {
     return {
         require: "ngModel",
         scope: {
@@ -17,10 +19,10 @@ angular.module('UnifyApp').directive("compareTo", function() {
             });
         }
     };
-});
+})
 
 // Directive to create a list of checkbox with validation
-angular.module('UnifyApp').directive('checkboxList', function () {
+.directive('checkboxList', function () {
     return {
         restrict: 'A',
         replace: true,
@@ -65,5 +67,25 @@ angular.module('UnifyApp').directive('checkboxList', function () {
                 }
             }, true);
         }
+    };
+})
+
+// Directive to compile the html, see https://docs.angularjs.org/api/ng/service/$compile
+.directive('compile', function($compile) {
+    // directive factory creates a link function
+    return function(scope, element, attrs) {
+        scope.$watch(
+            function(scope) {
+             // watch the 'compile' expression for changes
+            return scope.$eval(attrs.compile);
+            },
+            function(value) {
+                // when the 'compile' expression changes
+                // assign it into the current DOM
+                element.html(value);
+                // compile the new DOM and link it to the current scope.
+                $compile(element.contents())(scope);
+            }
+        );
     };
 });
