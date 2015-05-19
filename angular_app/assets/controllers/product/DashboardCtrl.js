@@ -15,6 +15,8 @@ angular.module('UnifyApp').
 
 	  $scope.recommendations = UnifyProductService.getRecommendationsList();
 
+	  $scope.inboxlist = UnifyProductService.getInboxList();
+
 	  $scope.searchClientById = function(isValid) {
 	  	$scope.clientSearchId // Selected client id
 	  	if (isValid) { // The form is valid
