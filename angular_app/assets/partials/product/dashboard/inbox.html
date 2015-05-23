@@ -1,0 +1,17 @@
+<div class="user-search-header third">
+	<p>Inbox</p>
+</div>
+<div class="user-search-content">
+	<p>Recent Mail:</p>
+	<div class="user-search-wrapper-descript">
+		<div class="row" ng-repeat="item in recommendations">
+			<div class="user-search-img  pull-left col-xs-2 col-sm-2">
+				<img ng-src="{{item.user.profile_picture || loadProfilePlaceholder(item.user.gender)}}" alt="user">
+			</div>
+			<div class="user-search-text col-xs-10 col-sm-10 ">
+				<a class="user-search-name">{{item.user.clientName}}</a>
+				<p class="user-search-descript" compile="item.descript"></p>
+			</div>
+		</div>
+	</div>
+</div>

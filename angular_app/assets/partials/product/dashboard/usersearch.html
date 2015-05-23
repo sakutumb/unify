@@ -1,0 +1,31 @@
+<p>Client Search:</p>
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<form name="clientByIdForm" novalidate>
+			<div class="user-search-input form-group">
+				<select name="clientSearchId" class="form-control" ng-model="clientSearchId" required>
+					<option ng-repeat="c in clientlist" value="{{c.id}}">{{c.clientName}}</option>
+				</select>
+				<p ng-show="clientByIdForm.$submitted && clientByIdForm.clientSearchId.$error.required" class="error-validation">
+					Please Complete.
+				</p>
+				<span class="user-search-input-btn">
+					<input ng-click="searchClientById(clientByIdForm.$valid)" class="btn btn-default submit-button" value="Go!" type="submit">
+				</span>
+			</div>
+		</form>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<form name="clientByNameForm" novalidate>
+			<div class="user-search-input form-group">
+				<input name="clientSearchName" ng-model="clientSearchName" required type="text" class="form-control" placeholder="Enter Client Name">
+				<p ng-show="clientByNameForm.$submitted && clientByNameForm.clientSearchName.$error.required" class="error-validation">
+					Please Complete.
+				</p>
+				<span class="user-search-input-btn">
+					<input ng-click="searchClientByName(clientByNameForm.$valid)" class="btn btn-default submit-button" value="Go!" type="submit">
+				</span>
+			</div>
+		</form>
+	</div>
+</div>

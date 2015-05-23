@@ -50,6 +50,15 @@
 
     <script src="/assets/main.js?body=1"></script>
 
+    <!-- product controllers -->
+    <script src="/assets/controllers/product/ProductCtrl.js?body=1"></script>
+    <script src="/assets/controllers/product/ProductMenuCtrl.js?body=1"></script>
+    <script src="/assets/controllers/product/AccountCtrl.js?body=1"></script>
+    <script src="/assets/controllers/product/DashboardCtrl.js?body=1"></script>    
+     <!-- product services -->
+    <script src="/assets/services/unify_product_service.js?body=1"></script>
+    <!-- -->
+
     <script src="/assets/controllers/BureauCtrl.js?body=1"></script>
     <script src="/assets/controllers/HeroCtrl.js?body=1"></script>
     <script src="/assets/controllers/IndexCtrl.js?body=1"></script>
@@ -61,12 +70,11 @@
     <script src="/assets/services/unify_services.js?body=1"></script>
     <script src="/assets/directives/directives.js?body=1"></script>
 
-
 </head>
 <body>
 
 <div id="main-container">
-    <div ui-view="index"></div>
+    <div ui-view="product"></div>
 </div>
 
 </body>
