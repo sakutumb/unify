@@ -164,6 +164,7 @@ var unifyModule = angular.module('UnifyApp', [
                 }
             // The product tabs
             }).state('product.dashboard', {
+                controller: 'DashboardCtrl',
                 templateUrl: '/assets/partials/product/dashboard.html'
             }).state('product.clients', {
                 templateUrl: '/assets/partials/product/clients.html'
