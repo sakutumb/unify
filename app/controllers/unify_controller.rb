@@ -21,6 +21,8 @@ class UnifyController < ApplicationController
     elsif (dynamic_route.present? && dynamic_route.length > 0)
       if (dynamic_route == 'prospect')
         @ui_view = 'prospect'
+      elsif (dynamic_route == 'product')
+          @ui_view = 'product'  #TODO: Name it correctly
       else
         @ui_view = 'bureau'
       end
