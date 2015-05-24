@@ -16,4 +16,5 @@
  *= require ../home
  *= require ../matchmaker
  *= require ../custom
+ *= require_tree ../product
  */
