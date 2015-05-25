@@ -172,8 +172,23 @@ var unifyModule = angular.module('UnifyApp', [
                 templateUrl: '/assets/partials/product/addclients.html'
             }).state('product.search', {
                 templateUrl: '/assets/partials/product/search.html'
+
             }).state('product.inbox', {
-                templateUrl: '/assets/partials/product/inbox.html'
+              controller: 'InboxCtrl',
+              templateUrl: '/assets/partials/product/inbox.html'
+            }).state('product.inbox.compose', {
+              templateUrl: '/assets/partials/product/inbox/compose.html'
+            }).state('product.inbox.inbox', {
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+            }).state('product.inbox.sent', {
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+            }).state('product.inbox.shortlisted', {
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+             }).state('product.inbox.notinterested', {
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+             }).state('product.inbox.trash', {
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+
             }).state('product.account', {
                 controller: 'AccountCtrl',
                 templateUrl: '/assets/partials/product/account.html'

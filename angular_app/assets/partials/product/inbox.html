@@ -1,0 +1,27 @@
+<div class="standart-block-wrapper">
+  <nav class="navbar navbar-default  standart-block-header">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav sub-list">
+          <li ui-sref="product.inbox.compose" ui-sref-active="active"><a>COMPOSE</a></li>
+          <li ui-sref="product.inbox.inbox" ui-sref-active="active"><a>INBOX</a></li>
+          <li ui-sref="product.inbox.sent" ui-sref-active="active"><a>SENT</a></li>
+          <li ui-sref="product.inbox.shortlisted" ui-sref-active="active"><a>SHORTLISTED</a></li>
+          <li ui-sref="product.inbox.notinterested" ui-sref-active="active"><a>NOT INTERESTED</a></li>
+          <li ui-sref="product.inbox.trash" ui-sref-active="active"><a>TRASH</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="standart-block-content no-padding">
+    <div class="row" ui-view>
+    
+    </div>
+  </div>
+</div>

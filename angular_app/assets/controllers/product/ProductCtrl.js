@@ -4,7 +4,7 @@ angular.module('UnifyApp').
   controller('ProductCtrl', ['$scope', '$state',
     function($scope, $state) {
 
-      // for now, redirect to account
+      // for now, redirect to dashboard
       $state.transitionTo('product.dashboard');
 
       $scope.openMenu = function() {

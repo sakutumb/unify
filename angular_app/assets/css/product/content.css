@@ -314,3 +314,219 @@ select[name=countries] {
 	padding: 6px 25px;
 }
 /*dashboard*/
+
+/*Inbox*/
+.standart-block-wrapper {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.navbar-default.standart-block-header {
+  margin-bottom: 0;
+  background-color: #664b3c;
+  border: none;
+  /* Fix the conflict with the matchmaker.css */
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.navbar-default.standart-block-header .navbar-nav > .active > a, .navbar-default.standart-block-header .navbar-nav > .active > a:focus, .navbar-default.standart-block-header .navbar-nav > .active > a:hover {
+  color: #fff !important;
+  background-color: none !important;
+}
+@media (max-width: 768px) {
+  .navbar-default.standart-block-header .sub-list li {
+    display: block;
+  }
+}
+.standart-block-header .sub-list {
+  margin: 0;
+  padding: 0;
+  background-color: #664b3c;
+  padding: 18px;
+}
+.standart-block-header .sub-list li {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.standart-block-header .sub-list .active {
+  background-color: none;
+  background: none;
+}
+.standart-block-header .sub-list li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #c88b69;
+  text-transform: uppercase;
+}
+.standart-block-header .sub-list .active a {
+  color: #fff;
+}
+.standart-block-header .sub-list li:hover a {
+  color: #fff;
+}
+.navbar-default.standart-block-header .navbar-nav > .active > a, .navbar-default.standart-block-header .navbar-nav > .active > a:focus, .navbar-default.standart-block-header .navbar-nav > .active > a:hover {
+  background-color: transparent;
+}
+
+.standart-block-content {
+  background-color: #fff;
+  border: 1px solid #9b8a80;
+  min-height: 530px;
+  padding: 0 70px 53px 200px;
+  padding: 0 7.3% 6.2% 21.5%;
+}
+
+.standart-block-content .input-form-wrapper .submit-button {
+  display: inline-block;
+  max-width: 100% !important;
+}
+
+.input-form-wrapper > a {
+  clear: both;
+  display: block;
+  margin-top: 15px;
+  color: #a4a4a4;
+  text-decoration: none;
+  font-size: 16px;
+  padding-left: 25px;
+  position: relative;
+}
+.input-form-wrapper > a:before {
+  content: ' ';
+  position: absolute;
+  background-image: url(../Images/upload-btn.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 18px;
+  width: 22px;
+  left: 0px;
+}
+.input-form-wrapper {
+  max-width: 895px;
+  background-color: #e9dbc9;
+  padding: 0 200px 75px 65px;
+  padding: 0 21.5% 8.5% 7.9%;
+}
+.input-form-wrapper input {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .input-form-wrapper {
+    padding: 20px;
+    padding-top: 0;
+  }
+  .standart-block-content {
+    padding: 10px;
+    padding-top: 0;
+    min-height: inherit;
+  }
+}
+textarea {
+  resize: none;
+  min-height: 180px;
+}
+.chosen-container-multi .chosen-choices {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/*Inbox*/
+
+/*trash*/
+.standart-block-content.no-padding {
+  padding: 0;
+}
+.trash-user-list {
+  margin: 0;
+  padding: 0;
+}
+.trash-user-list li {
+  list-style: none;
+  background-color: #f9efe3;
+  border-bottom: 1px solid #9b8a80;
+  border-right: 1px solid #9b8a80;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.trash-user-list .active .user-search-name {
+  color: #d76018;
+}
+.trash-user-list li .user-search-name {
+  color: #793919;
+}
+.trash-user-list li:last-child {
+  border-bottom: none;
+}
+.trash-user-list li:first-child {
+  border-bottom: none;
+}
+.trash-user-list li:hover {
+  background-color: #fff;
+  border-right: 1px solid #fff;
+}
+.trash-user-list .active {
+  background-color: #fff;
+  border-right: 1px solid #fff;
+}
+@media (max-width: 768px) {
+  .trash-user-list li {
+    border-right: none;
+  }
+  .trash-user-list li:hover {
+    border-right: none;
+  }
+  .trash-user-list .active {
+    border-right: none;
+  }
+}
+.trash-user-read-more {
+  display: block;
+  color: #040404;
+}
+.right-text-column h1 {
+  color: #793919;
+  font-size: 30px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.right-text-column a {
+  font-size: 16px;
+  color: #793919;
+  font-weight: 700;
+}
+.right-text-column p {
+  font-size: 16px;
+}
+
+.go-back {
+  font-size: 20px;
+  color: #e9dbc9;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: block;
+  width: 20px;
+}
+.go-back:hover {
+  color: #fff;
+}
+
+.right-text-column {
+  padding: 15px;
+}
+/*trash*/
