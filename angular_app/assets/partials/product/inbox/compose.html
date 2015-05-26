@@ -1,0 +1,22 @@
+<div class="standart-block-content">
+  <div class="row">
+    <div class="input-form-wrapper">
+      <div>
+        <!-- Check directive for help https://github.com/localytics/angular-chosen -->
+        <select data-placeholder="To"
+                chosen
+                multiple
+                class="chosen-select-width form-control"
+                ng-model="contacts"
+                ng-options="c.id as c.name for c in contactOptions">
+          <option value=""></option>
+        </select>
+      </div>
+      <input type="text" class="form-control" placeholder="Enter a subject">
+      <textarea class="form-control" placeholder="Type your message...."></textarea>
+      <a href="#"><i class='attach-file-icon'></i>Attach files</a>
+      <button ng-click="send()" class="btn btn-default submit-button" type="button">Send Message</button>
+      <button class="btn btn-default submit-button" type="button">Cancel</button>
+    </div>
+  </div>
+</div>

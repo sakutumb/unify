@@ -396,7 +396,7 @@ select[name=countries] {
 .input-form-wrapper > a:before {
   content: ' ';
   position: absolute;
-  background-image: url(../Images/upload-btn.png);
+  background-image: url(../../images/upload-btn.png);
   background-position: left center;
   background-repeat: no-repeat;
   height: 18px;

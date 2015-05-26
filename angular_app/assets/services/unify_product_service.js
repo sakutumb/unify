@@ -95,6 +95,20 @@ angular.module('UnifyApp')
         return array;
   		},
 
+      /** Inbox Tab  **/
+      getComposeContacts : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, name: "Denish Herron"},
+            {id: 2, name: "James Bond"},
+            {id: 3, name: "Indiana Jones"},
+            {id: 4, name: "Luk Skayvoker"},
+            {id: 5, name: "Harry Potter"}
+          ];
+        return array;
+      },
+
   		/** Account Tab **/
   		// Dummy funcions for the account tab
 	 		getAccountData : function(){ 
