@@ -370,6 +370,14 @@ select[name=countries] {
   background-color: transparent;
 }
 
+.chosen-contacts.ng-dirty.ng-valid + .chosen-container .chosen-choices {
+  border-color: #3C763D;
+}
+
+.chosen-contacts.ng-dirty.ng-invalid + .chosen-container .chosen-choices {
+  border-color: #A94442;
+}
+
 .standart-block-content {
   background-color: #fff;
   border: 1px solid #9b8a80;
