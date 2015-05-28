@@ -417,6 +417,9 @@ select[name=countries] {
   padding: 0 200px 75px 65px;
   padding: 0 21.5% 8.5% 7.9%;
 }
+.input-form-wrapper .form-group {
+  margin-bottom: 0px;
+}
 .input-form-wrapper input {
   margin-bottom: 8px;
   margin-top: 8px;
