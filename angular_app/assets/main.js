@@ -181,14 +181,19 @@ var unifyModule = angular.module('UnifyApp', [
               controller: 'ComposeCtrl',
               templateUrl: '/assets/partials/product/inbox/compose.html'
             }).state('product.inbox.inbox', {
+              controller: 'InboxMessagesCtrl',
               templateUrl: '/assets/partials/product/inbox/inbox.html'
             }).state('product.inbox.sent', {
+              controller: 'InboxMessagesCtrl',
               templateUrl: '/assets/partials/product/inbox/inbox.html'
             }).state('product.inbox.shortlisted', {
+              controller: 'InboxMessagesCtrl',
               templateUrl: '/assets/partials/product/inbox/inbox.html'
              }).state('product.inbox.notinterested', {
+              controller: 'InboxMessagesCtrl',
               templateUrl: '/assets/partials/product/inbox/inbox.html'
              }).state('product.inbox.trash', {
+              controller: 'InboxMessagesCtrl',
               templateUrl: '/assets/partials/product/inbox/inbox.html'
 
             }).state('product.account', {
