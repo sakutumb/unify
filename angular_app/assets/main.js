@@ -4,7 +4,8 @@ var unifyModule = angular.module('UnifyApp', [
         'ui.router',
         'ui.bootstrap.showErrors',
         'checklist-model',
-        'localytics.directives' // The "chosen" component used in the inbox tab
+        'localytics.directives', // The "chosen" component used in the inbox tab
+        'ngFileUpload' // The file upload is used in the compose section of the inbox tab to attach files
     ]).
     constant('appConstants', {
         // All app constants goes here
