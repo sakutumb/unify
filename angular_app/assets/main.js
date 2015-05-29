@@ -3,7 +3,9 @@
 var unifyModule = angular.module('UnifyApp', [
         'ui.router',
         'ui.bootstrap.showErrors',
-        'checklist-model'
+        'checklist-model',
+        'localytics.directives', // The "chosen" component used in the inbox tab
+        'ngFileUpload' // The file upload is used in the compose section of the inbox tab to attach files
     ]).
     constant('appConstants', {
         // All app constants goes here
@@ -172,8 +174,29 @@ var unifyModule = angular.module('UnifyApp', [
                 templateUrl: '/assets/partials/product/addclients.html'
             }).state('product.search', {
                 templateUrl: '/assets/partials/product/search.html'
+
             }).state('product.inbox', {
-                templateUrl: '/assets/partials/product/inbox.html'
+              controller: 'InboxCtrl',
+              templateUrl: '/assets/partials/product/inbox.html'
+            }).state('product.inbox.compose', {
+              controller: 'ComposeCtrl',
+              templateUrl: '/assets/partials/product/inbox/compose.html'
+            }).state('product.inbox.inbox', {
+              controller: 'InboxMessagesCtrl',
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+            }).state('product.inbox.sent', {
+              controller: 'InboxMessagesCtrl',
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+            }).state('product.inbox.shortlisted', {
+              controller: 'InboxMessagesCtrl',
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+             }).state('product.inbox.notinterested', {
+              controller: 'InboxMessagesCtrl',
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+             }).state('product.inbox.trash', {
+              controller: 'InboxMessagesCtrl',
+              templateUrl: '/assets/partials/product/inbox/inbox.html'
+
             }).state('product.account', {
                 controller: 'AccountCtrl',
                 templateUrl: '/assets/partials/product/account.html'

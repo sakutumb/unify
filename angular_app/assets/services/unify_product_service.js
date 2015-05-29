@@ -95,6 +95,92 @@ angular.module('UnifyApp')
         return array;
   		},
 
+      /** Inbox Tab  **/
+      getComposeContacts : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, name: "Denish Herron"},
+            {id: 2, name: "James Bond"},
+            {id: 3, name: "Indiana Jones"},
+            {id: 4, name: "Luk Skayvoker"},
+            {id: 5, name: "Harry Potter"}
+          ];
+        return array;
+      },
+      getInboxMessages : function(type){
+        // For now just load the messages regards the type (sent, shortlisted, etc)
+        var array = new Array();
+        array = 
+          [
+            {
+              id: 1, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 2, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "Test with a different title", 
+              title: "Test with a different title",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 3, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 4, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 5, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 7, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 8, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            },
+            {
+              id: 9, author_name: "Jenifer Ralston", author_genre: 'M',
+              title_exerpt: "More Information About..", 
+              title: "More Information About Peter Klempworth",
+              date: "12-27-14 14:56 PST",
+              body: "The stylized <b>message</b> body"
+            }
+          ];
+        return array;
+      },
+
+
   		/** Account Tab **/
   		// Dummy funcions for the account tab
 	 		getAccountData : function(){ 
