@@ -638,6 +638,7 @@ textarea {
 .sidebar-search-list {
   margin: 0;
   padding: 0;
+  background-color: transparent;
 }
 .sidebar-search-list li {
   margin: 0;
