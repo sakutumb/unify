@@ -153,53 +153,54 @@ var unifyModule = angular.module('UnifyApp', [
                     }
                 }
             }).state('product', {
-                url: '/product.html',
+                // the angularjs_product is temporary to host in the ftp
+                url: '/angularjs_product/product.html',
                 views: {
                     'product': {
                         controller: 'ProductCtrl',
-                        templateUrl: '/assets/templates/product.html'
+                        templateUrl: 'assets/templates/product.html'
                     },
                     'menulist@product': {
                         controller: 'ProductMenuCtrl',
-                        templateUrl: '/assets/partials/product/menulist.html'
+                        templateUrl: 'assets/partials/product/menulist.html'
                     }
                 }
             // The product tabs
             }).state('product.dashboard', {
                 controller: 'DashboardCtrl',
-                templateUrl: '/assets/partials/product/dashboard.html'
+                templateUrl: 'assets/partials/product/dashboard.html'
             }).state('product.clients', {
-                templateUrl: '/assets/partials/product/clients.html'
+                templateUrl: 'assets/partials/product/clients.html'
             }).state('product.addclients', {
-                templateUrl: '/assets/partials/product/addclients.html'
+                templateUrl: 'assets/partials/product/addclients.html'
             }).state('product.search', {
-                templateUrl: '/assets/partials/product/search.html'
+                templateUrl: 'assets/partials/product/search.html'
 
             }).state('product.inbox', {
               controller: 'InboxCtrl',
-              templateUrl: '/assets/partials/product/inbox.html'
+              templateUrl: 'assets/partials/product/inbox.html'
             }).state('product.inbox.compose', {
               controller: 'ComposeCtrl',
-              templateUrl: '/assets/partials/product/inbox/compose.html'
+              templateUrl: 'assets/partials/product/inbox/compose.html'
             }).state('product.inbox.inbox', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
             }).state('product.inbox.sent', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
             }).state('product.inbox.shortlisted', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
              }).state('product.inbox.notinterested', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
              }).state('product.inbox.trash', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
 
             }).state('product.account', {
                 controller: 'AccountCtrl',
-                templateUrl: '/assets/partials/product/account.html'
+                templateUrl: 'assets/partials/product/account.html'
             });
 
         }]).run(['$rootScope', '$timeout',
