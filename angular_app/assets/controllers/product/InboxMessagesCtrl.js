@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('UnifyApp').
-  controller('InboxMessagesCtrl', ['$scope', '$state', 'UnifyProductService',
-    function($scope, $state, UnifyProductService) {
+  controller('InboxMessagesCtrl', ['$scope', '$rootScope', '$state', 'UnifyProductService',
+    function($scope, $rootScope, $state, UnifyProductService) {
 
       var type = /[a-z]+$/.exec($state.$current.name)[0]; // get the message type of the state
 
@@ -16,8 +16,9 @@ angular.module('UnifyApp').
         $scope.inbox.selected = message;
       }
 
-      $scope.reply = function () {
-        // reply code
+      $scope.reply = function (message) {
+        $rootScope.composeMessage = {subject: 'RE: ' + message.title, contacts: [message.author_id]};
+        $state.transitionTo('product.inbox.compose');
       }
 
       $scope.loadProfilePlaceholder = function(gender){

@@ -1,10 +1,15 @@
 'use strict';
 
 angular.module('UnifyApp').
-  controller('ComposeCtrl', ['$scope', 'UnifyProductService',
-    function($scope, UnifyProductService) {
-      
-      $scope.compose = {};
+  controller('ComposeCtrl', ['$scope', '$rootScope', 'UnifyProductService',
+    function($scope, $rootScope, UnifyProductService) {
+
+      if ($rootScope.composeMessage) {
+        $scope.compose = $rootScope.composeMessage;
+        delete $rootScope.composeMessage;
+      } else {
+        $scope.compose = {};
+      }
 
       $scope.contactOptions = UnifyProductService.getComposeContacts();
 

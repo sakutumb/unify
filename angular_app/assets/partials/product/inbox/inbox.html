@@ -15,13 +15,13 @@
         </li>
       </ul>
     </div>
-    <div class="col-xs-12 col-sm-8 hidden-xs">
+    <div class="col-xs-12 col-sm-8">
       <div class="right-text-column">
         <h1>{{inbox.selected.title}}</h1>
         <a href="#">{{inbox.selected.author_name}}</a>
         <p>{{inbox.selected.date}}</p>
         <div compile="inbox.selected.body"></div>
-        <button ng-click="reply()" class="btn btn-default submit-button pull-left" type="button">Reply</button>
+        <button ng-click="reply(inbox.selected)" class="btn btn-default submit-button pull-left" type="button">Reply</button>
       </div>
     </div>
   </div>
