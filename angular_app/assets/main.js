@@ -167,15 +167,16 @@ var unifyModule = angular.module('UnifyApp', [
                 }
             // The product tabs
             }).state('product.dashboard', {
-                controller: 'DashboardCtrl',
-                templateUrl: 'assets/partials/product/dashboard.html'
+              controller: 'DashboardCtrl',
+              templateUrl: 'assets/partials/product/dashboard.html'
             }).state('product.clients', {
-                templateUrl: 'assets/partials/product/clients.html'
+              templateUrl: 'assets/partials/product/clients.html'
             }).state('product.addclients', {
-                templateUrl: 'assets/partials/product/addclients.html'
+              templateUrl: 'assets/partials/product/addclients.html'
             }).state('product.search', {
-                templateUrl: 'assets/partials/product/search.html'
-
+              controller: 'SearchCtrl',
+              templateUrl: 'assets/partials/product/search.html'
+              
             }).state('product.inbox', {
               controller: 'InboxCtrl',
               templateUrl: 'assets/partials/product/inbox.html'
