@@ -173,10 +173,19 @@ var unifyModule = angular.module('UnifyApp', [
               templateUrl: 'assets/partials/product/clients.html'
             }).state('product.addclients', {
               templateUrl: 'assets/partials/product/addclients.html'
+
             }).state('product.search', {
               controller: 'SearchCtrl',
               templateUrl: 'assets/partials/product/search.html'
-              
+            }).state('product.search.appearance', {
+              templateUrl: 'assets/partials/product/appearance.html'
+            }).state('product.search.basic', {
+              templateUrl: 'assets/partials/product/basic.html'
+            }).state('product.search.habits', {
+              templateUrl: 'assets/partials/product/habits.html'
+            }).state('product.search.basic', {
+              templateUrl: 'assets/partials/product/horoscope.html'
+
             }).state('product.inbox', {
               controller: 'InboxCtrl',
               templateUrl: 'assets/partials/product/inbox.html'
