@@ -572,6 +572,33 @@ textarea {
   height: auto;
 }
 
+/* Animation of the search refine */
+@media (min-width: 768px) {
+  .animate {
+    margin-left: -30px;
+  }
+
+  .animate.ng-enter
+  { 
+      -webkit-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -moz-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -ms-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -o-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  }
+
+  .animate.ng-enter {
+    margin-left: -290px;
+    width: 33%;
+    z-index: -1;
+  }
+
+  .animate.ng-enter.animate.ng-enter-active{
+    margin-left: -30px;
+    width: 66.66666667%;
+  }
+}
+
 /*block search*/
 .close-search {
   padding: 0;

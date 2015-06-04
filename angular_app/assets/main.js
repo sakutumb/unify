@@ -5,7 +5,8 @@ var unifyModule = angular.module('UnifyApp', [
         'ui.bootstrap.showErrors',
         'checklist-model',
         'localytics.directives', // The "chosen" component used in the inbox tab
-        'ngFileUpload' // The file upload is used in the compose section of the inbox tab to attach files
+        'ngFileUpload', // The file upload is used in the compose section of the inbox tab to attach files
+        'ngAnimate'
     ]).
     constant('appConstants', {
         // All app constants goes here
@@ -175,16 +176,16 @@ var unifyModule = angular.module('UnifyApp', [
               templateUrl: 'assets/partials/product/addclients.html'
 
             }).state('product.search', {
-              controller: 'SearchCtrl',
+              controller: 'ProductSearchCtrl',
               templateUrl: 'assets/partials/product/search.html'
             }).state('product.search.appearance', {
-              templateUrl: 'assets/partials/product/appearance.html'
+              templateUrl: 'assets/partials/product/search/appearance.html'
             }).state('product.search.basic', {
-              templateUrl: 'assets/partials/product/basic.html'
+              templateUrl: 'assets/partials/product/search/basic.html'
             }).state('product.search.habits', {
-              templateUrl: 'assets/partials/product/habits.html'
-            }).state('product.search.basic', {
-              templateUrl: 'assets/partials/product/horoscope.html'
+              templateUrl: 'assets/partials/product/search/habits.html'
+            }).state('product.search.horoscope', {
+              templateUrl: 'assets/partials/product/search/horoscope.html'
 
             }).state('product.inbox', {
               controller: 'InboxCtrl',

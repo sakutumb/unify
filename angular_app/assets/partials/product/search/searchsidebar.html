@@ -12,10 +12,18 @@
       </div>
       <div class="collapse navbar-collapse" id="search-sidebar">
         <ul class="nav navbar-nav sidebar-search-list">
-          <li><a href="search-basic.html">Basic</a></li>
-          <li><a href="search-appereance.html">Appearance</a></li>
-          <li><a href="search-habits.html">Habits</a></li>
-          <li><a href="search-horoscope.html">Horoscope</a></li>
+          <li ui-sref="product.search.basic" ui-sref-active="active">
+            <a href="#">Basic</a>
+          </li>
+          <li ui-sref="product.search.appearance" ui-sref-active="active">
+            <a href="#">Appearance</a>
+          </li>
+          <li ui-sref="product.search.habits" ui-sref-active="active">
+            <a href="#">Habits</a>
+          </li>
+          <li ui-sref="product.search.horoscope" ui-sref-active="active">
+            <a href="#">Horoscope</a>
+          </li>
           <li>
             <div class="standart-white-block-input">
               <input type="text" class="form-control" placeholder="Keyword Search">
