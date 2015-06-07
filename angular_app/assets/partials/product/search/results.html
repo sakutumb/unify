@@ -1,10 +1,9 @@
-<h2>Henry Velasquez's Matches: <span>567 Results</span></h2>
+<h2>{{search.searchingFor.name}}'s Matches: <span>{{search.results.length}} Results</span></h2>
 <div class="standart-white-block-input">
-  <select>
-    <option value="1">Velasquez, Henry</option>
-    <option value="2">Jenifer, Ralston</option>
+  <select ng-model="search.clientSelected">
+    <option ng-repeat="c in clientList" value="{{c.id}}">{{c.clientName}}</option>
   </select>
   <span class="user-search-input-btn">
-    <button class="btn btn-default submit-button" type="button">SUBMIT</button>
+    <button ng-click="searchForById(search.clientSelected)" class="btn btn-default submit-button" type="button">SUBMIT</button>
   </span>
 </div>

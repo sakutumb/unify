@@ -12,11 +12,11 @@
       </div>
     </div>
   </div>
-  <div class="search-second-row" ng-include="'assets/partials/product/search/results.html'">
+  <div ng-show="search.results.length > 0" class="search-second-row" ng-include="'assets/partials/product/search/results.html'">
     
   </div>
   <!--ng-class="{'third-row': !('product.search'|isState)}"-->
-  <div class="row">
+  <div ng-show="search.results.length > 0" class="row" >
     <div class="col-xs-12 col-sm-3" ng-include="'assets/partials/product/search/searchsidebar.html'">
       
     </div>

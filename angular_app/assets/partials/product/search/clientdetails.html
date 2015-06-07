@@ -1,14 +1,14 @@
-<div class="user-info standart-white-block">
+<div ng-show="search.searchingFor" class="user-info standart-white-block">
   <div class="row ">
     <div class="user-info-img  pull-left col-xs-12 col-sm-5  col-md-6">
-      <img src="assets/images/image-client.png" alt="user">
+      <img ng-src="{{search.searchingFor.profile_picture || 'assets/images/image-client.png'}}" alt="user">
     </div>
     <div class="user-info-descr col-xs-12 col-sm-7   col-md-6">
       <h3>Searching For:</h3>
-      <p class="user-info-name">Michelle Wong</p>
-      <p class="user-info-place">San Francisco, United States</p>
+      <p class="user-info-name">{{search.searchingFor.name}}</p>
+      <p class="user-info-place">{{search.searchingFor.place}}</p>
       <span class="user-search-input-btn">
-        <button class="btn btn-default submit-button" type="button">VIEW PROFILE</button>
+        <button ng-click="viewProfile(search.searchingFor)" class="btn btn-default submit-button" type="button">VIEW PROFILE</button>
       </span>
     </div>
   </div>

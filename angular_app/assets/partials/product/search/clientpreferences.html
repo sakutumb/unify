@@ -1,8 +1,8 @@
-<div class="user-info-deskription standart-white-block">
-  <h3>Henry's Preferences:</h3>
-  <p><mark>Age:</mark> 30-40 Years Old</p>
-  <p><mark>Ethnicity:</mark> Hispanic, Asian, White</p>
-  <p><mark>Location:</mark> San Francisco, United States</p>
-  <p><mark>Faith:</mark> Christian (Catholic)</p>
-  <p><mark>Build:</mark> Slim, Curvy</p>
+<div ng-show="search.searchingFor" class="user-info-deskription standart-white-block">
+  <h3>{{search.searchingFor.name}}'s Preferences:</h3>
+  <p><mark>Age:</mark> {{search.searchingFor.preferences.age}}</p>
+  <p><mark>Ethnicity:</mark> {{search.searchingFor.preferences.ethnicity}}</p>
+  <p><mark>Location:</mark> {{search.searchingFor.preferences.location}}</p>
+  <p><mark>Faith:</mark> {{search.searchingFor.preferences.faith}}</p>
+  <p><mark>Build:</mark> {{search.searchingFor.preferences.build}}</p>
 </div>

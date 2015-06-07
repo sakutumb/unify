@@ -3,158 +3,35 @@
 
 
   </div>
-  <div class="col-xs-12 col-sm-4">
+  <div ng-repeat="r in search.results" class="col-xs-12 col-sm-4">
     <div class="user-info no-top-margin standart-white-block">
       <div class="row ">
         <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
+          <img ng-src="{{r.profile_picture || 'assets/images/image-client.png'}}" alt="user">
         </div>
         <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
+          <p class="user-info-name">{{r.name}}</p>          
+          <p class="user-info-place">{{r.place}}</p>
+          <a ng-click="shortlistResult(r)" class='user-info-read-more' href="#">+ shortlist</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="user-info no-top-margin standart-white-block">
-      <div class="row ">
-        <div class="user-info-img  pull-left col-xs-12">
-          <img src="assets/images/image-client.png" alt="user">
-        </div>
-        <div class="user-info-descr col-xs-12">
-          <p class="user-info-name">Michelle Wong</p>
-          
-          <p class="user-info-place">San Francisco, United States</p>
-          <a class='user-info-read-more' href="#">+ shortlist</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 </div>
-<nav class='search-pager'>
+<nav ng-show="search.pages > 0" class='search-pager'>
   <ul class="pagination">
-    <li>
+    <li ng-show="search.activePage > 1">
       <a href="#" aria-label="Previous">
-        <span aria-hidden="true">Previous</span>
+        <span ng-click="queryResults(search.activePage - 1)"aria-hidden="true">Previous</span>
       </a>
     </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li>
+    <li ng-repeat="p in getPages(search.pages) track by $index">
+      <a ng-click="queryResults($index +1)" href="#">{{$index +1}}</a>
+    </li>
+    <li ng-show="search.activePage !== search.pages">
       <a href="#" aria-label="Next">
-        <span aria-hidden="true">Next</span>
+        <span ng-click="queryResults(search.activePage + 1)" aria-hidden="true">Next</span>
       </a>
     </li>
   </ul>
