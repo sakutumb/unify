@@ -14,19 +14,18 @@ angular.module('UnifyApp').
 
       $scope.searchForById = function(clientId) {
         $scope.search.searchingFor = UnifyProductService.searchForById(clientId);
-        $scope.activePage = 1;
-        $scope.queryResults($scope.activePage);
+        $scope.queryResults(1);
       }
 
       $scope.searchForByName = function(name) {
         $scope.search.searchingFor = UnifyProductService.searchForByName(name);
-        $scope.activePage = 1;
-        $scope.queryResults($scope.activePage);
+        $scope.queryResults(1);
       }
 
       $scope.queryResults = function(page){
         // Execute the search using the preferences
         // of the client in $scope.search.searchingFor
+        $scope.activePage = page;
         var obj = UnifyProductService.querySearch(page, $scope.search.searchingFor);
         $scope.search.pages = obj.pages;
         $scope.search.results = obj.results;
