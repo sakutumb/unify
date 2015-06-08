@@ -3,8 +3,8 @@
     <div class="col-xs-12 col-sm-6">
       <div class="search-gender pull-left"><label class="powermail_label">Gender:</label>
         <span>
-          <input type="radio" name="sex" value="male">Male
-          <input type="radio" name="sex" value="female">Female
+          <input type="radio" ng-model="search.basic.gender" name="sex" value="male">Male
+          <input type="radio" ng-model="search.basic.gender" name="sex" value="female">Female
         </span>
       </div>  
     </div>
@@ -13,9 +13,8 @@
         <div class="col-xs-9 col-sm-9">
           <div class="search-age pull-left"><label class="powermail_label">Age:</label>
             <span>
-              <select>
-                <option value="1">18-25 years</option>
-                <option value="2">25-70 years</option>
+              <select ng-model="search.basic.age">
+                <option ng-repeat="a in ageOptions" value="{{a.id}}">{{a.description}}</option>
               </select>
             </span>
           </div>
@@ -33,15 +32,9 @@
       <div class="search-etnicithy search-standart-inputs">
         <label class="powermail_label pull-left">Ethnicity :</label>
         <span class="multiple-input">
-          <label><input id="etnicity-asian" name="etn-asian" type="checkbox" value="asian">Asian</label>
-          <label><input id="etnicity-black" name="etn-canada" type="checkbox" value="black"> Black </label>
-          <label><input id="etnicity-indian" name="etn-indian" type="checkbox" value="indian">East Indian </label>
-          <br>
-          <label><input id="etnicity-Latino/Hispanic" name="etn-Latino/Hispanic" type="checkbox" value="indian">Latino/Hispanic </label>
-          <br>
-          <label><input id="etnicity-Middle-Eastern" name="etn-Middle-Eastern" type="checkbox" value="indian">Middle Eastern </label>
-          <br>
-          <label><input id="etnicity-Native-American" name="etn-Native-American" type="checkbox" value="indian">Native American </label>
+          <label ng-repeat="item in ethnicityOptions">
+            <input type="checkbox" checklist-model="search.basic.ethnicity" checklist-value="item.id"> {{item.description}}
+          </label>
         </span>
       </div>
     </div>
@@ -49,15 +42,9 @@
       <div class="search-Religion search-standart-inputs">
         <label class="powermail_label pull-left">Religion :</label>
         <span class="multiple-input">
-          <label><input id="religion-asian" name="rel-asian" type="checkbox" value="asian">Asian</label>
-          <label><input id="religion-black" name="rel-canada" type="checkbox" value="black"> Black </label>
-          <label><input id="religion-indian" name="rel-indian" type="checkbox" value="indian">East Indian </label>
-          <br>
-          <label><input id="religion-Latino/Hispanic" name="rel-Latino/Hispanic" type="checkbox" value="indian">Latino/Hispanic </label>
-          <br>
-          <label><input id="religion-Middle-Eastern" name="rel-Middle-Eastern" type="checkbox" value="indian">Middle Eastern </label>
-          <br>
-          <label><input id="religion-Native-American" name="rel-Native-American" type="checkbox" value="indian">Native American </label>
+          <label ng-repeat="item in religionOptions">
+            <input type="checkbox" checklist-model="search.basic.religion" checklist-value="item.id"> {{item.description}}
+          </label>
         </span>
       </div>
     </div>
@@ -65,15 +52,9 @@
       <div class="search-language search-standart-inputs">
         <label class="powermail_label pull-left">Language:</label>
         <span class="multiple-input">
-          <label><input id="language-asian" name="lang-asian" type="checkbox" value="asian">Asian</label>
-          <label><input id="language-black" name="lang-canada" type="checkbox" value="black"> Black </label>
-          <label><input id="language-indian" name="lang-indian" type="checkbox" value="indian">East Indian </label>
-          <br>
-          <label><input id="language-Latino/Hispanic" name="lang-Latino/Hispanic" type="checkbox" value="indian">Latino/Hispanic </label>
-          <br>
-          <label><input id="language-Middle-Eastern" name="lang-Middle-Eastern" type="checkbox" value="indian">Middle Eastern </label>
-          <br>
-          <label><input id="language-Native-American" name="lang-Native-American" type="checkbox" value="indian">Native American </label>
+          <label ng-repeat="item in languageOptions">
+            <input type="checkbox" checklist-model="search.basic.language" checklist-value="item.id"> {{item.description}}
+          </label>
         </span>
       </div>
     </div>
@@ -81,15 +62,9 @@
       <div class="search-community search-standart-inputs">
         <label class="powermail_label pull-left">Community/Caste/Sect :</label>
         <span class="multiple-input">
-          <label><input id="community-asian" name="com-asian" type="checkbox" value="asian">Asian</label>
-          <label><input id="community-black" name="com-canada" type="checkbox" value="black"> Black </label>
-          <label><input id="community-indian" name="com-indian" type="checkbox" value="indian">East Indian </label>
-          <br>
-          <label><input id="community-Latino/Hispanic" name="com-Latino/Hispanic" type="checkbox" value="indian">Latino/Hispanic </label>
-          <br>
-          <label><input id="community-Middle-Eastern" name="com-Middle-Eastern" type="checkbox" value="indian">Middle Eastern </label>
-          <br>
-          <label><input id="community-Native-American" name="com-Native-American" type="checkbox" value="indian">Native American </label>
+          <label ng-repeat="item in communityOptions">
+            <input type="checkbox" checklist-model="search.basic.community" checklist-value="item.id"> {{item.description}}
+          </label>
         </span>
       </div>
     </div>
@@ -97,23 +72,17 @@
       <div class="search-marital-status search-standart-inputs">
         <label class="powermail_label pull-left">Marital Status :</label>
         <span class="multiple-input">
-          <label><input id="marital-status-asian" name="mar-asian" type="checkbox" value="asian">Asian</label>
-          <label><input id="marital-status-black" name="mar-canada" type="checkbox" value="black"> Black </label>
-          <label><input id="marital-status-indian" name="mar-indian" type="checkbox" value="indian">East Indian </label>
-          <br>
-          <label><input id="marital-status-Latino/Hispanic" name="mar-Latino/Hispanic" type="checkbox" value="indian">Latino/Hispanic </label>
-          <br>
-          <label><input id="marital-status-Middle-Eastern" name="mar-Middle-Eastern" type="checkbox" value="indian">Middle Eastern </label>
-          <br>
-          <label><input id="marital-status-Native-American" name="mar-Native-American" type="checkbox" value="indian">Native American </label>
+          <label ng-repeat="item in maritalOptions">
+            <input type="checkbox" checklist-model="search.basic.marital" checklist-value="item.id"> {{item.description}}
+          </label>
         </span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="search-kids pull-left"><label class="powermail_label">Kids:</label>
         <span>
-          <input type="radio" name="kids" value="yes">Yes
-          <input type="radio" name="kids" value="no">No
+          <input ng-model="search.basic.kids" type="radio" name="kids" value="yes">Yes
+          <input ng-model="search.basic.kids" type="radio" name="kids" value="no">No
         </span>
       </div>  
     </div>
@@ -121,15 +90,9 @@
       <div class="search-Education search-standart-inputs">
         <label class="powermail_label pull-left">Education :</label>
         <span class="multiple-input">
-          <label><input id="education-asian" name="educ-asian" type="checkbox" value="asian">Asian</label>
-          <label><input id="education-black" name="educ-canada" type="checkbox" value="black"> Black </label>
-          <label><input id="education-indian" name="educ-indian" type="checkbox" value="indian">East Indian </label>
-          <br>
-          <label><input id="education-Latino/Hispanic" name="educ-Latino/Hispanic" type="checkbox" value="indian">Latino/Hispanic </label>
-          <br>
-          <label><input id="education-Middle-Eastern" name="educ-Middle-Eastern" type="checkbox" value="indian">Middle Eastern </label>
-          <br>
-          <label><input id="education-Native-American" name="educ-Native-American" type="checkbox" value="indian">Native American </label>
+          <label ng-repeat="item in educationOptions">
+            <input type="checkbox" checklist-model="search.basic.education" checklist-value="item.id"> {{item.description}}
+          </label>
         </span>
       </div>
     </div>
@@ -137,20 +100,14 @@
       <div class="search-Country search-standart-inputs">
         <label class="powermail_label pull-left">Country :</label>
         <span class="multiple-input">
-          <label><input id="country-asian" name="countr-asian" type="checkbox" value="asian">Asian</label>
-          <label><input id="country-black" name="countr-canada" type="checkbox" value="black"> Black </label>
-          <label><input id="country-indian" name="countr-indian" type="checkbox" value="indian">East Indian </label>
-          <br>
-          <label><input id="country-Latino/Hispanic" name="countr-Latino/Hispanic" type="checkbox" value="indian">Latino/Hispanic </label>
-          <br>
-          <label><input id="country-Middle-Eastern" name="countr-Middle-Eastern" type="checkbox" value="indian">Middle Eastern </label>
-          <br>
-          <label><input id="country-Native-American" name="countr-Native-American" type="checkbox" value="indian">Native American </label>
+          <label ng-repeat="item in countryOptions">
+            <input type="checkbox" checklist-model="search.basic.country" checklist-value="item.id"> {{item.description}}
+          </label>
         </span>
       </div>
     </div>
   </div>
-  <button class="btn btn-default submit-button" type="button">SUBMIT</button>
+  <button ng-click="queryResults(1)" class="btn btn-default submit-button" type="button">SUBMIT</button>
 </div>
 
 <script type="text/javascript" src="assets/jquery/searchscript.js"></script>

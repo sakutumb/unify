@@ -143,7 +143,47 @@ angular.module('UnifyApp')
           ];
         return {pages: 5, results: array};
       },
-
+      // The basic refine page options
+      getBasicAgeOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "18-25 years"},
+            {id: 2, description: "25-70 years"}
+          ];
+        return array;
+      },
+      getBasicEthnicityOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "Option 1"},
+            {id: 2, description: "Option 2"},
+            {id: 3, description: "Option 3"},
+            {id: 4, description: "Option 4"},
+            {id: 5, description: "Option 5"}
+          ];
+        return array;
+      },
+      // For now, using the same data
+      getBasicReligionOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicLanguageOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicCommunityOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicMaritalOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicEducationOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicCountryOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
 
       /** Inbox Tab  **/
       getComposeContacts : function(){

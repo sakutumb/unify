@@ -12,6 +12,18 @@ angular.module('UnifyApp').
 
       $scope.clientList = UnifyProductService.getClientsList();
 
+      // Load the basic options
+      $scope.ageOptions = UnifyProductService.getBasicAgeOptions();
+      $scope.ethnicityOptions = UnifyProductService.getBasicEthnicityOptions();
+      $scope.religionOptions = UnifyProductService.getBasicReligionOptions();
+      $scope.languageOptions = UnifyProductService.getBasicLanguageOptions();
+      $scope.communityOptions = UnifyProductService.getBasicCommunityOptions();
+      $scope.maritalOptions = UnifyProductService.getBasicMaritalOptions();
+      $scope.educationOptions = UnifyProductService.getBasicEducationOptions();
+      $scope.countryOptions = UnifyProductService.getBasicCountryOptions();
+
+
+
       $scope.searchForById = function(clientId) {
         $scope.search.searchingFor = UnifyProductService.searchForById(clientId);
         $scope.queryResults(1);
@@ -25,6 +37,7 @@ angular.module('UnifyApp').
       $scope.queryResults = function(page){
         // Execute the search using the preferences
         // of the client in $scope.search.searchingFor
+        console.log($scope.search);
         $scope.activePage = page;
         var obj = UnifyProductService.querySearch(page, $scope.search.searchingFor);
         $scope.search.pages = obj.pages;
