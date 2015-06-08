@@ -30,6 +30,11 @@ angular.module('UnifyApp').
       $scope.physicalOptions = UnifyProductService.getAppeaPhysicalOptions();
       $scope.complexionOptions = UnifyProductService.getAppeaComplexionOptions();
 
+      // Load the habits options
+      $scope.smokeOptions = UnifyProductService.getHabitsSmokeOptions();
+      $scope.drinkOptions = UnifyProductService.getHabitsDrinkOptions();
+      $scope.eatingOptions = UnifyProductService.getHabitsEatingOptions();
+
       $scope.searchForById = function(clientId) {
         $scope.search.searchingFor = UnifyProductService.searchForById(clientId);
         $scope.queryResults(1);

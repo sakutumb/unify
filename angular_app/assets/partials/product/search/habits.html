@@ -10,78 +10,36 @@
     <div class="col-xs-12 col-sm-6">
       <div class="search-smoke search-standart-inputs">
         <label class="powermail_label pull-left">Smoke :</label>
-        <span class="multiple-input"> <label>
-            <input id="smoke-asian" name="smok-asian" type="checkbox" value="asian">
-            Asian</label> <label>
-            <input id="smoke-black" name="smok-canada" type="checkbox" value="black">
-            Black </label> <label>
-            <input id="smoke-indian" name="smok-indian" type="checkbox" value="indian">
-            East Indian </label>
-          <br>
-          <label>
-            <input id="smoke-Latino/Hispanic" name="smok-Latino/Hispanic" type="checkbox" value="indian">
-            Latino/Hispanic </label>
-          <br>
-          <label>
-            <input id="smoke-Middle-Eastern" name="smok-Middle-Eastern" type="checkbox" value="indian">
-            Middle Eastern </label>
-          <br>
-          <label>
-            <input id="smoke-Native-American" name="smok-Native-American" type="checkbox" value="indian">
-            Native American </label> </span>
+        <span class="multiple-input">
+          <label ng-repeat="item in smokeOptions">
+            <input type="checkbox" checklist-model="search.habits.smoke" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="search-etnicithy search-standart-inputs">
         <label class="powermail_label pull-left">Drink:</label>
-        <span class="multiple-input"> <label>
-            <input id="drink-asian" name="drin-asian" type="checkbox" value="asian">
-            Asian</label> <label>
-            <input id="drink-black" name="drin-canada" type="checkbox" value="black">
-            Black </label> <label>
-            <input id="drink-indian" name="drin-indian" type="checkbox" value="indian">
-            East Indian </label>
-          <br>
-          <label>
-            <input id="drink-Latino/Hispanic" name="drin-Latino/Hispanic" type="checkbox" value="indian">
-            Latino/Hispanic </label>
-          <br>
-          <label>
-            <input id="drink-Middle-Eastern" name="drin-Middle-Eastern" type="checkbox" value="indian">
-            Middle Eastern </label>
-          <br>
-          <label>
-            <input id="drink-Native-American" name="drin-American" type="checkbox" value="indian">
-            Native American </label> </span>
+        <span class="multiple-input">
+          <label ng-repeat="item in drinkOptions">
+            <input type="checkbox" checklist-model="search.habits.drink" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="search-etnicithy search-standart-inputs">
         <label class="powermail_label pull-left">Eating:</label>
-        <span class="multiple-input"> <label>
-            <input id="eating-asian" name="eat-asian" type="checkbox" value="asian">
-            Asian</label> <label>
-            <input id="eating-black" name="eat-canada" type="checkbox" value="black">
-            Black </label> <label>
-            <input id="eating-indian" name="eat-indian" type="checkbox" value="indian">
-            East Indian </label>
-          <br>
-          <label>
-            <input id="eating-Latino/Hispanic" name="eat-Latino/Hispanic" type="checkbox" value="indian">
-            Latino/Hispanic </label>
-          <br>
-          <label>
-            <input id="eating-Middle-Eastern" name="eat-Middle-Eastern" type="checkbox" value="indian">
-            Middle Eastern </label>
-          <br>
-          <label>
-            <input id="eating-Native-American" name="eat-American" type="checkbox" value="indian">
-            Native American </label> </span>
+        <span class="multiple-input">
+          <label ng-repeat="item in eatingOptions">
+            <input type="checkbox" checklist-model="search.habits.eating" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
       </div>
     </div>
 
   </div>
-  <button class="btn btn-default submit-button" type="button">
+  <button ng-click="queryResults(1)" class="btn btn-default submit-button" type="button">
     SUBMIT
   </button>
 </div>

@@ -209,7 +209,17 @@ angular.module('UnifyApp')
       getAppeaComplexionOptions : function(){
         return this.getBasicEthnicityOptions();
       },
-      
+      // The habits page options
+      getHabitsSmokeOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHabitsDrinkOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHabitsEatingOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+
 
       /** Inbox Tab  **/
       getComposeContacts : function(){
