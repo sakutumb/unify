@@ -22,7 +22,13 @@ angular.module('UnifyApp').
       $scope.educationOptions = UnifyProductService.getBasicEducationOptions();
       $scope.countryOptions = UnifyProductService.getBasicCountryOptions();
 
-
+      // Load the appearance options
+      $scope.heightOptions = UnifyProductService.getAppeaHeightOptions();
+      $scope.bodyOptions = UnifyProductService.getAppeaBodyOptions();
+      $scope.eyeOptions = UnifyProductService.getAppeaEyeOptions();
+      $scope.hairOptions = UnifyProductService.getAppeaHairOptions();
+      $scope.physicalOptions = UnifyProductService.getAppeaPhysicalOptions();
+      $scope.complexionOptions = UnifyProductService.getAppeaComplexionOptions();
 
       $scope.searchForById = function(clientId) {
         $scope.search.searchingFor = UnifyProductService.searchForById(clientId);

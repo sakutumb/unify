@@ -184,6 +184,32 @@ angular.module('UnifyApp')
       getBasicCountryOptions : function(){
         return this.getBasicEthnicityOptions();
       },
+      // The appearance page options
+      getAppeaHeightOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "4.8\""},
+            {id: 2, description: "6\""}
+          ];
+        return array;
+      },
+      getAppeaBodyOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaEyeOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaHairOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaPhysicalOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaComplexionOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      
 
       /** Inbox Tab  **/
       getComposeContacts : function(){
