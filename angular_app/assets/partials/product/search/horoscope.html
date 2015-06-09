@@ -10,107 +10,52 @@
     <div class="col-xs-12 col-sm-6">
       <div class="search-gothram search-standart-inputs">
         <label class="powermail_label pull-left">Gotrham :</label>
-        <span class="multiple-input"> <label>
-            <input id="gothram-asian" name="goth-asian" type="checkbox" value="asian">
-            Asian</label> <label>
-            <input id="gothram-black" name="goth-canada" type="checkbox" value="black">
-            Black </label> <label>
-            <input id="gothram-indian" name="goth-indian" type="checkbox" value="indian">
-            East Indian </label>
-          <br>
-          <label>
-            <input id="gothram-Latino/Hispanic" name="goth-Latino/Hispanic" type="checkbox" value="indian">
-            Latino/Hispanic </label>
-          <br>
-          <label>
-            <input id="gothram-Middle-Eastern" name="goth-Middle-Eastern" type="checkbox" value="indian">
-            Middle Eastern </label>
-          <br>
-          <label>
-            <input id="gothram-Native-American" name="goth-Native-American" type="checkbox" value="indian">
-            Native American </label> </span>
+        <span class="multiple-input">
+          <label ng-repeat="item in gotrhamOptions">
+            <input type="checkbox" checklist-model="search.horoscope.gotrham" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="search-etnicithy search-standart-inputs">
         <label class="powermail_label pull-left">Birth Star:</label>
-        <span class="multiple-input"> <label>
-            <input id="birth-star-asian" name="birth-asian" type="checkbox" value="asian">
-            Asian</label> <label>
-            <input id="birth-star-black" name="birth-canada" type="checkbox" value="black">
-            Black </label> <label>
-            <input id="birth-star-indian" name="birth-indian" type="checkbox" value="indian">
-            East Indian </label>
-          <br>
-          <label>
-            <input id="birth-star-Latino/Hispanic" name="birth-Latino/Hispanic" type="checkbox" value="indian">
-            Latino/Hispanic </label>
-          <br>
-          <label>
-            <input id="birth-star-Middle-Eastern" name="birth-Middle-Eastern" type="checkbox" value="indian">
-            Middle Eastern </label>
-          <br>
-          <label>
-            <input id="birth-star-Native-American" name="birth-American" type="checkbox" value="indian">
-            Native American </label> </span>
+        <span class="multiple-input">
+          <label ng-repeat="item in birthStarOptions">
+            <input type="checkbox" checklist-model="search.horoscope.birthStar" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="search-etnicithy search-standart-inputs">
         <label class="powermail_label pull-left">Sun Sign:</label>
-        <span class="multiple-input"> <label>
-            <input id="sun-sign-asian" name="sun-asian" type="checkbox" value="asian">
-            Asian</label> <label>
-            <input id="sun-sign-black" name="sun-canada" type="checkbox" value="black">
-            Black </label> <label>
-            <input id="sun-sign-indian" name="sun-indian" type="checkbox" value="indian">
-            East Indian </label>
-          <br>
-          <label>
-            <input id="sun-sign-Latino/Hispanic" name="sun-Latino/Hispanic" type="checkbox" value="indian">
-            Latino/Hispanic </label>
-          <br>
-          <label>
-            <input id="sun-sign-Middle-Eastern" name="sun-Middle-Eastern" type="checkbox" value="indian">
-            Middle Eastern </label>
-          <br>
-          <label>
-            <input id="sun-sign-Native-American" name="sun-American" type="checkbox" value="indian">
-            Native American </label> </span>
+        <span class="multiple-input">
+          <label ng-repeat="item in sunSignOptions">
+            <input type="checkbox" checklist-model="search.horoscope.sunSign" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="search-etnicithy search-standart-inputs">
         <label class="powermail_label pull-left">Moon Sign:</label>
-        <span class="multiple-input"> <label>
-            <input id="moon-sign-asian" name="moon-asian" type="checkbox" value="asian">
-            Asian</label> <label>
-            <input id="moon-sign-black" name="moon-canada" type="checkbox" value="black">
-            Black </label> <label>
-            <input id="moon-sign-indian" name="moon-indian" type="checkbox" value="indian">
-            East Indian </label>
-          <br>
-          <label>
-            <input id="moon-sign-Latino/Hispanic" name="moon-Latino/Hispanic" type="checkbox" value="indian">
-            Latino/Hispanic </label>
-          <br>
-          <label>
-            <input id="moon-sign-Middle-Eastern" name="moon-Middle-Eastern" type="checkbox" value="indian">
-            Middle Eastern </label>
-          <br>
-          <label>
-            <input id="moon-sign-Native-American" name="moon-American" type="checkbox" value="indian">
-            Native American </label> </span>
+        <span class="multiple-input">
+          <label ng-repeat="item in moonSignOptions">
+            <input type="checkbox" checklist-model="search.horoscope.moonSign" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
       </div>
     </div>
   </div>
   <div class="search-mangalik pull-left">
     <label class="powermail_label">Manglik or Kujadosha:</label>
     <span>
-      <input type="radio" name="mangalik" value="yes">
+      <input ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="yes">
       Yes
-      <input type="radio" name="mangalik" value="no">
-      No </span>
+      <input ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="no">
+      No 
+    </span>
   </div>
   <button class="btn btn-default submit-button" type="button">
     SUBMIT

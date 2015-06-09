@@ -219,7 +219,19 @@ angular.module('UnifyApp')
       getHabitsEatingOptions : function(){
         return this.getBasicEthnicityOptions();
       },
-
+      // The horoscope page options
+      getHoroscopeGotrhamOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHoroscopeBirthStarOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHoroscopeSunSignOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHoroscopeMoonSignOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
 
       /** Inbox Tab  **/
       getComposeContacts : function(){

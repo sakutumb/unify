@@ -35,6 +35,12 @@ angular.module('UnifyApp').
       $scope.drinkOptions = UnifyProductService.getHabitsDrinkOptions();
       $scope.eatingOptions = UnifyProductService.getHabitsEatingOptions();
 
+      // Load the horoscope options
+      $scope.gotrhamOptions = UnifyProductService.getHoroscopeGotrhamOptions();
+      $scope.birthStarOptions = UnifyProductService.getHoroscopeBirthStarOptions();
+      $scope.sunSignOptions = UnifyProductService.getHoroscopeSunSignOptions();
+      $scope.moonSignOptions = UnifyProductService.getHoroscopeMoonSignOptions();
+
       $scope.searchForById = function(clientId) {
         $scope.search.searchingFor = UnifyProductService.searchForById(clientId);
         $scope.queryResults(1);
