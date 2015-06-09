@@ -26,17 +26,17 @@
           </li>
           <li>
             <div class="standart-white-block-input">
-              <input type="text" class="form-control" placeholder="Keyword Search">
+              <input ng-model="search.keywordSearch" type="text" class="form-control" placeholder="Keyword Search">
               <span class="user-search-input-btn">
-                <button class="btn btn-default submit-button" type="button">GO</button>
+                <button ng-click="queryResults(1)" class="btn btn-default submit-button" type="button">GO</button>
               </span>
             </div>
           </li>
           <li>
             <div class="standart-white-block-input">
-              <input type="text" class="form-control" placeholder="Name Search">
+              <input ng-model="search.nameSearch" type="text" class="form-control" placeholder="Name Search">
               <span class="user-search-input-btn">
-                <button class="btn btn-default submit-button" type="button">GO</button>
+                <button ng-click="queryResults(1)" class="btn btn-default submit-button" type="button">GO</button>
               </span>
             </div>
           </li>

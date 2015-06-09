@@ -53,7 +53,7 @@ angular.module('UnifyApp').
 
       $scope.queryResults = function(page){
         // Execute the search using the preferences
-        // of the client in $scope.search.searchingFor
+        // All possible filters are located in the $scope.search attribute
         console.log($scope.search);
         $scope.activePage = page;
         var obj = UnifyProductService.querySearch(page, $scope.search.searchingFor);
