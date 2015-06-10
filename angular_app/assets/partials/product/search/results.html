@@ -1,4 +1,4 @@
-<h2>{{search.searchingFor.name}}'s Matches: <span>{{search.results.length}} Results</span></h2>
+<h2><span ng-show="search.searchingFor">{{search.searchingFor.name}}'s</span> Matches: <span>{{search.results.length}} Results</span></h2>
 <div class="standart-white-block-input">
   <select ng-model="search.clientSelected">
     <option ng-repeat="c in clientList" value="{{c.id}}">{{c.clientName}}</option>

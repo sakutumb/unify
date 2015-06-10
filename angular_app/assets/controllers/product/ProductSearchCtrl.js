@@ -79,6 +79,9 @@ angular.module('UnifyApp').
         return new Array(num);   
       }
 
+      // Query the result when enter the page
+      $scope.queryResults(1);
+
     }
 
 ]);
