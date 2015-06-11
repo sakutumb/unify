@@ -1,3 +1,8 @@
+/* prevents flickering in the template loading */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 .content h1, .under-header-text {
 	text-align: center;
 	color: #793919;
