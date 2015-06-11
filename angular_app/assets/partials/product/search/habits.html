@@ -12,7 +12,7 @@
         <label class="powermail_label pull-left">Smoke :</label>
         <span class="multiple-input">
           <label ng-repeat="item in smokeOptions">
-            <input type="checkbox" checklist-model="search.habits.smoke" checklist-value="item.id"> {{item.description}}
+            <input id="{{'smoke_'+item.id}}" name="{{'smoke_'+item.id}}" type="checkbox" checklist-model="search.habits.smoke" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -22,7 +22,7 @@
         <label class="powermail_label pull-left">Drink:</label>
         <span class="multiple-input">
           <label ng-repeat="item in drinkOptions">
-            <input type="checkbox" checklist-model="search.habits.drink" checklist-value="item.id"> {{item.description}}
+            <input id="{{'drink_'+item.id}}" name="{{'drink_'+item.id}}" type="checkbox" checklist-model="search.habits.drink" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -32,7 +32,7 @@
         <label class="powermail_label pull-left">Eating:</label>
         <span class="multiple-input">
           <label ng-repeat="item in eatingOptions">
-            <input type="checkbox" checklist-model="search.habits.eating" checklist-value="item.id"> {{item.description}}
+            <input id="{{'eating_'+item.id}}" name="{{'eating_'+item.id}}" type="checkbox" checklist-model="search.habits.eating" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>

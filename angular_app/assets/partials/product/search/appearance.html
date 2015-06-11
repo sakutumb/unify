@@ -4,7 +4,7 @@
       <div class="search-height pull-left">
         <label class="powermail_label">Height:</label>
         <span>
-          <select ng-model="search.appearance.height">
+          <select id="search_height" name="search_height" ng-model="search.appearance.height">
             <option ng-repeat="h in heightOptions" value="{{h.id}}">{{h.description}}</option>
           </select>
         </span>
@@ -26,7 +26,7 @@
         <label class="powermail_label pull-left">Body-type:</label>
         <span class="multiple-input">
           <label ng-repeat="item in bodyOptions">
-            <input type="checkbox" checklist-model="search.appearance.body" checklist-value="item.id"> {{item.description}}
+            <input id="{{'body_'+item.id}}" name="{{'body_'+item.id}}" type="checkbox" checklist-model="search.appearance.body" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -36,7 +36,7 @@
         <label class="powermail_label pull-left">Eye-color:</label>
         <span class="multiple-input">
           <label ng-repeat="item in eyeOptions">
-            <input type="checkbox" checklist-model="search.appearance.eye" checklist-value="item.id"> {{item.description}}
+            <input id="{{'eye_'+item.id}}" name="{{'eye_'+item.id}}" type="checkbox" checklist-model="search.appearance.eye" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -46,7 +46,7 @@
         <label class="powermail_label pull-left">Hair-color:</label>
         <span class="multiple-input">
           <label ng-repeat="item in hairOptions">
-            <input type="checkbox" checklist-model="search.appearance.hair" checklist-value="item.id"> {{item.description}}
+            <input id="{{'hair_'+item.id}}" name="{{'hair_'+item.id}}" type="checkbox" checklist-model="search.appearance.hair" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -56,7 +56,7 @@
         <label class="powermail_label pull-left">Physical Status:</label>
         <span class="multiple-input">
           <label ng-repeat="item in physicalOptions">
-            <input type="checkbox" checklist-model="search.appearance.physical" checklist-value="item.id"> {{item.description}}
+            <input id="{{'physical_'+item.id}}" name="{{'physical_'+item.id}}" type="checkbox" checklist-model="search.appearance.physical" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -66,7 +66,7 @@
         <label class="powermail_label pull-left">Complexion:</label>
         <span class="multiple-input">
           <label ng-repeat="item in complexionOptions">
-            <input type="checkbox" checklist-model="search.appearance.complexion" checklist-value="item.id"> {{item.description}}
+            <input id="{{'complexion_'+item.id}}" name="{{'complexion_'+item.id}}" type="checkbox" checklist-model="search.appearance.complexion" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>

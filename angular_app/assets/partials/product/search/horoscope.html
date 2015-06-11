@@ -12,7 +12,7 @@
         <label class="powermail_label pull-left">Gotrham :</label>
         <span class="multiple-input">
           <label ng-repeat="item in gotrhamOptions">
-            <input type="checkbox" checklist-model="search.horoscope.gotrham" checklist-value="item.id"> {{item.description}}
+            <input id="{{'gotrham_'+item.id}}" name="{{'gotrham_'+item.id}}" type="checkbox" checklist-model="search.horoscope.gotrham" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -22,7 +22,7 @@
         <label class="powermail_label pull-left">Birth Star:</label>
         <span class="multiple-input">
           <label ng-repeat="item in birthStarOptions">
-            <input type="checkbox" checklist-model="search.horoscope.birthStar" checklist-value="item.id"> {{item.description}}
+            <input id="{{'birthStar_'+item.id}}" name="{{'birthStar_'+item.id}}" type="checkbox" checklist-model="search.horoscope.birthStar" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -32,7 +32,7 @@
         <label class="powermail_label pull-left">Sun Sign:</label>
         <span class="multiple-input">
           <label ng-repeat="item in sunSignOptions">
-            <input type="checkbox" checklist-model="search.horoscope.sunSign" checklist-value="item.id"> {{item.description}}
+            <input id="{{'sunSign_'+item.id}}" name="{{'sunSign_'+item.id}}" type="checkbox" checklist-model="search.horoscope.sunSign" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -42,7 +42,7 @@
         <label class="powermail_label pull-left">Moon Sign:</label>
         <span class="multiple-input">
           <label ng-repeat="item in moonSignOptions">
-            <input type="checkbox" checklist-model="search.horoscope.moonSign" checklist-value="item.id"> {{item.description}}
+            <input id="{{'moonSign_'+item.id}}" name="{{'moonSign_'+item.id}}" type="checkbox" checklist-model="search.horoscope.moonSign" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -51,9 +51,9 @@
   <div class="search-mangalik pull-left">
     <label class="powermail_label">Manglik or Kujadosha:</label>
     <span>
-      <input ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="yes">
+      <input id="search_manglik" name="manglik" ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="yes">
       Yes
-      <input ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="no">
+      <input id="search_manglik" name="manglik" ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="no">
       No 
     </span>
   </div>

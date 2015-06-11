@@ -3,8 +3,8 @@
     <div class="col-xs-12 col-sm-6">
       <div class="search-gender pull-left"><label class="powermail_label">Gender:</label>
         <span>
-          <input type="radio" ng-model="search.basic.gender" name="sex" value="male">Male
-          <input type="radio" ng-model="search.basic.gender" name="sex" value="female">Female
+          <input type="radio" ng-model="search.basic.gender" id="sex" name="sex" value="male">Male
+          <input type="radio" ng-model="search.basic.gender" id="sex" name="sex" value="female">Female
         </span>
       </div>  
     </div>
@@ -13,7 +13,7 @@
         <div class="col-xs-9 col-sm-9">
           <div class="search-age pull-left"><label class="powermail_label">Age:</label>
             <span>
-              <select ng-model="search.basic.age">
+              <select id="age" name="age" ng-model="search.basic.age">
                 <option ng-repeat="a in ageOptions" value="{{a.id}}">{{a.description}}</option>
               </select>
             </span>
@@ -33,7 +33,7 @@
         <label class="powermail_label pull-left">Ethnicity :</label>
         <span class="multiple-input">
           <label ng-repeat="item in ethnicityOptions">
-            <input type="checkbox" checklist-model="search.basic.ethnicity" checklist-value="item.id"> {{item.description}}
+            <input id="{{'ethnicity_'+item.id}}" name="{{'ethnicity_'+item.id}}" type="checkbox" checklist-model="search.basic.ethnicity" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -43,7 +43,7 @@
         <label class="powermail_label pull-left">Religion :</label>
         <span class="multiple-input">
           <label ng-repeat="item in religionOptions">
-            <input type="checkbox" checklist-model="search.basic.religion" checklist-value="item.id"> {{item.description}}
+            <input id="{{'religion_'+item.id}}" name="{{'religion_'+item.id}}" type="checkbox" checklist-model="search.basic.religion" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -53,7 +53,7 @@
         <label class="powermail_label pull-left">Language:</label>
         <span class="multiple-input">
           <label ng-repeat="item in languageOptions">
-            <input type="checkbox" checklist-model="search.basic.language" checklist-value="item.id"> {{item.description}}
+            <input id="{{'language_'+item.id}}" name="{{'language_'+item.id}}" type="checkbox" checklist-model="search.basic.language" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -63,7 +63,7 @@
         <label class="powermail_label pull-left">Community/Caste/Sect :</label>
         <span class="multiple-input">
           <label ng-repeat="item in communityOptions">
-            <input type="checkbox" checklist-model="search.basic.community" checklist-value="item.id"> {{item.description}}
+            <input id="{{'community_'+item.id}}" name="{{'community_'+item.id}}" type="checkbox" checklist-model="search.basic.community" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -73,7 +73,7 @@
         <label class="powermail_label pull-left">Marital Status :</label>
         <span class="multiple-input">
           <label ng-repeat="item in maritalOptions">
-            <input type="checkbox" checklist-model="search.basic.marital" checklist-value="item.id"> {{item.description}}
+            <input id="{{'marital_'+item.id}}" name="{{'marital_'+item.id}}" type="checkbox" checklist-model="search.basic.marital" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -81,8 +81,8 @@
     <div class="col-xs-12 col-sm-6">
       <div class="search-kids pull-left"><label class="powermail_label">Kids:</label>
         <span>
-          <input ng-model="search.basic.kids" type="radio" name="kids" value="yes">Yes
-          <input ng-model="search.basic.kids" type="radio" name="kids" value="no">No
+          <input ng-model="search.basic.kids" type="radio" id="kids" ame="kids" value="yes">Yes
+          <input ng-model="search.basic.kids" type="radio" id="kids" name="kids" value="no">No
         </span>
       </div>  
     </div>
@@ -91,7 +91,7 @@
         <label class="powermail_label pull-left">Education :</label>
         <span class="multiple-input">
           <label ng-repeat="item in educationOptions">
-            <input type="checkbox" checklist-model="search.basic.education" checklist-value="item.id"> {{item.description}}
+            <input id="{{'education_'+item.id}}" name="{{'education_'+item.id}}" type="checkbox" checklist-model="search.basic.education" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
@@ -101,7 +101,7 @@
         <label class="powermail_label pull-left">Country :</label>
         <span class="multiple-input">
           <label ng-repeat="item in countryOptions">
-            <input type="checkbox" checklist-model="search.basic.country" checklist-value="item.id"> {{item.description}}
+            <input id="{{'country_'+item.id}}" name="{{'country_'+item.id}}" type="checkbox" checklist-model="search.basic.country" checklist-value="item.id"> {{item.description}}
           </label>
         </span>
       </div>
