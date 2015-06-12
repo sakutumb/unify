@@ -21,16 +21,16 @@
 <nav ng-show="search.pages > 0" class='search-pager'>
   <ul class="pagination">
     <li ng-show="activePage > 1">
-      <a href="#" aria-label="Previous">
-        <span ng-click="queryResults(search.activePage - 1)"aria-hidden="true">Previous</span>
+      <a ng-click="changePage(search.activePage - 1)" href="#" aria-label="Previous">
+        <span aria-hidden="true">Previous</span>
       </a>
     </li>
     <li ng-repeat="p in getPages(search.pages) track by $index">
-      <a ng-click="queryResults($index +1)" href="#">{{$index +1}}</a>
+      <a ng-click="changePage($index +1)" href="#">{{$index +1}}</a>
     </li>
     <li ng-show="activePage !== search.pages">
-      <a href="#" aria-label="Next">
-        <span ng-click="queryResults(search.activePage + 1)" aria-hidden="true">Next</span>
+      <a ng-click="changePage(search.activePage + 1)" href="#" aria-label="Next">
+        <span aria-hidden="true">Next</span>
       </a>
     </li>
   </ul>

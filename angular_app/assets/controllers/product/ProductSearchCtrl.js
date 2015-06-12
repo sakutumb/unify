@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('UnifyApp').
-  controller('ProductSearchCtrl', ['$scope', '$state', 'UnifyProductService',
-    function($scope, $state, UnifyProductService) {
+  controller('ProductSearchCtrl', ['$scope', '$state', 'UnifyProductService', 'UnifyProductSearch',
+    function($scope, $state, UnifyProductService, UnifyProductSearch) {
 
       $scope.search = {};
 
@@ -42,21 +42,21 @@ angular.module('UnifyApp').
       $scope.moonSignOptions = UnifyProductService.getHoroscopeMoonSignOptions();
 
       $scope.searchForById = function(clientId) {
-        $scope.search.searchingFor = UnifyProductService.searchForById(clientId);
-        $scope.queryResults(1);
+        $scope.search.searchingFor = UnifyProductSearch.searchForById(clientId);
+        $scope.queryResults();
       }
 
       $scope.searchForByName = function(name) {
-        $scope.search.searchingFor = UnifyProductService.searchForByName(name);
-        $scope.queryResults(1);
+        $scope.search.searchingFor = UnifyProductSearch.searchForByName(name);
+        $scope.queryResults();
       }
 
-      $scope.queryResults = function(page){
+      $scope.queryResults = function(){
         // Execute the search using the preferences
         // All possible filters are located in the $scope.search attribute
         console.log($scope.search);
-        $scope.activePage = page;
-        var obj = UnifyProductService.querySearch(page, $scope.search.searchingFor);
+        var obj = UnifyProductSearch.searchResults($scope.activePage, $scope.search);
+        // get the return object
         $scope.search.pages = obj.pages;
         $scope.search.results = obj.results;
       }
@@ -69,18 +69,23 @@ angular.module('UnifyApp').
         // Shortlist a result
       }
 
-      $scope.closeRefine = function () {
+      $scope.closeRefine = function() {
         //Reset the height of the sidebar
         $(".sidebar-search-list").css('height' , "");
         $state.transitionTo('product.search');
       }
 
+      $scope.changePage = function(page) {
+        $scope.activePage = page;
+        $scope.queryResults();
+      }
+
       $scope.getPages = function(num) {
-        return new Array(num);   
+        return new Array(num);
       }
 
       // Query the result when enter the page
-      $scope.queryResults(1);
+      $scope.queryResults();
 
     }
 
