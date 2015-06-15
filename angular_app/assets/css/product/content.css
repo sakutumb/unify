@@ -577,6 +577,22 @@ textarea {
   height: auto;
 }
 
+.search-sidebar-wrapper.appearance nav{
+  height: 682px;
+}
+
+.search-sidebar-wrapper.basic nav{
+  height: 924px;
+}
+
+.search-sidebar-wrapper.habits nav{
+  height: 487px;
+}
+
+.search-sidebar-wrapper.horoscope nav{
+  height: 487px;
+}
+
 /* Animation of the search refine */
 @media (min-width: 768px) {
   .animate {
