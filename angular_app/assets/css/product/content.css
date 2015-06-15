@@ -581,6 +581,7 @@ textarea {
 @media (min-width: 768px) {
   .animate {
     margin-left: -30px;
+    margin-right: 100%;
   }
 
   .animate.ng-enter
