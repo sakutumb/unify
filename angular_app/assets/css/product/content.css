@@ -585,11 +585,11 @@ textarea {
 
   .animate.ng-enter
   { 
-      -webkit-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-      -moz-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-      -ms-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-      -o-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-      transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -webkit-transition: 700ms ease-out all;
+      -moz-transition: 700ms ease-out all;
+      -ms-transition: 700ms ease-out all;
+      -o-transition: 700ms ease-out all;
+      transition: 700ms ease-out all;
   }
 
   .animate.ng-enter {
