@@ -279,6 +279,7 @@ angular.module('UnifyApp')
         return {
             business_name : "dummy data",
             business_location : "dummy data",
+            religions : [],
             languages : ["en"],
             community : ["afrikanas"],
             phone_number : "dummy data",
@@ -288,6 +289,16 @@ angular.module('UnifyApp')
             state : "dummy data",
             country : "usa"
         	};
+      },
+      getReligionOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, name: " Christian"},
+            {id: 2, name: " Islam"},
+            {id: 3, name: " Judaism"}
+          ];
+        return array;
       },
       getLanguageOptions : function(){
         var array = new Array();
