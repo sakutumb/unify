@@ -36,6 +36,11 @@ a:focus, a:visited {
 	
 }
 
+/* Fix the "jump" when a template is being loaded */
+.wrapper .content {
+  min-height: 650px;
+}
+
 .wrapper.pull_left {
 	-webkit-transition: -webkit-transform 1s;
 	-moz-transition: -moz-transform 1s;
