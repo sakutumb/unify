@@ -33,7 +33,7 @@ a:focus, a:visited {
 	transform: translate(0px, 0px);
 	transition: transform 1s ease 0s;
 	z-index: 15;
-	
+	overflow-y: visible;
 }
 
 /* Fix the "jump" when a template is being loaded */
