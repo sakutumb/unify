@@ -1,0 +1,23 @@
+<div class="row ">
+  <div class="user-info-img  pull-left col-xs-12 col-sm-5  col-md-5">
+    <img ng-src="{{userinfo.profile_picture || 'assets/images/image-client.png'}}" alt="user">
+  </div>
+  <div class="user-info-descr clients-layout col-xs-12 col-sm-7   col-md-7">
+    <h3>Welcome!</h3>
+    <p class="user-info-name">
+      {{userinfo.name}}
+    </p>
+    <p class="user-info-description">
+      {{userinfo.description}}
+    </p>
+    <p class="user-info-place">
+      {{userinfo.place}}
+    </p>
+    <p class="user-info-visit">
+      Last Visit:
+    </p>
+    <p class="user-info-visit-date">
+      {{userinfo.visit_date | date:'dd-MM-yy hh:mm a (EEEE)'}}
+    </p>
+  </div>
+</div>

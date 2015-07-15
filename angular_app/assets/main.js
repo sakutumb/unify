@@ -171,6 +171,7 @@ var unifyModule = angular.module('UnifyApp', [
               controller: 'DashboardCtrl',
               templateUrl: 'assets/partials/product/dashboard.html'
             }).state('product.clients', {
+              controller: 'ClientCtrl',
               templateUrl: 'assets/partials/product/clients.html'
             }).state('product.addclients', {
               templateUrl: 'assets/partials/product/addclients.html'

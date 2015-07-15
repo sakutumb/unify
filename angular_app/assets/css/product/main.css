@@ -84,3 +84,14 @@ fieldset > div {
 .no-top-margin {
   margin-top: 0!important;
 }
+
+@media (min-width: 768px) {
+  .alfa{
+    padding-left:0!important;
+    margin-left:0!important;
+  }
+  .omega{
+    padding-right:0!important;
+    margin-right:0!important;
+  }    
+}
