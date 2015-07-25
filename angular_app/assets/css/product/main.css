@@ -77,6 +77,10 @@ fieldset > div {
 	border-radius:3px;
 }
 
+.dsplBlock{
+  display:block!important;
+}
+
 .darkerColor{
 	color:#793919!important;
 }

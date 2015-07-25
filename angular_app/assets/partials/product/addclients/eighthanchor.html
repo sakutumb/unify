@@ -1,0 +1,157 @@
+<h2>Partner Preferences</h2>
+<fieldset>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="search-height pull-left search-standart-inputs">
+        <label class="powermail_label">Height:</label>
+        <span>
+          <select name="preferences_height" ng-options="i.description for i in heightOptions track by i.id" ng-model="client.eighth.height">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="hair-color search-standart-inputs">
+        <label class="powermail_label pull-left">Hair color :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in hairOptions">
+            <input name="{{'hair_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.hair" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="eye-color search-standart-inputs">
+        <label class="powermail_label pull-left">Eye color :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in eyeOptions">
+            <input name="{{'eye_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.eye" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="smoke search-standart-inputs">
+        <label class="powermail_label pull-left">Smoke :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in smokeOptions">
+            <input name="{{'smoke_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.smoke" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="drink search-standart-inputs">
+        <label class="powermail_label pull-left">Drink :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in drinkOptions">
+            <input name="{{'drink_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.drink" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="eating search-standart-inputs">
+        <label class="powermail_label pull-left">Eating :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in eatingOptions">
+            <input name="{{'eating_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.eating" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="body-type search-standart-inputs">
+        <label class="powermail_label pull-left">Body Type :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in bodyOptions">
+            <input name="{{'body_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.body" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="complexion search-standart-inputs">
+        <label class="powermail_label pull-left">Complexion :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in complexionOptions">
+            <input name="{{'complexion_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.complexion" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="physical-status search-standart-inputs">
+        <label class="powermail_label pull-left">Physical status :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in physicalOptions">
+            <input name="{{'physical_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.physical" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="sun-sign search-standart-inputs">
+        <label class="powermail_label pull-left">Sun sign :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in sunSignOptions">
+            <input name="{{'sunSign_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.sunSign" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="moon-sign search-standart-inputs">
+        <label class="powermail_label pull-left">Moon sign :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in moonSignOptions">
+            <input name="{{'moonSign_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.moonSign" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="birth-star search-standart-inputs">
+        <label class="powermail_label pull-left">Birth star :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in birthStarOptions">
+            <input name="{{'birthStar_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.birthStar" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="gothram search-standart-inputs">
+        <label class="powermail_label pull-left">Gothram :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in gotrhamOptions">
+            <input name="{{'gothram_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.gothram" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="mangalik search-standart-inputs">
+        <label class="powermail_label pull-left">Mangalik or Kujadosha :</label>
+        <span class="multiple-input">
+          <label ng-repeat="i in mangalikOptions">
+            <input name="{{'hair_option_' + i.id}}" type="checkbox" checklist-model="client.eighth.mangalik" checklist-value="i"> {{i.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="horoscope pull-left">
+        <label class="powermail_label">In horoscope match mandatory for you ?</label>
+        <span>
+          <input ng-model="client.eighth.mandatory" type="radio" name="isMandatory" value="true">
+          Yes
+          <input ng-model="client.eighth.mandatory" type="radio" name="isMandatory" value="false">
+          Now </span>
+      </div>
+    </div>
+  </div>
+  <button ng-click="eighthSave()" class=" btn btn-default save-button" type="button">
+    Save
+  </button>
+</fieldset>

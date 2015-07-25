@@ -40,7 +40,7 @@
 
 		<div class="first-row">
 			<label class="powermail_label">Community:</label>
-			<span checkbox-list name="community" required ng-model="account.community" items="communityOptions" value="id" label="name" class="multiple-input"></span>
+			<span name="community" required ng-model="account.community" checkbox-list items="communityOptions" value="id" label="name" class="multiple-input"></span>
 			<p ng-show="(form.$submitted || form.community.$touched) && form.community.$error.required" class="error-validation">
 				Please Complete.
 			</p>

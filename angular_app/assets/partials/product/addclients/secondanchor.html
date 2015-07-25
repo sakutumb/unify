@@ -1,0 +1,45 @@
+<h2>Religion</h2>
+<fieldset>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="religion select-add-clients">
+        <label class="powermail_label pull-left">What is your Ethnicity?</label>
+        <span class="user-search-input-btn">
+          <select name="ethnicity" ng-options="i.description for i in ethnicityOptions track by i.id" ng-model="client.second.ethnicity">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="religion select-add-clients">
+        <label class="powermail_label pull-left">What Religion you belong to?</label>
+        <span class="user-search-input-btn">
+          <select name="religion" ng-options="i.description for i in religionOptions track by i.id" ng-model="client.second.religion">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="religion select-add-clients">
+        <label class="powermail_label pull-left">What is your mother tongue?</label>
+        <span class="user-search-input-btn">
+          <select name="language" ng-options="i.description for i in languageOptions track by i.id" ng-model="client.second.language">
+          </select>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12">
+      <div class="religion select-add-clients">
+        <label class="powermail_label pull-left">What is your Community/Caste/Sect?</label>
+        <span class="user-search-input-btn">
+          <select name="community" ng-options="i.description for i in communityOptions track by i.id" ng-model="client.second.community">
+          </select>
+        </span>
+      </div>
+    </div>
+  </div>
+  <button ng-click="secondSave()" class=" btn btn-default save-button" type="button">
+    Save
+  </button>
+</fieldset>

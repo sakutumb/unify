@@ -174,6 +174,7 @@ var unifyModule = angular.module('UnifyApp', [
               controller: 'ClientCtrl',
               templateUrl: 'assets/partials/product/clients.html'
             }).state('product.addclients', {
+              controller: 'AddClientsCtrl',
               templateUrl: 'assets/partials/product/addclients.html'
 
             }).state('product.search', {

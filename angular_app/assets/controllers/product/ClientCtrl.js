@@ -21,7 +21,7 @@ angular.module('UnifyApp').
       }
 
       $scope.$on('$includeContentLoaded', function () {
-          execClientJQuery(); // see assets/jquery/clientscript.js
+        execClientJQuery(); // see assets/jquery/clientscript.js
       });
 
       $scope.nextPage = function () {

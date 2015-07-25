@@ -58,29 +58,32 @@ fieldset div span {
 .first-row:first-child {
 	margin-top: 7px;
 }
-fieldset div input.form-control, fieldset div select.form-control {
+fieldset div input.form-control, fieldset div select.form-control, fieldset div span select, fieldset div span input {
 	height: 32px;
 	border-radius: 7px;
 	border: 1px solid #9b8a80;
+  margin-top: 5px;
 }
-fieldset div select.form-control {
+fieldset div select.form-control, fieldset div span select {
 	color: #793919;
-	font-size: 16px;
+	font-size: 13px;
+  height: 25px;
 }
 
 fieldset div label {
-	font-weight: 700;
+	font-weight: 400;
 	color: #793919;
-	font-size: 16px;
-	margin-bottom: 10px;
+	font-size: 13px;
+	margin-bottom: 0px;
 }
+
 .submit-button {
 	margin: 0 auto;
 	margin-top: 30px;
 	text-align: center;
 	display: inherit;
 }
-.submit-button {
+.submit-button, .save-button {
 	padding: 10px 25px;
 	cursor: pointer;
 	font-size: 14px;
@@ -91,7 +94,12 @@ fieldset div label {
 	outline: none;
 	font-weight: bold;
 }
-.submit-button:hover {
+
+button.btn.btn-default.save-button {
+  margin: 15px auto;
+  display: block;
+}
+.submit-button:hover, .save-button:hover {
 	background-color: rgba(136,82,55,1);
 }
 .under-header-text br {
@@ -963,6 +971,7 @@ textarea {
   color: #82492e;
   font-weight: 700;
   padding-left: 20px;
+  text-align: left;
 }
 .add-clients-wrapper fieldset {
   /*border: 1px solid #000;*/
@@ -982,7 +991,7 @@ textarea {
 }
 
 .partner-preferences .mangalik input, .first-name input, .last-name input, .occupation input, .college input, .company input, .st-add-input input, .linkedin input {
-  width: 95%;
+  width: 95% !important;
   float: left !important;
   text-align: left;
   border: 1px solid #9b8a80;
@@ -993,7 +1002,7 @@ textarea {
   margin-bottom: 5px;
   background-color: #f9f2e8;
   clear: both;
-  height: 25px;
+  height: 25px !important;
 }
 
 .basics-about .submit-button {

@@ -95,6 +95,31 @@ angular.module('UnifyApp')
         return array;
   		},
 
+      //** Add Clients Tab **/
+
+      // I'm using the getBasicEthnicityOptions as a dummy data
+      getViewedByOptions : function () {
+        return this.getBasicEthnicityOptions();
+      },
+
+      getSiblingsBrothersOptions : function () {
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "2"},
+            {id: 2, description: "4"}
+          ];
+        return array;
+      },
+
+      getSiblingsSistersOptions : function () {
+        return this.getSiblingsBrothersOptions();
+      },
+
+      getMangalikOptions : function () {
+        return this.getBasicEthnicityOptions();
+      },
+
       /** Search Tab **/
       // The basic refine page options
       getBasicAgeOptions : function(){

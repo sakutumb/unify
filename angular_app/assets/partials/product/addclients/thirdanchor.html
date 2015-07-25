@@ -1,0 +1,41 @@
+<h2>Education and Profession</h2>
+<fieldset>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="education select-add-clients">
+        <label class="powermail_label pull-left">What is your education level?</label>
+        <span class="user-search-input-btn">
+          <select name="education" ng-options="i.description for i in educationOptions track by i.id" ng-model="client.third.education">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="college search-standart-inputs">
+        <label class="powermail_label pull-left">Which College did you go to?</label>
+        <input name="college" ng-model="client.third.college" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="occupation search-standart-inputs">
+        <label class="powermail_label pull-left">What's your occupation?</label>
+        <input name="occupation" ng-model="client.third.occupation" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="company search-standart-inputs">
+        <label class="powermail_label pull-left">Which company you are working currently?</label>
+        <input name="company" ng-model="client.third.company" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="linkedin search-standart-inputs">
+        <label class="powermail_label pull-left">Linkedln Profile URL</label>
+        <input name="linkedin_profile" ng-model="client.third.linkedin_profile" type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+  <button ng-click="thirdSave()" class=" btn btn-default save-button" type="button">
+    Save
+  </button>
+</fieldset>
