@@ -6,6 +6,8 @@ angular.module('UnifyApp').
 
       $scope.clients = [];
 
+      $scope.isLoaded = false;
+
       $scope.currentPage = 1;
       $scope.maxPages = 0;
 
@@ -22,6 +24,7 @@ angular.module('UnifyApp').
 
       $scope.$on('$includeContentLoaded', function () {
         execClientJQuery(); // see assets/jquery/clientscript.js
+        $scope.isLoaded = true;
       });
 
       $scope.nextPage = function () {

@@ -4,6 +4,8 @@ angular.module('UnifyApp').
   controller('AddClientsCtrl', ['$scope', 'UnifyProductService', 
     function($scope, UnifyProductService) {
 
+      $scope.isLoaded = false;
+
       $scope.client = {};
       $scope.client.first = {};
       $scope.client.second = {};
@@ -54,6 +56,7 @@ angular.module('UnifyApp').
       $scope.$on('$includeContentLoaded', function () {
         execOnceAddClientsJquery();
         execAddClientsJQuery(); // see assets/jquery/addclientsscript.js
+        $scope.isLoaded = true;
       });
 
       $scope.firstSave = function () {
