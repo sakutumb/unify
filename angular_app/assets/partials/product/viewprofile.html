@@ -1,0 +1,410 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8">
+    <div class="standart-block-wrapper add-clients-wrapper">
+      <ul class="add-clients-items-list">
+        <li id="tracker_0" class="active">
+          <a href="#first_anchor">Profile</a>
+        </li>
+        <li id="tracker_1">
+          <a href="#second_anchor">Partner Preferences</a>
+        </li>
+        <li id="tracker_2">
+          <a href="#third_anchor">Recommended Profiles </a>
+        </li>
+        <li id="tracker_3">
+          <a href="#fourth_anchor">Shortlisted Profiles</a>
+        </li>
+      </ul>
+
+      <div id="first_anchor" class="basics-about">
+
+        <h2>Profile</h2>
+        <div class="who-view-wrap mobile-view">
+          <div class="view-prof-img-wrap">
+            <img ng-src="{{client.profile_picture || 'assets/images/image-client.png'}}" alt="user">
+          </div>
+          <nav class="view-profile-nav">
+            <ul class="pager">
+              <li>
+                <a>1</a>
+              </li>
+              <li>
+                <a>2</a>
+              </li>
+              <li>
+                <a>3</a>
+              </li>
+            </ul>
+          </nav>
+          <button ng-click="whoViewed()" class="btn btn-default save-button" type="button">
+            Who's viewed this Profile
+          </button>
+        </div>
+        <table class="profile-table view-profile-table">
+          <tr class="view-prof-first-col">
+            <td rowspan="45">
+            <div class="who-view-wrap">
+              <div class="view-prof-img-wrap">
+                <img ng-src="{{client.profile_picture || 'assets/images/image-client.png'}}" alt="user">
+              </div>
+              <nav class="view-profile-nav">
+                <ul class="pager">
+                  <li>
+                    <a>1</a>
+                  </li>
+                  <li>
+                    <a>2</a>
+                  </li>
+                  <li>
+                    <a>3</a>
+                  </li>
+                </ul>
+              </nav>
+              <button ng-click="whoViewed()" class=" btn btn-default save-button" type="button">
+                Who's viewed this Profile
+              </button>
+            </div></td>
+          </tr>
+          <tr>
+            <td>Unique ID</td>
+            <td>{{client.id}}</td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>{{client.gender}}</td>
+          </tr>
+          <tr>
+            <td>First Name</td>
+            <td>{{client.first_name}}</td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td>{{client.last_name}}</td>
+          </tr>
+          <tr>
+            <td>Date of Birth </td>
+            <td>{{client.birthday}}</td>
+          </tr>
+          <tr>
+            <td>Marital Status </td>
+            <td>{{client.marital_status}}</td>
+          </tr>
+          <tr>
+            <td>Kids </td>
+            <td>{{client.kids}}</td>
+          </tr>
+          <tr>
+            <td>Ethnicity</td>
+            <td>{{client.ethnicity}}</td>
+          </tr>
+          <tr>
+            <td>Religion</td>
+            <td>{{client.religion}}</td>
+          </tr>
+          <tr>
+            <td>Mother Tongue</td>
+            <td>{{client.language}}</td>
+          </tr>
+          <tr>
+            <td>Community/Caste/Sect</td>
+            <td>{{client.community}}</td>
+          </tr>
+          <tr>
+            <td>Education Level</td>
+            <td>{{client.education}}</td>
+          </tr>
+          <tr>
+            <td>College </td>
+            <td>{{client.college}}</td>
+          </tr>
+          <tr>
+            <td>Occupation</td>
+            <td>{{client.occupation}}</td>
+          </tr>
+          <tr>
+            <td>Linkedln Profile URL</td>
+            <td>{{client.linkedin_profile}}</td>
+          </tr>
+          <tr>
+            <td>Height </td>
+            <td>{{client.height}}</td>
+          </tr>
+          <tr>
+            <td>Hair Color </td>
+            <td>{{client.hair_color}}</td>
+          </tr>
+          <tr>
+            <td>Eye Color </td>
+            <td>{{client.eye_color}}</td>
+          </tr>
+          <tr>
+            <td>Smoke </td>
+            <td>{{client.smoke}}</td>
+          </tr>
+          <tr>
+            <td>Drink </td>
+            <td>{{client.drink}}</td>
+          </tr>
+          <tr>
+            <td>Food</td>
+            <td>{{client.food}}</td>
+          </tr>
+          <tr>
+            <td>Body Type</td>
+            <td>{{client.body_type}}</td>
+          </tr>
+          <tr>
+            <td>Complexion</td>
+            <td>{{client.complexion}}</td>
+          </tr>
+          <tr>
+            <td>Physical Status </td>
+            <td>{{client.physical_status}}</td>
+          </tr>
+          <tr>
+            <td>Favorite Movies</td>
+            <td>{{client.movies}}</td>
+          </tr>
+          <tr>
+            <td>Favorite Music </td>
+            <td>{{client.music}}</td>
+          </tr>
+          <tr>
+            <td>Favorite TV Shows</td>
+            <td>{{client.tv_shows}}</td>
+          </tr>
+          <tr>
+            <td>Favorite Cuisine </td>
+            <td>{{client.cuisine}}</td>
+          </tr>
+          <tr>
+            <td>Hobbies </td>
+            <td>{{client.hobbies}}</td>
+          </tr>
+          <tr>
+            <td>Facebook profile URL </td>
+            <td>{{client.facebook_profile_url}}</td>
+          </tr>
+          <tr>
+            <td>Father Name</td>
+            <td>{{client.father_name}}</td>
+          </tr>
+          <tr>
+            <td>Father Profession</td>
+            <td>{{client.father_profession}}</td>
+          </tr>
+          <tr>
+            <td>Mother Name</td>
+            <td>{{client.mother_name}}</td>
+          </tr>
+          <tr>
+            <td>Mother Profession </td>
+            <td>{{client.mother_profession}}</td>
+          </tr>
+          <tr>
+            <td>#of Siblings (Brothers) </td>
+            <td>{{client.number_brothers}}</td>
+          </tr>
+          <tr>
+            <td>#of Siblings (Sisters) </td>
+            <td>{{client.number_sisters}}</td>
+          </tr>
+          <tr>
+            <td>Sun Sign </td>
+            <td>{{client.sun_sign}}</td>
+          </tr>
+          <tr>
+            <td>Moon Sign </td>
+            <td>{{client.moon_sign}}</td>
+          </tr>
+          <tr>
+            <td>(Raasi or Lunar)</td>
+            <td>{{client.raasi_or_lunar}}</td>
+          </tr>
+          <tr>
+            <td>Birth Star </td>
+            <td>{{client.birthstar}}</td>
+          </tr>
+          <tr>
+            <td>Gothram </td>
+            <td>{{client.gothram}}</td>
+          </tr>
+          <tr>
+            <td>Mangilik or Kujdosha </td>
+            <td>{{client.mangilik}}</td>
+          </tr>
+
+        </table>
+      </div>
+      <a class='go-to-top scrollup view-prof-scroll' href=""><i class="fa fa-chevron-circle-up"></i></a>
+      <div id="second_anchor" class="religion-details">
+        <h2>Partner Preferences</h2>
+        <table class="partner-preferences view-profile-table">
+          <tr>
+            <td>Gender</td>
+            <td>{{partnerPreferences.gender}}</td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>{{partnerPreferences.age}}</td>
+          </tr>
+          <tr>
+            <td>Marital Status </td>
+            <td>{{partnerPreferences.marital_status}}</td>
+          </tr>
+          <tr>
+            <td>Kids</td>
+            <td>{{partnerPreferences.kids}}</td>
+          </tr>
+          <tr>
+            <td>Ethnicity </td>
+            <td>{{partnerPreferences.ethnicity}}</td>
+          </tr>
+          <tr>
+            <td>Religion</td>
+            <td>{{partnerPreferences.religion}}</td>
+          </tr>
+          <tr>
+            <td>Mother Tongue </td>
+            <td>{{partnerPreferences.language}}</td>
+          </tr>
+          <tr>
+            <td>Community/Caste/Sect</td>
+            <td>{{partnerPreferences.community}}</td>
+          </tr>
+          <tr>
+            <td>Education Level </td>
+            <td>{{partnerPreferences.education}}</td>
+          </tr>
+          <tr>
+            <td>Height </td>
+            <td>{{partnerPreferences.height}}</td>
+          </tr>
+          <tr>
+            <td>Hair Color </td>
+            <td>{{partnerPreferences.hair_color}}</td>
+          </tr>
+          <tr>
+            <td>Eye Color</td>
+            <td>{{partnerPreferences.eye_color}}</td>
+          </tr>
+          <tr>
+            <td>Smoke </td>
+            <td>{{partnerPreferences.smoke}}</td>
+          </tr>
+          <tr>
+            <td>Drink </td>
+            <td>{{partnerPreferences.drink}}</td>
+          </tr>
+          <tr>
+            <td>Food</td>
+            <td>{{partnerPreferences.food}}</td>
+          </tr>
+          <tr>
+            <td>Body Type</td>
+            <td>{{partnerPreferences.body_type}}</td>
+          </tr>
+          <tr>
+            <td>Complexion</td>
+            <td>{{partnerPreferences.complexion}}</td>
+          </tr>
+          <tr>
+            <td>Physical Status </td>
+            <td>{{partnerPreferences.physical_status}}</td>
+          </tr>
+          <tr>
+            <td>Sun Sign</td>
+            <td>{{partnerPreferences.sun_sign}}</td>
+          </tr>
+          <tr>
+            <td>Moon Sign </td>
+            <td>{{partnerPreferences.moon_sign}}</td>
+          </tr>
+          <tr>
+            <td>(Raasi or Lunar)</td>
+            <td>{{partnerPreferences.raasi_or_lunar}}</td>
+          </tr>
+          <tr>
+            <td>Birth Star </td>
+            <td>{{partnerPreferences.birthstar}}</td>
+          </tr>
+          <tr>
+            <td>Gothram </td>
+            <td>{{partnerPreferences.gothram}}</td>
+          </tr>
+          <tr>
+            <td>Mangilik or Kujdosha </td>
+            <td>{{partnerPreferences.mangilik}}</td>
+          </tr>
+        </table>
+      </div>
+      <a class="go-to-top scrollup view-prof-scroll" href=""><i class="fa fa-chevron-circle-up"></i></a>
+      <div id="third_anchor" class="profesion">
+        <h2>Recommended Profiles </h2>
+        <div class="row">
+          <div ng-repeat="i in recommendedProfiles" class="col-xs-12 col-sm-4">
+            <div class="user-info no-top-margin who_view_overlay standart-white-block">
+              <div class="row ">
+                <div class="user-info-img  pull-left col-xs-12">
+                  <img ng-src="{{i.profile_picture || 'assets/images/image-client.png'}}" alt="user">
+                </div>
+                <div class="user-info-descr col-xs-12">
+                  <p class="user-info-name">
+                    {{i.name}}
+                  </p>
+
+                  <p class="user-info-place">
+                    {{i.city}},
+                    <mark>
+                      {{i.country}}
+                    </mark>
+                  </p>
+                  <a class="user-info-read-more" ng-click="shortlist(i.id)">+ shortlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="go-to-top scrollup view-prof-scroll" href=""><i class="fa fa-chevron-circle-up"></i></a>
+      <div id="fourth_anchor" class="yourself-info">
+        <h2>Shortlisted Profiles</h2>
+        <div class="row">
+          <div ng-repeat="i in shortlistedProfiles track by $index" class="col-xs-12 col-sm-4">
+            <div class="user-info no-top-margin who_view_overlay standart-white-block">
+              <div class="row ">
+                <div class="user-info-img  pull-left col-xs-12">
+                  <img ng-src="{{i.profile_picture || 'assets/images/image-client.png'}}" alt="user">
+                  <a ng-click="close($index, i.id)" class="close-who-view-user"><i class="fa fa-times"></i></a>
+
+                </div>
+                <div class="user-info-descr col-xs-12">
+                  <p class="user-info-name">
+                     {{i.name}}
+                  </p>
+
+                  <p class="user-info-place">
+                    {{i.city}},
+                    <mark>
+                      {{i.country}}
+                    </mark>
+                  </p>
+                  <a class="user-info-read-more" ng-click="shortlist(i.id)" href="#">+ shortlist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="standart-block-wrapper add-clients-wrapper">
+      <div class="adwrapper">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="assets/jquery/addclientsscript.js"></script>

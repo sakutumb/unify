@@ -353,7 +353,108 @@ angular.module('UnifyApp')
             {"id": "ukraine", "name": " Ukraine"}
           ];
         return array;
-      }     
+      },
+
+      /** View Profile **/
+      getProfile : function(id){
+        return {
+          id: 1,
+          first_name: "Michelle",
+          last_name: "Wong",
+          gender: "Dumb Data",
+          birthday: "Dumb Data",
+          marital_status: "Dumb Data",
+          kids: "Dumb Data",
+          ethnicity: "Dumb Data",
+          religion: "Dumb Data",
+          language: "Dumb Data",
+          community: "Dumb Data",
+          education: "Dumb Data",
+          college: "Dumb Data",
+          occupation: "Dumb Data",
+          linkedin_profile: "Dumb Data",
+          height: "Dumb Data",
+          hair_color: "Dumb Data",
+          eye_color: "Dumb Data",
+          smoke: "Dumb Data",
+          drink: "Dumb Data",
+          food: "Dumb Data",
+          body_type: "Dumb Data",
+          complexion: "Dumb Data",
+          physical_status: "Dumb Data",
+          movies: "Dumb Data",
+          music: "Dumb Data",
+          tv_shows: "Dumb Data",
+          cuisine: "Dumb Data",
+          hobbies: "Dumb Data",
+          facebook_profile_url: "Dumb Data",
+          father_name: "Dumb Data",
+          father_profession: "Dumb Data",
+          mother_name: "Dumb Data",
+          mother_profession: "Dumb Data",
+          number_brothers: "Dumb Data",
+          number_sisters: "Dumb Data",
+          moon_sign: "Dumb Data",
+          sun_sign: "Dumb Data",
+          raasi_or_lunar: "Dumb Data",
+          birthstar: "Dumb Data",
+          gothram: "Dumb Data",
+          mangilik: "Dumb Data"
+        };
+      },
+      getPartnerPreferences : function(id){
+        return {
+          gender: "Dumb Data",
+          age: "Dumb Data",
+          marital_status: "Dumb Data",
+          kids: "Dumb Data",
+          ethnicity: "Dumb Data",
+          religion: "Dumb Data",
+          language: "Dumb Data",
+          community: "Dumb Data",
+          education: "Dumb Data",
+          height: "Dumb Data",
+          hair_color: "Dumb Data",
+          eye_color: "Dumb Data",
+          smoke: "Dumb Data",
+          drink: "Dumb Data",
+          food: "Dumb Data",
+          body_type: "Dumb Data",
+          complexion: "Dumb Data",
+          physical_status: "Dumb Data",
+          moon_sign: "Dumb Data",
+          sun_sign: "Dumb Data",
+          raasi_or_lunar: "Dumb Data",
+          birthstar: "Dumb Data",
+          gothram: "Dumb Data",
+          mangilik: "Dumb Data"
+        };
+      },
+      getRecommendedProfiles : function() {
+        var array = new Array();
+        array = 
+          [
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"},
+            {id: 1, profile_picture: null, name: "Michelle Wong", city: "San Francisco", country:"United States"}
+          ];
+        return array;
+      },
+      getShortlistedProfiles : function() {
+        return this.getRecommendedProfiles();
+      },
+
+      /** Who Viewed **/
+      getWhoViewed : function() {
+        return this.getRecommendedProfiles();
+      }
+
   	}
   }
 ]);

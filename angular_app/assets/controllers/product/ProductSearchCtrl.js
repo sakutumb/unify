@@ -61,8 +61,9 @@ angular.module('UnifyApp').
         $scope.search.results = obj.results;
       }
 
-      $scope.viewProfile = function(client) {
+      $scope.viewProfile = function() {
         // View client profile
+        $state.go('product.viewProfile', {'clientId': $scope.search.clientSelected});
       }
 
       $scope.shortlistResult = function(result) {

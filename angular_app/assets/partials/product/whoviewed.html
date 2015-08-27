@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8 height">
+    <div class="user-search">
+      <p>
+        Who' Viewed {{client.first_name}} {{client.last_name}} Profile
+      </p>
+      <div class="graph-wrap"><img src="assets/images/graph.png" alt=""></div>
+      <div class="row">
+        <div ng-repeat="i in whoViewed" class="col-xs-12 col-sm-4">
+          <div class="user-info no-top-margin who_view_overlay standart-white-block">
+            <div class="row ">
+              <div class="user-info-img  pull-left col-xs-12">
+                <img ng-src="{{i.profile_picture || 'assets/images/image-client.png'}}" alt="user">
+              </div>
+              <div class="user-info-descr col-xs-12">
+                <p class="user-info-name">{{i.name}}</p>
+                
+                <p class="user-info-place">{{i.city}}, <mark>{{i.country}}</mark></p>
+                <a class="user-info-read-more" ng-click="shortlist(i.id)" href="#">+ shortlist</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="adwrapper user-info">
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="assets/jquery/addclientsscript.js"></script>

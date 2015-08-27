@@ -904,7 +904,7 @@ textarea {
 
 /*add-clients*/
 
-.clients-nav {
+.clients-nav, .view-profile-nav {
   text-align: center;
   position: static;
   float: none;
@@ -1371,10 +1371,20 @@ form#login_form {
   .go-to-top {
     right: 45%;
   }
+  .view-prof-scroll {
+    right: 3%;
+  }
 }
+.view-prof-scroll{
+  position: inherit;
+  float:right;
+  margin-top:8px;
+}
+
 .go-to-top:hover {
   text-decoration: none;
 }
+
 .adwrapper {
   background-color: #efefef;
   width: 100%;
@@ -1513,4 +1523,22 @@ form#login_form {
   top: 5px;
   z-index: 9999;
   color: #000;
+}
+
+.who-view-wrap.mobile-view {
+  display: none;
+}
+@media (max-width: 1124px) {
+  .view-prof-first-col {
+    display: none;
+  }
+  .who-view-wrap.mobile-view {
+    display: block;
+    border: 3px solid #fff;
+    border-bottom:none;
+    overflow:hidden;
+  }
+  .who-view-wrap.mobile-view .save-button{
+    max-width: inherit;
+  }
 }

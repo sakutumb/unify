@@ -168,16 +168,20 @@ var unifyModule = angular.module('UnifyApp', [
                 }
             // The product tabs
             }).state('product.dashboard', {
+              url: "#dashboard",
               controller: 'DashboardCtrl',
               templateUrl: 'assets/partials/product/dashboard.html'
             }).state('product.clients', {
+              url: "#clients",
               controller: 'ClientCtrl',
               templateUrl: 'assets/partials/product/clients.html'
             }).state('product.addclients', {
+              url: "#addclients",
               controller: 'AddClientsCtrl',
               templateUrl: 'assets/partials/product/addclients.html'
 
             }).state('product.search', {
+              url: "#search",
               controller: 'ProductSearchCtrl',
               templateUrl: 'assets/partials/product/search.html'
             }).state('product.search.appearance', {
@@ -190,6 +194,7 @@ var unifyModule = angular.module('UnifyApp', [
               templateUrl: 'assets/partials/product/search/horoscope.html'
 
             }).state('product.inbox', {
+              url: "#inbox",
               controller: 'InboxCtrl',
               templateUrl: 'assets/partials/product/inbox.html'
             }).state('product.inbox.compose', {
@@ -212,12 +217,27 @@ var unifyModule = angular.module('UnifyApp', [
               templateUrl: 'assets/partials/product/inbox/inbox.html'
 
             }).state('product.account', {
-                controller: 'AccountCtrl',
-                templateUrl: 'assets/partials/product/account.html'
+              url: "#account",
+              controller: 'AccountCtrl',
+              templateUrl: 'assets/partials/product/account.html'
+            })
+
+            .state('product.viewProfile', {
+              url: "#viewprofile",
+              params: {clientId: 0},
+              controller: 'ViewProfileCtrl',
+              templateUrl: 'assets/partials/product/viewprofile.html'
+            })
+
+            .state('product.whoViewed', {
+              url: "#whoviewed",
+              params: {clientId: 0},
+              controller: 'WhoViewedCtrl',
+              templateUrl: 'assets/partials/product/whoviewed.html'
             });
 
-        }]).run(['$rootScope', '$timeout',
-        function($rootScope, $timeout) {
+        }]).run(['$rootScope', '$timeout', '$state',
+        function($rootScope, $timeout, $state) {
             $rootScope.loginFormVisible = false;
             $rootScope.registrationFormVisible = false;
             $rootScope.hasUserLoggedIn = IS_VALID_SESSION;
