@@ -5,7 +5,8 @@ var unifyModule = angular.module('UnifyApp', [
         'ui.bootstrap.showErrors',
         'checklist-model',
         'localytics.directives', // The "chosen" component used in the inbox tab
-        'ngFileUpload' // The file upload is used in the compose section of the inbox tab to attach files
+        'ngFileUpload', // The file upload is used in the compose section of the inbox tab to attach files
+        'ngAnimate'
     ]).
     constant('appConstants', {
         // All app constants goes here
@@ -153,53 +154,66 @@ var unifyModule = angular.module('UnifyApp', [
                     }
                 }
             }).state('product', {
-                url: '/product.html',
+                // the angularjs_product is temporary to host in the ftp
+                url: '/angularjs_product/product.html',
                 views: {
                     'product': {
                         controller: 'ProductCtrl',
-                        templateUrl: '/assets/templates/product.html'
+                        templateUrl: 'assets/templates/product.html'
                     },
                     'menulist@product': {
                         controller: 'ProductMenuCtrl',
-                        templateUrl: '/assets/partials/product/menulist.html'
+                        templateUrl: 'assets/partials/product/menulist.html'
                     }
                 }
             // The product tabs
             }).state('product.dashboard', {
-                controller: 'DashboardCtrl',
-                templateUrl: '/assets/partials/product/dashboard.html'
+              controller: 'DashboardCtrl',
+              templateUrl: 'assets/partials/product/dashboard.html'
             }).state('product.clients', {
-                templateUrl: '/assets/partials/product/clients.html'
+              controller: 'ClientCtrl',
+              templateUrl: 'assets/partials/product/clients.html'
             }).state('product.addclients', {
-                templateUrl: '/assets/partials/product/addclients.html'
+              controller: 'AddClientsCtrl',
+              templateUrl: 'assets/partials/product/addclients.html'
+
             }).state('product.search', {
-                templateUrl: '/assets/partials/product/search.html'
+              controller: 'ProductSearchCtrl',
+              templateUrl: 'assets/partials/product/search.html'
+            }).state('product.search.appearance', {
+              templateUrl: 'assets/partials/product/search/appearance.html'
+            }).state('product.search.basic', {
+              templateUrl: 'assets/partials/product/search/basic.html'
+            }).state('product.search.habits', {
+              templateUrl: 'assets/partials/product/search/habits.html'
+            }).state('product.search.horoscope', {
+              templateUrl: 'assets/partials/product/search/horoscope.html'
 
             }).state('product.inbox', {
               controller: 'InboxCtrl',
-              templateUrl: '/assets/partials/product/inbox.html'
+              templateUrl: 'assets/partials/product/inbox.html'
             }).state('product.inbox.compose', {
               controller: 'ComposeCtrl',
-              templateUrl: '/assets/partials/product/inbox/compose.html'
+              templateUrl: 'assets/partials/product/inbox/compose.html'
             }).state('product.inbox.inbox', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
             }).state('product.inbox.sent', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
             }).state('product.inbox.shortlisted', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
              }).state('product.inbox.notinterested', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
              }).state('product.inbox.trash', {
               controller: 'InboxMessagesCtrl',
-              templateUrl: '/assets/partials/product/inbox/inbox.html'
+              templateUrl: 'assets/partials/product/inbox/inbox.html'
 
             }).state('product.account', {
                 controller: 'AccountCtrl',
-                templateUrl: '/assets/partials/product/account.html'
+                templateUrl: 'assets/partials/product/account.html'
             });
 
         }]).run(['$rootScope', '$timeout',

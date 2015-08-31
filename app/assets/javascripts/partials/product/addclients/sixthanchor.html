@@ -1,0 +1,50 @@
+<h2>Family</h2>
+<fieldset>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="st-add-input search-standart-inputs">
+        <label class="powermail_label pull-left">Father name</label>
+        <input name="father_name" ng-model="client.sixth.father_name" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="st-add-input search-standart-inputs">
+        <label class="powermail_label pull-left">Father Profession</label>
+        <input name="father_profession" ng-model="client.sixth.father_profession" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="st-add-input search-standart-inputs">
+        <label class="powermail_label pull-left">Mother name</label>
+        <input name="mother_name" ng-model="client.sixth.mother_name" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="st-add-input search-standart-inputs">
+        <label class="powermail_label pull-left">Mother Profession</label>
+        <input name="mother_profession" ng-model="client.sixth.mother_profession" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="number-of-siblings select-add-clients">
+        <label class="powermail_label pull-left"># of Siblings Brothers</label>
+        <span class="user-search-input-btn">
+          <select name="siblings_brothers" ng-options="i.description for i in nSiblingsBrothersOptions track by i.id" ng-model="client.sixth.siblings_brothers" >
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="number-of-siblings select-add-clients">
+        <label class="powermail_label pull-left"># of Siblings Sisters</label>
+        <span class="user-search-input-btn">
+          <select name="siblings_sisters" ng-options="i.description for i in nSiblingsSistersOptions track by i.id" ng-model="client.sixth.siblings_sisters" >
+          </select>
+        </span>
+      </div>
+    </div>
+  </div>
+  <button ng-click="sixthSave()" class=" btn btn-default save-button" type="button">
+    Save
+  </button>
+</fieldset>

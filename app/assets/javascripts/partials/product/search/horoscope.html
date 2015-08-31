@@ -1,0 +1,65 @@
+<div class="user-info-select no-top-margin standart-white-block search-horoscope ng-cloak">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <!-- <button type="button" class="" aria-label="Left Align"> -->
+      <a href="#" ng-click="closeRefine()" class="btn btn-default close-search pull-right glyphicon glyphicon glyphicon-remove" aria-hidden="true"></a>
+      <!-- </button> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-gothram search-standart-inputs">
+        <label class="powermail_label pull-left">Gotrham :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in gotrhamOptions">
+            <input id="{{'gotrham_'+item.id}}" name="{{'gotrham_'+item.id}}" type="checkbox" checklist-model="search.horoscope.gotrham" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Birth Star:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in birthStarOptions">
+            <input id="{{'birthStar_'+item.id}}" name="{{'birthStar_'+item.id}}" type="checkbox" checklist-model="search.horoscope.birthStar" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Sun Sign:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in sunSignOptions">
+            <input id="{{'sunSign_'+item.id}}" name="{{'sunSign_'+item.id}}" type="checkbox" checklist-model="search.horoscope.sunSign" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Moon Sign:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in moonSignOptions">
+            <input id="{{'moonSign_'+item.id}}" name="{{'moonSign_'+item.id}}" type="checkbox" checklist-model="search.horoscope.moonSign" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="search-mangalik pull-left">
+    <label class="powermail_label">Manglik or Kujadosha:</label>
+    <span>
+      <input id="search_manglik" name="manglik" ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="yes">
+      Yes
+      <input id="search_manglik" name="manglik" ng-model="search.horoscope.manglik" type="radio" name="mangalik" value="no">
+      No 
+    </span>
+  </div>
+  <button ng-click="queryResults()" class="btn btn-default submit-button" type="button">
+    SUBMIT
+  </button>
+</div>
+
+<script type="text/javascript" src="assets/jquery/searchscript.js"></script>

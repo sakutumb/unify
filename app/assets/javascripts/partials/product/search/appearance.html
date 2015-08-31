@@ -1,0 +1,78 @@
+<div class="user-info-select no-top-margin standart-white-block search-appereance ng-cloak">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-height pull-left">
+        <label class="powermail_label">Height:</label>
+        <span>
+          <select id="search_height" name="search_height" ng-model="search.appearance.height">
+            <option ng-repeat="h in heightOptions" value="{{h.id}}">{{h.description}}</option>
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <!-- <button type="button" class="" aria-label="Left Align"> -->
+          <a href="#" ng-click="closeRefine()" class="btn btn-default close-search pull-right glyphicon glyphicon glyphicon-remove" aria-hidden="true"></a>
+          <!-- </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Body-type:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in bodyOptions">
+            <input id="{{'body_'+item.id}}" name="{{'body_'+item.id}}" type="checkbox" checklist-model="search.appearance.body" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Eye-color:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in eyeOptions">
+            <input id="{{'eye_'+item.id}}" name="{{'eye_'+item.id}}" type="checkbox" checklist-model="search.appearance.eye" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Hair-color:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in hairOptions">
+            <input id="{{'hair_'+item.id}}" name="{{'hair_'+item.id}}" type="checkbox" checklist-model="search.appearance.hair" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Physical Status:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in physicalOptions">
+            <input id="{{'physical_'+item.id}}" name="{{'physical_'+item.id}}" type="checkbox" checklist-model="search.appearance.physical" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Complexion:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in complexionOptions">
+            <input id="{{'complexion_'+item.id}}" name="{{'complexion_'+item.id}}" type="checkbox" checklist-model="search.appearance.complexion" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <button ng-click="queryResults()" class="btn btn-default submit-button" type="button">SUBMIT</button>
+</div>
+
+<script type="text/javascript" src="assets/jquery/searchscript.js"></script>

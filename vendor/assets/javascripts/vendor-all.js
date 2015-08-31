@@ -10,10 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require angular-js/angular
-//= require angular-js/angular-route
-//= require angular-js/angular-ui-router
-//= require angular-js/checklist-model
-//= require angular-js/ui-bootstrap-tpls
+// require angular-js/angular
+// require angular-js/angular-route
+// require angular-js/angular-ui-router
+// require angular-js/angular-animate.min
+// require angular-js/ui-bootstrap-tpls
+//= require angular-js/chosenangular
+//= require angular-js/ng-file-upload.min
+// = require angular-js/checklist-model
 //= require show-errors/showErrors
 //= require jquery-slicknav/jquery.slicknav.min

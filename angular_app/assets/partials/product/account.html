@@ -22,6 +22,14 @@
 			</p>
 		</div>
 
+    <div class="first-row">
+      <label class="powermail_label">Religion:</label>      
+      <span checkbox-list name="religions" required ng-model="account.religions" items="religionOptions" value="id" label="name" class="multiple-input"></span>
+      <p ng-show="(form.$submitted || form.religions.$touched) && form.religions.$error.required" class="error-validation">
+        Please Complete.
+      </p>
+    </div>
+
 		<div class="first-row">
 			<label class="powermail_label">Language:</label>			
 			<span checkbox-list name="languages" required ng-model="account.languages" items="langOptions" value="id" label="name" class="multiple-input"></span>
@@ -32,7 +40,7 @@
 
 		<div class="first-row">
 			<label class="powermail_label">Community:</label>
-			<span checkbox-list name="community" required ng-model="account.community" items="communityOptions" value="id" label="name" class="multiple-input"></span>
+			<span name="community" required ng-model="account.community" checkbox-list items="communityOptions" value="id" label="name" class="multiple-input"></span>
 			<p ng-show="(form.$submitted || form.community.$touched) && form.community.$error.required" class="error-validation">
 				Please Complete.
 			</p>

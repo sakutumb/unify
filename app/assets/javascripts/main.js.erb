@@ -3,19 +3,22 @@
 var unifyModule = angular.module('UnifyApp', [
             'ui.router',
             'ui.bootstrap.showErrors',
-            'checklist-model'
+            'checklist-model',
+            'localytics.directives', // The "chosen" component used in the inbox tab
+            'ngFileUpload', // The file upload is used in the compose section of the inbox tab to attach files
+            'ngAnimate'
         ]).
         constant('appConstants', {
             // All app constants goes here
-            APP_CONFIG          : APP_CONFIG,
-            authenticity_token  : FORM_AUTHENTICITY_TOKEN, // Defined at layout level
-            LOGIN_URL           : '/app/services/login',
-            REGISTRATION_URL    : '/app/services/register',
-            DIM_DATA_URL        : '/app/services/get_dim_data',
-            FILTER_DATA_URL        : '/app/services/get_filter_data',
-            LINKEDIN_PROFILE_SAVE_URL   : '/app/services/save_linkedin_profile',
-            FB_PROFILE_SAVE_URL         : '/app/services/save_fb_profile',
-            SUPPORTED_LOCALES        : <%= Unify::SUPPORTED_LOCALES_JSON %>
+            APP_CONFIG: APP_CONFIG,
+            authenticity_token: FORM_AUTHENTICITY_TOKEN, // Defined at layout level
+            LOGIN_URL: '/app/services/login',
+            REGISTRATION_URL: '/app/services/register',
+            DIM_DATA_URL: '/app/services/get_dim_data',
+            FILTER_DATA_URL: '/app/services/get_filter_data',
+            LINKEDIN_PROFILE_SAVE_URL: '/app/services/save_linkedin_profile',
+            FB_PROFILE_SAVE_URL: '/app/services/save_fb_profile',
+            SUPPORTED_LOCALES: <%= Unify::SUPPORTED_LOCALES_JSON %>
         }).
         config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -109,6 +112,7 @@ var unifyModule = angular.module('UnifyApp', [
                         }
                     }
                 }).state('product', {
+                    // the angularjs_product is temporary to host in the ftp
                     url: '/product',
                     views: {
                         'product': {
@@ -125,13 +129,43 @@ var unifyModule = angular.module('UnifyApp', [
                     controller: 'DashboardCtrl',
                     templateUrl: '<%= asset_path('partials/product/dashboard.html') %>'
                 }).state('product.clients', {
+                    controller: 'ClientCtrl',
                     templateUrl: '<%= asset_path('partials/product/clients.html') %>'
                 }).state('product.addclients', {
+                    controller: 'AddClientsCtrl',
                     templateUrl: '<%= asset_path('partials/product/addclients.html') %>'
                 }).state('product.search', {
+                    controller: 'ProductSearchCtrl',
                     templateUrl: '<%= asset_path('partials/product/search.html') %>'
+                }).state('product.search.appearance', {
+                    templateUrl: '<%= asset_path('partials/product/search/appearance.html') %>'
+                }).state('product.search.basic', {
+                    templateUrl: '<%= asset_path('partials/product/search/basic.html') %>'
+                }).state('product.search.habits', {
+                    templateUrl: '<%= asset_path('partials/product/search/habits.html') %>'
+                }).state('product.search.horoscope', {
+                    templateUrl: '<%= asset_path('partials/product/search/horoscope.html') %>'
                 }).state('product.inbox', {
+                    controller: 'InboxCtrl',
                     templateUrl: '<%= asset_path('partials/product/inbox.html') %>'
+                }).state('product.inbox.compose', {
+                    controller: 'ComposeCtrl',
+                    templateUrl: '<%= asset_path('partials/product/inbox/compose.html') %>'
+                }).state('product.inbox.inbox', {
+                    controller: 'InboxMessagesCtrl',
+                    templateUrl: '<%= asset_path('partials/product/inbox/inbox.html') %>'
+                }).state('product.inbox.sent', {
+                    controller: 'InboxMessagesCtrl',
+                    templateUrl: '<%= asset_path('partials/product/inbox/inbox.html') %>'
+                }).state('product.inbox.shortlisted', {
+                    controller: 'InboxMessagesCtrl',
+                    templateUrl: '<%= asset_path('partials/product/inbox/inbox.html') %>'
+                }).state('product.inbox.notinterested', {
+                    controller: 'InboxMessagesCtrl',
+                    templateUrl: '<%= asset_path('partials/product/inbox/inbox.html') %>'
+                }).state('product.inbox.trash', {
+                    controller: 'InboxMessagesCtrl',
+                    templateUrl: '<%= asset_path('partials/product/inbox/inbox.html') %>'
                 }).state('product.account', {
                     controller: 'AccountCtrl',
                     templateUrl: '<%= asset_path('partials/product/account.html') %>'
@@ -179,20 +213,20 @@ var unifyModule = angular.module('UnifyApp', [
                     }
                 })
             }]).run(['$rootScope', '$timeout',
-                    function($rootScope, $timeout) {
-                        $rootScope.loginFormVisible = false;
-                        $rootScope.registrationFormVisible = false;
-                        $rootScope.hasUserLoggedIn = IS_VALID_SESSION;
-                        //Utility function to animate scroll to a section of a page
-                        $rootScope.scrollToSection = function(sectionId){
-                            if($(sectionId)){
-                                $timeout(
-                                        function () {
-                                            $('html, body').animate({
-                                                scrollTop: $(sectionId).offset().top - 2
-                                            }, 1000);
-                                        }
-                                );
-                            }
-                        };
-                }]);
+            function ($rootScope, $timeout) {
+                $rootScope.loginFormVisible = false;
+                $rootScope.registrationFormVisible = false;
+                $rootScope.hasUserLoggedIn = IS_VALID_SESSION;
+                //Utility function to animate scroll to a section of a page
+                $rootScope.scrollToSection = function (sectionId) {
+                    if ($(sectionId)) {
+                        $timeout(
+                                function () {
+                                    $('html, body').animate({
+                                        scrollTop: $(sectionId).offset().top - 2
+                                    }, 1000);
+                                }
+                        );
+                    }
+                };
+            }]);

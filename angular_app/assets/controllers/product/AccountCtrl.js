@@ -5,6 +5,7 @@ angular.module('UnifyApp').
     function($scope, UnifyProductService) {
 
       $scope.account = UnifyProductService.getAccountData();
+      $scope.religionOptions = [];
       $scope.langOptions = [];
       $scope.communityOptions = [];
       $scope.countryOptions = [];
@@ -20,6 +21,10 @@ angular.module('UnifyApp').
         
       }
 
+      $scope.loadReligions = function() { // Dummy function to load religions
+        $scope.religionOptions = UnifyProductService.getReligionOptions();
+      }
+
       $scope.loadLanguages = function() { // Dummy function to load languages
         $scope.langOptions = UnifyProductService.getLanguageOptions();
       }
@@ -32,6 +37,7 @@ angular.module('UnifyApp').
         $scope.countryOptions = UnifyProductService.getCountryOptions();
       }
 
+      $scope.loadReligions();
       $scope.loadLanguages();
       $scope.loadCommunities();
       $scope.loadCountries();

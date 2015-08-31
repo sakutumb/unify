@@ -1,0 +1,27 @@
+<div class="standart-block-wrapper ng-cloak">
+  <div class="search-first-row">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4" ng-include="'assets/partials/product/search/clientsearch.html'">
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4" ng-include="'assets/partials/product/search/clientdetails.html'">
+        
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4" ng-include="'assets/partials/product/search/clientpreferences.html'">
+        
+      </div>
+    </div>
+  </div>
+  <div ng-show="search.results.length > 0" class="search-second-row" ng-include="'assets/partials/product/search/results.html'">
+    
+  </div>
+  <!--ng-class="{'third-row': !('product.search'|isState)}"-->
+  <div class="row" >
+    <div class="col-xs-12 col-sm-3" ng-include="'assets/partials/product/search/searchsidebar.html'">
+      
+    </div>
+    <div class="col-xs-12 col-sm-9" ng-include="'assets/partials/product/search/resultdetails.html'">
+      
+    </div>
+  </div>
+</div>

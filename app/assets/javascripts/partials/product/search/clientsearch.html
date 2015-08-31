@@ -1,0 +1,17 @@
+<div class="standart-white-block ng-cloak">
+  <h3>Searching For:</h3>
+  <div class="standart-white-block-input">
+    <select ng-model="search.clientSelected">
+      <option ng-repeat="c in clientList" value="{{c.id}}">{{c.clientName}}</option>
+    </select>
+    <span class="user-search-input-btn">
+      <button ng-click="searchForById(search.clientSelected)" class="btn btn-default submit-button" type="button">SUBMIT</button>
+    </span>
+  </div>
+  <div class="standart-white-block-input">
+    <input ng-model="search.clientName" type="text" class="form-control" placeholder="Enter Client Name">
+    <span class="user-search-input-btn">
+      <button ng-click="searchForByName(search.clientName)" class="btn btn-default submit-button" type="button">SUBMIT</button>
+    </span>
+  </div>
+</div>

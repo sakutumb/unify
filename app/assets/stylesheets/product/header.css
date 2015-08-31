@@ -54,7 +54,7 @@
 	position: absolute;
 	right: -4px;
 	bottom: 8px;
-	background-image: url(../../images/active-menu-item-after.png);
+	background-image: url(/assets/active-menu-item-after.png);
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	z-index: 9999
@@ -66,7 +66,7 @@
 	position: absolute;
 	left: -6px;
 	bottom: 8px;
-	background-image: url(../../images/active-menu-item-before.png);
+	background-image: url(/assets/active-menu-item-before.png);
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	z-index: 9999
@@ -131,7 +131,7 @@
 		display:none;
 	}
 	.menu-button{
-		background-image: url(../../images/menu.png);
+		background-image: url(/assets/menu.png);
 		background-repeat: no-repeat;
 		background-position: center center;
 		display: block;

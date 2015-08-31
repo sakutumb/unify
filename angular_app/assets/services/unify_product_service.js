@@ -95,6 +95,122 @@ angular.module('UnifyApp')
         return array;
   		},
 
+      //** Add Clients Tab **/
+
+      // I'm using the getBasicEthnicityOptions as a dummy data
+      getViewedByOptions : function () {
+        return this.getBasicEthnicityOptions();
+      },
+
+      getSiblingsBrothersOptions : function () {
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "2"},
+            {id: 2, description: "4"}
+          ];
+        return array;
+      },
+
+      getSiblingsSistersOptions : function () {
+        return this.getSiblingsBrothersOptions();
+      },
+
+      getMangalikOptions : function () {
+        return this.getBasicEthnicityOptions();
+      },
+
+      /** Search Tab **/
+      // The basic refine page options
+      getBasicAgeOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "18-25 years"},
+            {id: 2, description: "25-70 years"}
+          ];
+        return array;
+      },
+      getBasicEthnicityOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "Option 1"},
+            {id: 2, description: "Option 2"},
+            {id: 3, description: "Option 3"},
+            {id: 4, description: "Option 4"},
+            {id: 5, description: "Option 5"}
+          ];
+        return array;
+      },
+      // For now, using the same data
+      getBasicReligionOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicLanguageOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicCommunityOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicMaritalOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicEducationOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getBasicCountryOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      // The appearance page options
+      getAppeaHeightOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, description: "4.8\""},
+            {id: 2, description: "6\""}
+          ];
+        return array;
+      },
+      getAppeaBodyOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaEyeOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaHairOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaPhysicalOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getAppeaComplexionOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      // The habits page options
+      getHabitsSmokeOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHabitsDrinkOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHabitsEatingOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      // The horoscope page options
+      getHoroscopeGotrhamOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHoroscopeBirthStarOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHoroscopeSunSignOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+      getHoroscopeMoonSignOptions : function(){
+        return this.getBasicEthnicityOptions();
+      },
+
       /** Inbox Tab  **/
       getComposeContacts : function(){
         var array = new Array();
@@ -104,7 +220,8 @@ angular.module('UnifyApp')
             {id: 2, name: "James Bond"},
             {id: 3, name: "Indiana Jones"},
             {id: 4, name: "Luk Skayvoker"},
-            {id: 5, name: "Harry Potter"}
+            {id: 5, name: "Harry Potter"},
+            {id: 6, name: "Jenifer Ralston"}
           ];
         return array;
       },
@@ -114,63 +231,63 @@ angular.module('UnifyApp')
         array = 
           [
             {
-              id: 1, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 1, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 2, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 2, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "Test with a different title", 
               title: "Test with a different title",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 3, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 3, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 4, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 4, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 5, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 5, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 6, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 7, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 7, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 8, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 8, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
               body: "The stylized <b>message</b> body"
             },
             {
-              id: 9, author_name: "Jenifer Ralston", author_genre: 'M',
+              id: 9, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
               title_exerpt: "More Information About..", 
               title: "More Information About Peter Klempworth",
               date: "12-27-14 14:56 PST",
@@ -187,6 +304,7 @@ angular.module('UnifyApp')
         return {
             business_name : "dummy data",
             business_location : "dummy data",
+            religions : [],
             languages : ["en"],
             community : ["afrikanas"],
             phone_number : "dummy data",
@@ -196,6 +314,16 @@ angular.module('UnifyApp')
             state : "dummy data",
             country : "usa"
         	};
+      },
+      getReligionOptions : function(){
+        var array = new Array();
+        array = 
+          [
+            {id: 1, name: " Christian"},
+            {id: 2, name: " Islam"},
+            {id: 3, name: " Judaism"}
+          ];
+        return array;
       },
       getLanguageOptions : function(){
         var array = new Array();

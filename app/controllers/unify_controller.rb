@@ -231,7 +231,7 @@ class UnifyController < ApplicationController
 
 
   def user_params
-    params.require(:unify_user).permit(:user_id, :email, :password, :first_name, :last_name, :user_type, :organization_name)
+    params.require(:unify_user).permit(:user_id, :email, :password, :first_name, :last_name, :user_type, :organization_name, :locale_id)
   end
 
   def check_user_session
