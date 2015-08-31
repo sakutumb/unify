@@ -1,0 +1,113 @@
+<div class="user-info-select no-top-margin standart-white-block search-basic ng-cloak">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-gender pull-left"><label class="powermail_label">Gender:</label>
+        <span>
+          <input type="radio" ng-model="search.basic.gender" id="sex" name="sex" value="male">Male
+          <input type="radio" ng-model="search.basic.gender" id="sex" name="sex" value="female">Female
+        </span>
+      </div>  
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="row">
+        <div class="col-xs-9 col-sm-9">
+          <div class="search-age pull-left"><label class="powermail_label">Age:</label>
+            <span>
+              <select id="age" name="age" ng-model="search.basic.age">
+                <option ng-repeat="a in ageOptions" value="{{a.id}}">{{a.description}}</option>
+              </select>
+            </span>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3">
+          <!-- <button type="button" class="" aria-label="Left Align"> -->
+            <a href="#" ng-click="closeRefine()" class="btn btn-default close-search pull-right glyphicon glyphicon glyphicon-remove" aria-hidden="true"></a>
+          <!-- </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Ethnicity :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in ethnicityOptions">
+            <input id="{{'ethnicity_'+item.id}}" name="{{'ethnicity_'+item.id}}" type="checkbox" checklist-model="search.basic.ethnicity" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12  col-sm-6">
+      <div class="search-Religion search-standart-inputs">
+        <label class="powermail_label pull-left">Religion :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in religionOptions">
+            <input id="{{'religion_'+item.id}}" name="{{'religion_'+item.id}}" type="checkbox" checklist-model="search.basic.religion" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-language search-standart-inputs">
+        <label class="powermail_label pull-left">Language:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in languageOptions">
+            <input id="{{'language_'+item.id}}" name="{{'language_'+item.id}}" type="checkbox" checklist-model="search.basic.language" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12  col-sm-6">
+      <div class="search-community search-standart-inputs">
+        <label class="powermail_label pull-left">Community/Caste/Sect :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in communityOptions">
+            <input id="{{'community_'+item.id}}" name="{{'community_'+item.id}}" type="checkbox" checklist-model="search.basic.community" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12  col-sm-6">
+      <div class="search-marital-status search-standart-inputs">
+        <label class="powermail_label pull-left">Marital Status :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in maritalOptions">
+            <input id="{{'marital_'+item.id}}" name="{{'marital_'+item.id}}" type="checkbox" checklist-model="search.basic.marital" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-kids pull-left"><label class="powermail_label">Kids:</label>
+        <span>
+          <input ng-model="search.basic.kids" type="radio" id="kids" ame="kids" value="yes">Yes
+          <input ng-model="search.basic.kids" type="radio" id="kids" name="kids" value="no">No
+        </span>
+      </div>  
+    </div>
+    <div class="col-xs-12  col-sm-6">
+      <div class="search-Education search-standart-inputs">
+        <label class="powermail_label pull-left">Education :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in educationOptions">
+            <input id="{{'education_'+item.id}}" name="{{'education_'+item.id}}" type="checkbox" checklist-model="search.basic.education" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12  col-sm-6">
+      <div class="search-Country search-standart-inputs">
+        <label class="powermail_label pull-left">Country :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in countryOptions">
+            <input id="{{'country_'+item.id}}" name="{{'country_'+item.id}}" type="checkbox" checklist-model="search.basic.country" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+  </div>
+  <button ng-click="queryResults()" class="btn btn-default submit-button" type="button">SUBMIT</button>
+</div>
+
+<script type="text/javascript" src="assets/jquery/searchscript.js"></script>

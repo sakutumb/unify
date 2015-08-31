@@ -1,0 +1,53 @@
+<h2>Astro details</h2>
+<fieldset>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="religion select-add-clients">
+        <label class="powermail_label pull-left">What is your Sun sign?</label>
+        <span class="user-search-input-btn">
+          <select name="sun_sign" ng-options="i.description for i in sunSignOptions track by i.id" ng-model="client.seventh.sun_sign">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="religion select-add-clients">
+        <label class="powermail_label pull-left">What is your Moon sign (Raasi or Lunar)?</label>
+        <span class="user-search-input-btn">
+          <select name="moon_sign" ng-options="i.description for i in moonSignOptions track by i.id" ng-model="client.seventh.moon_sign">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="birth-star select-add-clients">
+        <label class="powermail_label pull-left">Birth Star</label>
+        <span class="user-search-input-btn">
+          <select name="birth_star" ng-options="i.description for i in birthStarOptions track by i.id" ng-model="client.seventh.birth_star">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="gotrham select-add-clients">
+        <label class="powermail_label pull-left">Gothram</label>
+        <span class="user-search-input-btn">
+          <select name="gothram" ng-options="i.description for i in gotrhamOptions track by i.id" ng-model="client.seventh.gothram">
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <div class="manga-kaujad pull-left">
+        <label class="powermail_label">Are you Mangalik or Kujadosha?</label>
+        <span>
+          <input ng-model="client.seventh.mang" type="radio" name="mang" value="true"> Yes
+          <input ng-model="client.seventh.mang" type="radio" name="mang" value="false"> Now
+        </span>
+      </div>
+    </div>
+  </div>
+  <button ng-click="seventhSave()" class=" btn btn-default save-button" type="button">
+    Save
+  </button>
+</fieldset>

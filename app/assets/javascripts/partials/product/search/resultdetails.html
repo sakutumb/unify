@@ -1,0 +1,37 @@
+<div class="row ng-cloak">
+  <div id="resultdetails" ng-show="!('product.search'|isState)" class="col-xs-12 col-sm-8 animate" ui-view>
+
+  </div>
+  <div ng-repeat="r in search.results" class="col-xs-12 col-sm-4">
+    <div class="user-info no-top-margin standart-white-block">
+      <div class="row ">
+        <div class="user-info-img  pull-left col-xs-12">
+          <img ng-src="{{r.profile_picture || '/assets/image-client.png'}}" alt="user">
+        </div>
+        <div class="user-info-descr col-xs-12">
+          <p class="user-info-name">{{r.name}}</p>          
+          <p class="user-info-place">{{r.place}}</p>
+          <a ng-click="shortlistResult(r)" class='user-info-read-more' href="#">+ shortlist</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<nav ng-show="search.pages > 0" class='search-pager'>
+  <ul class="pagination">
+    <li ng-show="activePage > 1">
+      <a ng-click="changePage(search.activePage - 1)" href="#" aria-label="Previous">
+        <span aria-hidden="true">Previous</span>
+      </a>
+    </li>
+    <li ng-repeat="p in getPages(search.pages) track by $index">
+      <a ng-click="changePage($index +1)" href="#">{{$index +1}}</a>
+    </li>
+    <li ng-show="activePage !== search.pages">
+      <a ng-click="changePage(search.activePage + 1)" href="#" aria-label="Next">
+        <span aria-hidden="true">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>

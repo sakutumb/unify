@@ -1,0 +1,9 @@
+<h2><span ng-show="search.searchingFor">{{search.searchingFor.name}}'s</span> Matches: <span>{{search.results.length}} Results</span></h2>
+<div class="standart-white-block-input">
+  <select ng-model="search.clientSelected">
+    <option ng-repeat="c in clientList" value="{{c.id}}">{{c.clientName}}</option>
+  </select>
+  <span class="user-search-input-btn">
+    <button ng-click="searchForById(search.clientSelected)" class="btn btn-default submit-button" type="button">SUBMIT</button>
+  </span>
+</div>

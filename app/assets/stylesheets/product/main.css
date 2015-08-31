@@ -9,6 +9,7 @@ body {
 	font-family: 'arial';
 	font-weight: normal;
 	margin: 0;
+  overflow-y: scroll;
 }
 a:hover, a:focus, a:visited {
 	outline: none;
@@ -33,7 +34,11 @@ a:focus, a:visited {
 	transform: translate(0px, 0px);
 	transition: transform 1s ease 0s;
 	z-index: 15;
-	
+}
+
+/* Fix the "jump" when a template is being loaded */
+.wrapper .content {
+  min-height: 650px;
 }
 
 .wrapper.pull_left {
@@ -55,7 +60,7 @@ fieldset > div {
 	position:absolute;
 	top:-10px;
 	left:55px;
-	background-image: url(../../images/error-arrow.png);
+	background-image: url(/assets/error-arrow.png);
 	background-repeat:no-repeat;
 	background-position:top center;
 	height:11px;
@@ -72,7 +77,25 @@ fieldset > div {
 	border-radius:3px;
 }
 
+.dsplBlock{
+  display:block!important;
+}
+
 .darkerColor{
 	color:#793919!important;
 }
 
+.no-top-margin {
+  margin-top: 0!important;
+}
+
+@media (min-width: 768px) {
+  .alfa{
+    padding-left:0!important;
+    margin-left:0!important;
+  }
+  .omega{
+    padding-right:0!important;
+    margin-right:0!important;
+  }
+}

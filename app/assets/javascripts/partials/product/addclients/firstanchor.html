@@ -1,0 +1,117 @@
+<h2>Basic info</h2>
+  <fieldset>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <div class="search-gender pull-left">
+          <label class="powermail_label">Gender</label>
+          <span>
+            <input type="radio" name="sex" ng-model="client.first.sex" value="male">
+            Male
+            <input type="radio" name="sex" ng-model="client.first.sex" value="female">
+            Female </span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <div class="first-name search-standart-inputs">
+          <label class="powermail_label pull-left">Your first name :</label>
+          <input name="first_name" ng-model="client.first.first_name" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <div class="last-name search-standart-inputs">
+          <label class="powermail_label pull-left">Your Last name or Surname:</label>
+          <input name="last_name"ng-model="client.first.last_name" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-8">
+        <div class="date-birth">
+          <label class="powermail_label">Your Date of Birth:</label>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <span class="user-search-input-btn date-day">
+                <select name="birthday_day" ng-model="client.first.birthday_day" >
+                  <option ng-repeat="d in getDays() track by $index" value="{{$index + 1}}">{{$index + 1}}</option>
+                </select> </span>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <span class="user-search-input-btn date-month">
+                <select name="birthday_month" ng-model="client.first.birthday_month" >
+                  <option value="1">January</option>
+                  <option value="2">February</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">Dezember</option>
+                </select> </span>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <span class="user-search-input-btn date-year">
+                <select name="birthday_year" ng-options="y for y in getYears()" ng-model="client.first.birthday_year" >
+                </select>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="marital">
+          <label class="powermail_label pull-left">Marital status:</label>
+          <span class="user-search-input-btn">
+            <select name="marital" ng-options="i.description for i in maritalOptions track by i.id" ng-model="client.first.marital" >
+            </select> </span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <div class="kids pull-left">
+          <label class="powermail_label">Do you have kids?</label>
+          <span>
+            <input type="radio" name="kid" ng-model="client.first.kids" value="true">
+            Yes
+            <input type="radio" name="kid" ng-model="client.first.kids" value="false">
+            No </span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-10">
+        <div class="upload-photo">
+          <div class="row">
+            <div class="col-xs-6">
+              <label class="powermail_label">Upload Your Photo</label>
+              <span class="user-search-input-btn file_upload ">
+                <!-- I used this directive to create the file selector https://github.com/danialfarid/ng-file-upload-->
+                <button ngf-select ngf-multiple="true" ngf-accept="'image/*'" ng-model="client.first.photos" class=" btn btn-default submit-button" type="button">
+                  Choose file
+                </button>
+              </span>
+            </div>
+            <div class="col-xs-6">
+              <div class="row">
+                <div ng-repeat="p in client.first.photos" class="col-xs-6">
+                  <div class="upload-photo">
+                    <img ngf-src="p" alt="user">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <div class="viewed-profile">
+          <label class="powermail_label pull-left">Your profile is viewed by:</label>
+          <span class="user-search-input-btn">
+            <select name="viewed_by" ng-options="i.description for i in viewedByOptions track by i.id" ng-model="client.first.viewed_by" >
+            </select> </span>
+        </div>
+      </div>
+    </div>
+    <button ng-click="firstSave()" class=" btn btn-default save-button" type="button">
+      Save
+    </button>
+  </fieldset>

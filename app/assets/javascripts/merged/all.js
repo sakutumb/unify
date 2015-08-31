@@ -12,6 +12,7 @@
 //
 //= require vendor-all.js
 //= require main
+//= require_tree ../lib
 //= require_tree ../controllers
 //= require_tree ../services
 //= require_tree ../directives

@@ -1,0 +1,47 @@
+<div class="user-info-select no-top-margin standart-white-block search-habits ng-cloak">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <!-- <button type="button" class="" aria-label="Left Align"> -->
+      <a href="#" ng-click="closeRefine()" class="btn btn-default close-search pull-right glyphicon glyphicon glyphicon-remove" aria-hidden="true"></a>
+      <!-- </button> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-smoke search-standart-inputs">
+        <label class="powermail_label pull-left">Smoke :</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in smokeOptions">
+            <input id="{{'smoke_'+item.id}}" name="{{'smoke_'+item.id}}" type="checkbox" checklist-model="search.habits.smoke" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Drink:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in drinkOptions">
+            <input id="{{'drink_'+item.id}}" name="{{'drink_'+item.id}}" type="checkbox" checklist-model="search.habits.drink" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="search-etnicithy search-standart-inputs">
+        <label class="powermail_label pull-left">Eating:</label>
+        <span class="multiple-input">
+          <label ng-repeat="item in eatingOptions">
+            <input id="{{'eating_'+item.id}}" name="{{'eating_'+item.id}}" type="checkbox" checklist-model="search.habits.eating" checklist-value="item.id"> {{item.description}}
+          </label>
+        </span>
+      </div>
+    </div>
+
+  </div>
+  <button ng-click="queryResults()" class="btn btn-default submit-button" type="button">
+    SUBMIT
+  </button>
+</div>
+
+<script type="text/javascript" src="assets/jquery/searchscript.js"></script>

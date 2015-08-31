@@ -1,0 +1,47 @@
+<div class="search-sidebar-wrapper ng-cloak" ng-class="{appearance: ('product.search.appearance'|isState), basic: ('product.search.basic'|isState), habits: ('product.search.habits'|isState), horoscope: ('product.search.horoscope'|isState)}">
+  <div class="search-sidebar">
+    <h3>Refine Search</h3>
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#search-sidebar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="search-sidebar">
+        <ul class="nav navbar-nav sidebar-search-list">
+          <li ui-sref="product.search.basic" ui-sref-active="active">
+            <a href="#">Basic</a>
+          </li>
+          <li ui-sref="product.search.appearance" ui-sref-active="active">
+            <a href="#">Appearance</a>
+          </li>
+          <li ui-sref="product.search.habits" ui-sref-active="active">
+            <a href="#">Habits</a>
+          </li>
+          <li ui-sref="product.search.horoscope" ui-sref-active="active">
+            <a href="#">Horoscope</a>
+          </li>
+          <li>
+            <div class="standart-white-block-input">
+              <input id="search_keyword" name="search_keyword" ng-model="search.keywordSearch" type="text" class="form-control" placeholder="Keyword Search">
+              <span class="user-search-input-btn">
+                <button ng-click="queryResults()" class="btn btn-default submit-button" type="button">GO</button>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="standart-white-block-input">
+              <input id="search_name" name="search_name" ng-model="search.nameSearch" type="text" class="form-control" placeholder="Name Search">
+              <span class="user-search-input-btn">
+                <button ng-click="queryResults()" class="btn btn-default submit-button" type="button">GO</button>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
