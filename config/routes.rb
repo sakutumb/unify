@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   match '/search' => 'unify#search', via: [:get, :post]
 
+  resources :unify_matchmakers
+
   get '/(:dynamic_route)(/:dynamic_action)(/:action_param)' => 'unify#index'
 
   #get '/:locale/index' => 'unify#index'
