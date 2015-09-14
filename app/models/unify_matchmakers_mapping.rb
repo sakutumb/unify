@@ -1,8 +1,11 @@
 class UnifyMatchmakersMapping  < ActiveRecord::Base
-  validates :matchmaker_id, presence: true, numericality: { only_integer: true, greater_than:0}
-  validates :matchmaker_id_URLC, presence: true, numericality: { only_integer: true, greater_than:0}
-  validates :country_id, presence: true, numericality: { only_integer: true, greater_than:0}
+  validates :matchmakers_id, presence: true, numericality: { only_integer: true, greater_than:0}
+  validates :religion_id, numericality: { only_integer: true, greater_than:0}
+  validates :caste_id, numericality: { only_integer: true, greater_than:0}
+  validates :language_id, numericality: { only_integer: true, greater_than:0}
 
-  belongs_to :unify_matchmaker, foreign_key: "matchmaker_id"
-  belongs_to :unify_religion_lang_caste_mapping, foreign_key: "matchmaker_id_URLC"
+  belongs_to :unify_matchmaker, foreign_key: "matchmakers_id"
+  belongs_to :dim_religion, foreign_key: "religion_id"
+  belongs_to :dim_caste, foreign_key: "caste_id"
+  belongs_to :dim_language, foreign_key: "language_id"
 end
