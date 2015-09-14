@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: unify_users
+#
+#  user_id           :string(45)       not null, primary key
+#  email             :string(100)      not null
+#  password          :string(45)
+#  password_digest   :string(300)
+#  first_name        :string(100)      not null
+#  last_name         :string(100)
+#  user_type         :string(2)        not null
+#  locale_id         :integer          not null
+#  organization_name :string(100)
+#  logo_image_name   :string(100)
+#  last_updated      :datetime
+#
+
 class UnifyUser < ActiveRecord::Base
   has_secure_password
   EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i

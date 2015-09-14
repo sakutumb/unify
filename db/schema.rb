@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150914212711) do
 
   create_table "_unused_fact_linkedin", primary_key: "seq_num", force: true do |t|
     t.string "id",                      limit: 200
@@ -78,11 +78,7 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "dim_cities", ["locale_id"], name: "FK_dim_city_dim_locale", using: :btree
 
   create_table "dim_communities", force: true do |t|
-    t.string  "name",      limit: 256, null: false
-    t.integer "locale_id",             null: false
   end
-
-  add_index "dim_communities", ["locale_id"], name: "FK_dim_community_dim_locale", using: :btree
 
   create_table "dim_countries", force: true do |t|
     t.string  "name",                limit: 256, null: false
@@ -102,11 +98,8 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "dim_education_level", ["locale_id"], name: "FK_dim_education_level_dim_locale", using: :btree
 
   create_table "dim_genders", force: true do |t|
-    t.string  "name",      limit: 28, null: false
-    t.integer "locale_id",            null: false
+    t.string "name", limit: 28, null: false
   end
-
-  add_index "dim_genders", ["locale_id"], name: "FK_dim_gender_dim_locale", using: :btree
 
   create_table "dim_languages", force: true do |t|
     t.string  "name",      limit: 256, null: false
@@ -129,17 +122,6 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "dim_states", force: true do |t|
     t.string "name",   limit: 256, null: false
     t.string "locale", limit: 256
-  end
-
-  create_table "dim_values", force: true do |t|
-    t.string  "value",       limit: 256, null: false
-    t.integer "map_id",                  null: false
-    t.string  "map_value",   limit: 256, null: false
-    t.integer "map_id_2",                null: false
-    t.string  "map_value_2", limit: 256, null: false
-    t.string  "table_name",  limit: 56,  null: false
-    t.date    "from_date"
-    t.date    "to_date"
   end
 
   create_table "dim_zodiac_signs", force: true do |t|
@@ -240,22 +222,45 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "first_name",    limit: 56,  default: "0", null: false
     t.string   "last_name",     limit: 56,  default: "0", null: false
     t.string   "email_address", limit: 56,  default: "0", null: false
-    t.integer  "phone",                     default: 0,   null: false
+    t.string   "phone",                     default: "0", null: false
     t.string   "address_1",     limit: 128, default: "0", null: false
     t.string   "address_2",     limit: 128, default: "0", null: false
+    t.string   "state",         limit: 25
+    t.string   "city",          limit: 25
     t.integer  "country_id",                default: 0,   null: false
-    t.integer  "religion_id",               default: 0,   null: false
-    t.integer  "language_id",               default: 0,   null: false
-    t.integer  "community",                 default: 0,   null: false
     t.integer  "locale_id",                 default: 0,   null: false
     t.datetime "last_updated",                            null: false
+    t.string   "biz_location"
   end
 
-  add_index "unify_matchmakers", ["community"], name: "FK__dim_community", using: :btree
-  add_index "unify_matchmakers", ["country_id"], name: "FK__dim_country", using: :btree
-  add_index "unify_matchmakers", ["language_id"], name: "FK__dim_language", using: :btree
-  add_index "unify_matchmakers", ["locale_id"], name: "FK_unify_matchmaker_dim_locale", using: :btree
-  add_index "unify_matchmakers", ["religion_id"], name: "FK__dim_religion", using: :btree
+  create_table "unify_matchmakers_mappings", force: true do |t|
+    t.integer "matchmakers_id"
+    t.integer "religion_id"
+    t.integer "caste_id"
+    t.integer "language_id"
+  end
+
+  create_table "unify_matchmakers_mappings_1", id: false, force: true do |t|
+    t.integer "id"
+    t.integer "matchmakers_id", null: false
+    t.integer "country_id"
+  end
+
+  add_index "unify_matchmakers_mappings_1", ["matchmakers_id"], name: "matchmakers_id", using: :btree
+
+  create_table "unify_matchmakers_mappings_old", force: true do |t|
+    t.integer "matchmakers_id"
+    t.integer "country_id"
+    t.integer "religion_id"
+    t.integer "caste_id"
+    t.integer "language_id"
+  end
+
+  add_index "unify_matchmakers_mappings_old", ["caste_id"], name: "FK_dim_community_MM", using: :btree
+  add_index "unify_matchmakers_mappings_old", ["country_id"], name: "FK_dim_country_MM", using: :btree
+  add_index "unify_matchmakers_mappings_old", ["id"], name: "FK_unify_matchmakers_id", using: :btree
+  add_index "unify_matchmakers_mappings_old", ["language_id"], name: "FK_dim_language_MM", using: :btree
+  add_index "unify_matchmakers_mappings_old", ["religion_id"], name: "FK_dim_religion_MM", using: :btree
 
   create_table "unify_partner_preferences", force: true do |t|
     t.string   "first_name",      limit: 128, null: false
@@ -296,7 +301,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string   "match_maker_name",   limit: 50,  default: "0",                   null: false
     t.string   "first_name",         limit: 50,  default: "0",                   null: false
     t.string   "last_name",          limit: 50,  default: "0",                   null: false
-    t.integer  "gender_id",                      default: 0,                     null: false
+    t.integer  "gender_id",                                                      null: false
     t.datetime "dob",                                                            null: false
     t.time     "dob_time",                       default: '2000-01-01 00:00:00', null: false
     t.string   "place_of_birth",     limit: 50,  default: "0",                   null: false
@@ -330,10 +335,14 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "unify_prospects", ["zodiac_id"], name: "FK_unify_user_dim_zodiac_sign", using: :btree
 
   create_table "unify_religion_lang_caste_mappings", id: false, force: true do |t|
-    t.integer "religion_id", null: false
-    t.integer "language_id", null: false
-    t.integer "caste_id",    null: false
+    t.integer "matchmakers_id", null: false
+    t.integer "religion_id",    null: false
+    t.integer "language_id",    null: false
+    t.integer "caste_id",       null: false
   end
+
+  add_index "unify_religion_lang_caste_mappings", ["matchmakers_id"], name: "matchmakers_id", using: :btree
+  add_index "unify_religion_lang_caste_mappings", ["matchmakers_id"], name: "matchmakers_id_2", using: :btree
 
   create_table "unify_users", primary_key: "user_id", force: true do |t|
     t.string   "email",             limit: 100, null: false

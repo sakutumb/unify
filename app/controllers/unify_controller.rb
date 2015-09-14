@@ -30,7 +30,10 @@ class UnifyController < ApplicationController
     render :template => '/index', :locals => {ui_view: @ui_view}
   end
 
-  # Entry point method for all data calls from front-end
+  # Entry point method for data calls from front-end, inherit code, only for services: login, 
+  # register, save_linkedin_profile, get_dim_data.
+  # For SoC and keep "fat model skinny controller", other services are implemented 
+  # in other controllers. See details in routes.rb and every controller.
   def services
     Rails.logger.debug 'Inside service'
     @result_json = {}
