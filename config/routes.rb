@@ -3,9 +3,17 @@ Rails.application.routes.draw do
 
   root 'unify#index'
 
+  match '/app/services/save-account' => 'unify_matchmakers#save_account', via: :post
+  match '/app/services/view-account' => 'unify_matchmakers#view_account', via: :get
+
+
+  #Generic services login, register, save_linkedin_profile, get_dim_data
   match '/app/services/:do' => 'unify#services', via: [:get, :post]
 
   match '/search' => 'unify#search', via: [:get, :post]
+
+  resources :unify_matchmakers
+
 
   get '/(:dynamic_route)(/:dynamic_action)(/:action_param)' => 'unify#index'
 
