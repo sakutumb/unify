@@ -11,6 +11,7 @@ angular.module('UnifyApp').
       $scope.countryOptions = [];
 
       $scope.submit = function(account) {
+        debugger
         $scope.$broadcast('show-errors-check-validity');
 
         if ($scope.form.$valid) {
