@@ -11,15 +11,17 @@ angular.module('UnifyApp').
       $scope.countryOptions = [];
 
       $scope.submit = function(account) {
-        debugger
+        
         $scope.$broadcast('show-errors-check-validity');
 
         if ($scope.form.$valid) {
-          console.log($scope.account);
-
-          // Code to submit form
+          UnifyProductService.saveAccount(account).then(function(data){
+            //#DEBUGGER: change for redirect code
+            alert(JSON.stringify(data, null, 2));
+          },function(data){
+            alert(data.fail)
+          })
         }
-        
       }
 
       $scope.loadReligions = function() { // Dummy function to load religions
