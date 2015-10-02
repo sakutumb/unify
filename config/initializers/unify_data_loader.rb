@@ -13,7 +13,7 @@ search_filters = {
 locales = DimLocale.select('id, name')
 # Set to the app variable
 Unify::SUPPORTED_LOCALES = locales.map(&:serializable_hash) if(locales.present?)
-Unify::SUPPORTED_LOCALES_JSON = Unify::SUPPORTED_LOCALES.to_json
+Unify::SUPPORTED_LOCALES_JSON = Unify::SUPPORTED_LOCALES.to_json if Unify::SUPPORTED_LOCALES.present?
 locales.each do |locale|
   # Load all Religions
   #record_set = DimReligion.where('locale_id = ?', locale.id).select('id, name')
