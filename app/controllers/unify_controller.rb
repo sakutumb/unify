@@ -30,7 +30,10 @@ class UnifyController < ApplicationController
     render :template => '/index', :locals => {ui_view: @ui_view}
   end
 
-  # Entry point method for all data calls from front-end
+  # Entry point method for data calls from front-end, inherit code, only for services: login, 
+  # register, save_linkedin_profile, get_dim_data.
+  # For SoC and keep "fat model skinny controller", other services are implemented 
+  # in other controllers. See details in routes.rb and every controller.
   def services
     Rails.logger.debug 'Inside service'
     @result_json = {}
@@ -234,10 +237,6 @@ class UnifyController < ApplicationController
     params.require(:unify_user).permit(:user_id, :email, :password, :first_name, :last_name, :user_type, :organization_name, :locale_id)
   end
 
-  def check_user_session
-    @is_logged_in_user = (session[:user].present? && session[:user]['user_id'].present?)
-    set_locale if(session[:user_locale].blank? || session[:user_locale_id].blank?)
-    Rails.logger.debug "Locale: #{session[:user_locale]}, #{session[:user_locale_id]}"
-  end
+  
 end
 

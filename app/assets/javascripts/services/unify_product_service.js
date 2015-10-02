@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('UnifyApp')
-  .factory('UnifyProductService', ['$http', function ($http) {
-  	return {
+.factory('UnifyProductService', ['$http','$q','appConstants', function ($http, $q,appConstants) {
+ return {
 
-  		/** Dashboard Tab **/
+  /** Dashboard Tab **/
   		// Dummy funcions for the dashboard tab
   		getUserInfoData : function(){
   			return {
@@ -25,43 +25,43 @@ angular.module('UnifyApp')
   		getClientsList : function(){
   			var array = new Array();
         array = 
-          [
-            {id: 1, clientName: "Velasquez, Henry"},
-            {id: 2, clientName: "Jenifer, Ralston"}
-          ];
+        [
+        {id: 1, clientName: "Velasquez, Henry"},
+        {id: 2, clientName: "Jenifer, Ralston"}
+        ];
         return array;
-  		},
-  		getClientsActivityList : function(){
-  			var array = new Array();
+      },
+      getClientsActivityList : function(){
+       var array = new Array();
   			// This template come from the server and can be assembled with different phrases
   			var template = 'Recently viewed <a class="darkerColor" href="/#/client/{{item.citedUser.id}}">' +
-  										 '{{item.citedUser.clientName}}’s</a> profile.';
-        array = 
-          [
-            {
-            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
-            	citedUser: {id: 3, clientName: "Tom Gomez"},
-            	descript: template
-            },
-            {
-            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
-            	citedUser: {id: 3, clientName: "Tom Gomez"},
-            	descript: template
-            },
-            {
-            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
-            	citedUser: {id: 3, clientName: "Tom Gomez"},
-            	descript: template
-            },
-            {
-            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
-            	citedUser: {id: 3, clientName: "Tom Gomez"},
-            	descript: template
-            }
-          ];
-        return array;
-  		},
-  		getRecommendationsList : function(){
+       '{{item.citedUser.clientName}}’s</a> profile.';
+       array = 
+       [
+       {
+         user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+         citedUser: {id: 3, clientName: "Tom Gomez"},
+         descript: template
+       },
+       {
+         user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+         citedUser: {id: 3, clientName: "Tom Gomez"},
+         descript: template
+       },
+       {
+         user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+         citedUser: {id: 3, clientName: "Tom Gomez"},
+         descript: template
+       },
+       {
+         user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+         citedUser: {id: 3, clientName: "Tom Gomez"},
+         descript: template
+       }
+       ];
+       return array;
+     },
+     getRecommendationsList : function(){
   			// Same data as above for while
   			return this.getClientsActivityList();
   		},
@@ -70,30 +70,30 @@ angular.module('UnifyApp')
   			// This template come from the server and can be assembled with different phrases
   			var template = 'Subject: <a href="/#/message/{{item.citedMessage.id}}">“{{{item.citedMessage.subject}}”</a>';
         array = 
-          [
-            {
-            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
-            	citedMessage: {id: 1, subject: "Ray Johnson"},
-            	descript: template
-            },
-            {
-            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
-            	citedMessage: {id: 2, subject: "I Need More Information"},
-            	descript: template
-            },
-            {
-            	user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
-            	citedMessage: {id: 3, subject: "Ray Johnson"},
-            	descript: template
-            },
-            {
-            	user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
-            	citedMessage: {id: 4, subject: "Ray Johnson"},
-            	descript: template
-            }
-          ];
-        return array;
-  		},
+        [
+        {
+         user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+         citedMessage: {id: 1, subject: "Ray Johnson"},
+         descript: template
+       },
+       {
+         user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+         citedMessage: {id: 2, subject: "I Need More Information"},
+         descript: template
+       },
+       {
+         user: {id: 2, profile_picture: null, gender:"M", clientName: "Jenifer Ralston"},
+         citedMessage: {id: 3, subject: "Ray Johnson"},
+         descript: template
+       },
+       {
+         user: {id: 2, profile_picture: null, gender:"F", clientName: "Jenifer Ralston"},
+         citedMessage: {id: 4, subject: "Ray Johnson"},
+         descript: template
+       }
+       ];
+       return array;
+     },
 
       //** Add Clients Tab **/
 
@@ -105,10 +105,10 @@ angular.module('UnifyApp')
       getSiblingsBrothersOptions : function () {
         var array = new Array();
         array =
-          [
-            {id: 1, description: "2"},
-            {id: 2, description: "4"}
-          ];
+        [
+        {id: 1, description: "2"},
+        {id: 2, description: "4"}
+        ];
         return array;
       },
 
@@ -125,22 +125,22 @@ angular.module('UnifyApp')
       getBasicAgeOptions : function(){
         var array = new Array();
         array =
-          [
-            {id: 1, description: "18-25 years"},
-            {id: 2, description: "25-70 years"}
-          ];
+        [
+        {id: 1, description: "18-25 years"},
+        {id: 2, description: "25-70 years"}
+        ];
         return array;
       },
       getBasicEthnicityOptions : function(){
         var array = new Array();
         array =
-          [
-            {id: 1, description: "Option 1"},
-            {id: 2, description: "Option 2"},
-            {id: 3, description: "Option 3"},
-            {id: 4, description: "Option 4"},
-            {id: 5, description: "Option 5"}
-          ];
+        [
+        {id: 1, description: "Option 1"},
+        {id: 2, description: "Option 2"},
+        {id: 3, description: "Option 3"},
+        {id: 4, description: "Option 4"},
+        {id: 5, description: "Option 5"}
+        ];
         return array;
       },
       // For now, using the same data
@@ -166,10 +166,10 @@ angular.module('UnifyApp')
       getAppeaHeightOptions : function(){
         var array = new Array();
         array =
-          [
-            {id: 1, description: "4.8\""},
-            {id: 2, description: "6\""}
-          ];
+        [
+        {id: 1, description: "4.8\""},
+        {id: 2, description: "6\""}
+        ];
         return array;
       },
       getAppeaBodyOptions : function(){
@@ -215,145 +215,157 @@ angular.module('UnifyApp')
       getComposeContacts : function(){
         var array = new Array();
         array =
-          [
-            {id: 1, name: "Denish Herron"},
-            {id: 2, name: "James Bond"},
-            {id: 3, name: "Indiana Jones"},
-            {id: 4, name: "Luk Skayvoker"},
-            {id: 5, name: "Harry Potter"},
-            {id: 6, name: "Jenifer Ralston"}
-          ];
+        [
+        {id: 1, name: "Denish Herron"},
+        {id: 2, name: "James Bond"},
+        {id: 3, name: "Indiana Jones"},
+        {id: 4, name: "Luk Skayvoker"},
+        {id: 5, name: "Harry Potter"},
+        {id: 6, name: "Jenifer Ralston"}
+        ];
         return array;
       },
       getInboxMessages : function(type){
         // For now just load the messages regards the type (sent, shortlisted, etc)
         var array = new Array();
         array =
-          [
-            {
-              id: 1, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 2, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "Test with a different title",
-              title: "Test with a different title",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 3, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 4, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 5, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 6, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 7, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 8, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            },
-            {
-              id: 9, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
-              title_exerpt: "More Information About..",
-              title: "More Information About Peter Klempworth",
-              date: "12-27-14 14:56 PST",
-              body: "The stylized <b>message</b> body"
-            }
-          ];
+        [
+        {
+          id: 1, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 2, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "Test with a different title",
+          title: "Test with a different title",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 3, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 4, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 5, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 6, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 7, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 8, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        },
+        {
+          id: 9, author_id: 6, author_name: "Jenifer Ralston", author_genre: 'M',
+          title_exerpt: "More Information About..",
+          title: "More Information About Peter Klempworth",
+          date: "12-27-14 14:56 PST",
+          body: "The stylized <b>message</b> body"
+        }
+        ];
         return array;
       },
 
 
-  		/** Account Tab **/
+      /** Account Tab **/
   		// Dummy funcions for the account tab
-	 		getAccountData : function(){ 
+      getAccountData : function(){ 
         return {
-            business_name : "dummy data",
-            business_location : "dummy data",
-            religions : [],
-            languages : ["en"],
-            community : ["afrikanas"],
-            phone_number : "dummy data",
-            address_first : "dummy data",
-            address_second : "dummy data",
-            city : "dummy data",
-            state : "dummy data",
-            country : "usa"
-        	};
+          business_name : "dummy data",
+          business_location : "dummy data",
+          religions : [],
+          languages : ["en"],
+          community : ["afrikanas"],
+          phone_number : "dummy data",
+          address_first : "dummy data",
+          address_second : "dummy data",
+          city : "dummy data",
+          state : "dummy data",
+          country : "usa"
+        };
       },
       getReligionOptions : function(){
         var array = new Array();
         array =
-          [
-            {id: 1, name: " Christian"},
-            {id: 2, name: " Islam"},
-            {id: 3, name: " Judaism"}
-          ];
+        [
+        {id: 1, name: " Christian"},
+        {id: 2, name: " Islam"},
+        {id: 3, name: " Judaism"}
+        ];
         return array;
       },
       getLanguageOptions : function(){
         var array = new Array();
         array = 
-          [
-            {id: "en", name: " English"},
-            {id: "pt", name: " Portugues"},
-            {id: "sp", name: " Spanish"}
-          ];
+        [
+        {id: "en", name: " English"},
+        {id: "pt", name: " Portugues"},
+        {id: "sp", name: " Spanish"}
+        ];
         return array;
       },
       getCommunityOptions : function(){
         var array = new Array();
         array = 
-          [
-            {"id": "afrikanas", "name": " Afrikanas"},
-            {"id": "albanian", "name": " Albanian"},
-            {"id": "arabic", "name": " Arabic"}
-          ];
+        [
+        {"id": "afrikanas", "name": " Afrikanas"},
+        {"id": "albanian", "name": " Albanian"},
+        {"id": "arabic", "name": " Arabic"}
+        ];
         return array;
       },
       getCountryOptions : function(){
         var array = new Array();
         array =  
-          [
-            {"id": "usa", "name": " United States"},
-            {"id": "ukraine", "name": " Ukraine"}
-          ];
+        [
+        {"id": "US", "name": " United States"},
+        {"id": "CO", "name": " Colombia"}
+        ];
         return array;
+      },
+      saveAccount: function(account) {
+        var deferred = $q.defer();
+        jQuery.extend(account, {authenticity_token: appConstants.authenticity_token});
+        $http.post(appConstants.SAVE_ACCOUNT_URL,account)
+          .success(function(data, status, headers, config) {
+            deferred.resolve(data);
+          })
+          .error(function(data, status, headers, config) {
+            deferred.reject(data);
+          });
+        return deferred.promise;
       }     
-  	}
+    }
   }
-]);
+  ]);
