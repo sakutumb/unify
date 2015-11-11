@@ -8,6 +8,7 @@ class UnifyMatchmakersRedo < ActiveRecord::Migration
   def change
     DimReligion.connection.execute("SET FOREIGN_KEY_CHECKS = 0")
     create_table "unify_matchmakers", force: true do |t|
+      t.integer  'unify_user_id'
       t.string   "user_name",     limit: 128, default: "0", null: false
       t.string   "password",      limit: 128, default: "0", null: false
       t.string   "company_name",  limit: 128, default: "0", null: false

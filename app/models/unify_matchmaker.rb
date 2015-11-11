@@ -24,7 +24,7 @@
 
  class UnifyMatchmaker  < ActiveRecord::Base
   validates :company_name, presence: true, length: {maximum: 128}
-  validates :phone, presence: true, numericality: { only_integer: true , greater_than:0}
+  validates :phone, presence: true, numericality: { only_integer: true}
   validates :address_1, presence: true, length: {maximum: 128}
   validates :address_2, length: {maximum: 128}
   validates :city, presence: true, length: {maximum: 25}
