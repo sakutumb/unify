@@ -33,6 +33,7 @@
 
   has_many :unify_matchmakers_mappings, foreign_key: "matchmakers_id"
   belongs_to :dim_country, foreign_key: 'country_id'
+  belongs_to :unify_user
 
   before_save :set_last_updated
 

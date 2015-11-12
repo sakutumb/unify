@@ -1,6 +1,5 @@
 #Register account service /app/services/save-account => post and /app/services/view-account => get
 class UnifyMatchmakersController < ApplicationController
-  protect_from_forgery with: :null_session
   before_filter :check_user_session
 
   def view_account
@@ -16,8 +15,10 @@ class UnifyMatchmakersController < ApplicationController
   	begin
 	    build_object
 	    @object.save!
-	    render json: @object.to_json(include: {unify_matchmakers_mappings: {dim_religion: nil, 
-        dim_caste: nil, dim_language: nil}})
+	    render json: @object.to_json(
+      include: {
+        unify_matchmakers_mappings: {include: [:dim_religion, :dim_caste, :dim_language]}
+    })
   	rescue Exception => e
       logger.exc
   		render json: {fail: e.message}, status: :unprocessable_entity
@@ -28,25 +29,25 @@ class UnifyMatchmakersController < ApplicationController
   #Build object for save_account
   def build_object
     @object = UnifyMatchmaker.new
-    @object.unify_user_id = @@user_json['user_id']
-    @object.company_name = params["biz-name"]
-    #matchmaker.???? = params["biz-location"]
-    @object.phone = params["phone"].to_s.gsub(/[^0-9]/,'')
+    @object.unify_user_id = @user_json['user_id']
+    @object.company_name = params["business_name"]
+    @object.biz_location = params["business_location"]
+
+    @object.phone = params["phone_number"].to_s.gsub(/[^0-9]/,'')
     @object.phone = 0 if @object.phone.blank?
-    @object.address_1 = params["address-line1"]
-    @object.address_2 = params["address-line2"]
-    @object.state = params["state-province"]
+    @object.address_1 = params["address_first"]
+    @object.address_2 = params["address_second"]
+    @object.state = params["state"]
     @object.city = params["city"]
-    @object.biz_location = params["biz-location"]
-    @object.country = params["country"]
+    @object.country =params["country"]
     (params["languages"]||[]).each do |lang|
     	@object.unify_matchmakers_mappings.build(language: lang)
 		end
-		(params["communities"]|[]).each do |cast|
+		(params["community"]||[]).each do |cast|
     	@object.unify_matchmakers_mappings.build(caste: cast)
 		end
-		(params["religions"]||[]).each do |religion|
-    	@object.unify_matchmakers_mappings.build(religion: religion)
+		(params["religions"]||[]).each do |religion_id|
+    	@object.unify_matchmakers_mappings.build(religion_id: religion_id)
 		end
   end
 end

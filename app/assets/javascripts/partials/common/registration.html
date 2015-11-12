@@ -1,0 +1,63 @@
+<section id="registration" ng-show="registrationFormVisible">
+    <h2>Registration</h2>
+
+    <form class="form-horizontal registerForm">
+        <div class="form-group">
+            <label class="col-sm-5 control-label">EMail </label>
+
+            <div class="col-xs-12 col-sm-4">
+                <input type="text" class="form-control" name="username"
+                       data-bv-notempty="true"
+                       data-bv-notempty-message="The username is required and cannot be empty"
+
+                       data-bv-stringlength="true"
+                       data-bv-stringlength-min="6"
+                       data-bv-stringlength-max="30"
+                       data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
+
+                       data-bv-regexp="true"
+                       data-bv-regexp-regexp="^[a-zA-Z0-9]+$"
+                       data-bv-regexp-message="The username can only consist of alphabetical and number"
+
+                       data-bv-different="true"
+                       data-bv-different-field="password"
+                       data-bv-different-message="The username and password cannot be the same as each other"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-5 control-label">Password </label>
+
+            <div class="col-xs-12 col-sm-4">
+                <input type="password" class="form-control" name="password"
+                       data-bv-notempty="true"
+                       data-bv-notempty-message="The password is required and cannot be empty"
+
+                       data-bv-stringlength="true"
+                       data-bv-stringlength-min="8"
+                       data-bv-stringlength-message="The password must have at least 8 characters"
+
+                       data-bv-different="true"
+                       data-bv-different-field="username"
+                       data-bv-different-message="The password cannot be the same as username"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-5 control-label">Re-enter Password </label>
+
+            <div class="col-xs-12 col-sm-4">
+                <input type="password" class="form-control" name="rePassword"
+                       data-bv-notempty="true"
+                       data-bv-notempty-message="The password is required and cannot be empty"
+
+                       data-bv-stringlength="true"
+                       data-bv-stringlength-min="8"
+                       data-bv-stringlength-message="The password must have at least 8 characters"
+
+                       data-bv-different="true"
+                       data-bv-different-field="username"
+                       data-bv-different-message="The password cannot be the same as username"/>
+            </div>
+        </div>
+    </form>
+</section>

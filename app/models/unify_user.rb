@@ -17,6 +17,8 @@
 
 class UnifyUser < ActiveRecord::Base
   has_secure_password
+  has_one :unify_matchmaker
+
   EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\z/i
   validates :user_id, :presence => true, :uniqueness => true, :length => { :in => 3..100 }
   validates :email, :uniqueness => true, :format => EMAIL_REGEX

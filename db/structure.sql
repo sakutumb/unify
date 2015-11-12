@@ -425,7 +425,7 @@ CREATE TABLE `unify_matchmakers` (
   `biz_location` varchar(255) DEFAULT NULL,
   `unify_user_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -442,7 +442,7 @@ CREATE TABLE `unify_matchmakers_mappings` (
   `caste_id` int(11) DEFAULT NULL,
   `language_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -674,7 +674,7 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-12 15:04:06
+-- Dump completed on 2015-11-12 16:13:42
 INSERT INTO schema_migrations (version) VALUES ('20150914073249');
 
 INSERT INTO schema_migrations (version) VALUES ('20150914205332');

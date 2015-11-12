@@ -237,12 +237,6 @@ class UnifyController < ApplicationController
     params.require(:unify_user).permit(:user_id, :email, :password, :first_name, :last_name, :user_type, :organization_name, :locale_id)
   end
 
-  def check_user_session
-    if session[:user].present? 
-      @is_logged_in_user = @user_json['user_id'].present? if @user_json = JSON.parse(session[:user]) 
-    end
-    set_locale if(session[:user_locale].blank? || session[:user_locale_id].blank?)
-    Rails.logger.debug "Locale: #{session[:user_locale]}, #{session[:user_locale_id]}"
-  end
+  
 end
 
