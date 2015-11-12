@@ -6,7 +6,6 @@
 #
 default: &default
   adapter: mysql2
-  <% puts ENV.inspect%>
   database: '<%= ENV["UNIFYDB"]||"unify_db"%>'
   username: '<%= ENV["UNIFYUSER"]||"unify"%>'
   password: '<%= ENV["UNIFYPASS"]||"un$fy9"%>'

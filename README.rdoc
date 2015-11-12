@@ -1,28 +1,18 @@
-== README
+=Running
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== For running rake use local implementation 
+´bin/rake db:seed´
 
-Things you may want to cover:
+== For changing database connection use evnironment variables 
+export UNIFYDB=unify_sql; export UNIFYUSER=root; export UNIFYPASS=password; export UNIFYHOST="192.168.10.99"
 
-* Ruby version
+=Schema documentation
 
-* System dependencies
+In /doc can find models diagrams, and the original schema from mysqlworkbench.
 
-* Configuration
+In db/structure.sql keep the sql schema, is created with bin/rake db:structure:dump  .
 
-* Database creation
+Don't erase data from schema table, for keepig migrations working.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=Test
+For test account admin login and go to /product

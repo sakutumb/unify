@@ -1,6 +1,8 @@
 #Register account service /app/services/save-account => post and /app/services/view-account => get
 class UnifyMatchmakersController < ApplicationController
   protect_from_forgery with: :null_session
+  before_filter :check_user_session
+
   def view_account
     render json: {fail: 'not implemented'}, status: :unprocessable_entity
   end
@@ -26,6 +28,7 @@ class UnifyMatchmakersController < ApplicationController
   #Build object for save_account
   def build_object
     @object = UnifyMatchmaker.new
+    @object.unify_user_id = @@user_json['user_id']
     @object.company_name = params["biz-name"]
     #matchmaker.???? = params["biz-location"]
     @object.phone = params["phone"].to_s.gsub(/[^0-9]/,'')
